@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="VFX Platform : Reference Platform for VFX Software" />
+    <meta name="description" content="VFX Platform : Reference Platform for VFX Software, Frequently Asked Questions" />
     <meta name="author" content="Visual Effects Society Technology Committee">
     <!-- link rel="shortcut icon" href="../../assets/ico/favicon.ico" -->
 
-    <title>VFX Platform Reference</title>
+    <title>VFX Reference Platform: Frequently Asked Questions/title>
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
-            <!--li><a href="/about">FAQ</a></li-->
+            <li><a href="/FAQ">FAQ</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
@@ -50,7 +50,7 @@
     <div class="container">
 
       <div class="vfxplatform-template">
-        <h1>VFX Platform Reference</h1>
+        <h1>Frequently Asked Questions</h1>
 
 
 <div class="panel-group" id="accordion">
@@ -63,7 +63,7 @@
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <div id="collapseOne" class="panel-collapse collapse">
       <div class="panel-body">
         Building software products for a common platform means they are easier to install and integrate into pipelines so may result in quicker adoption of new software releases at your studio. It will also make it easier for the industry to adopt new technologies more rapidly.
         <br>
@@ -76,30 +76,229 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Collapsible Group Item #2
+          Is there a VFX Reference Platform certified Linux distribution that I can download and install?
         </a>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse">
       <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        There is no VFX Reference Platform certified Linux distro available today so it is currently up to VFX and animation studios to take a standard Linux distribution and upgrade/install the relevant platform versions. In the future it’s possible that a Linux distribution vendor or service provider will choose to provide a VFX Reference Platform compliant distro, either by providing a distro with pre-packaged platform components or providing the components in a manner that is easy to add to a vanilla distro.
+        <br>
+        If you are responsible for building a linux environment for a studio or would like to learn more about the process, we suggest joining the discussion at <a href="http://www.studiosysadmins.com/">Studio Sysadmins</a> where these topics are regularly discussed.
       </div>
     </div>
   </div>
+  
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Collapsible Group Item #3
+          Why can't you just recommend a particular Linux distribution?
         </a>
       </h4>
     </div>
     <div id="collapseThree" class="panel-collapse collapse">
       <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        There are numerous reasons to pick one Linux distribution over another. Some distros offer paid support, some offer an update schedule that is favorable for a particular studio’s upgrade schedule and many other factors impact the decision for which distro to run in a studio.
+        <br>
+        Our goal with the VFX Reference Platform is to make it more straightforward to run a wide variety of Visual Effects and Animation software on any modern Linux distribution you choose.
       </div>
     </div>
   </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+          Are there particular Linux distributions that are close to the Reference Platform and thus easier to adopt?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFour" class="panel-collapse collapse">
+      <div class="panel-body">
+        While we do not recommend any particular distribution, Redhat’s CentOS and Canonical’s Ubuntu are both commonly used in the industry. By using a resource like <a href="http://distrowatch.com">DistroWatch</a> you can easily see which library versions are used by each distro release and how closely they line up to a given VFX Reference Platform. 
+        <br>
+        For example, the CY2015 platform is fairly close to Ubuntu 14 and CentOS 7 so it is somewhat easier to adapt those distro releases to that platform. To be clear, other distros and some older versions of those distributions are supported by CY2015, it just take a little more effort to build.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+          What is the significance of the glibc version to which Linux distro releases are not supported?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFive" class="panel-collapse collapse">
+      <div class="panel-body">
+        The glibc specified in the VFX Reference Platform is the minimum version of the GNU C library that the platform will work with. Generally speaking, glibc is not upgradeable on a given Linux distro release so if your distro has a glibc version easier than than specified in the VFX Reference Platform then it will not be supported.
+        <br>
+        For example, for CY2015 the minimum glibc is set to 2.12 which means that releases earlier than CentOS 6.0 or Ubuntu 12.04, just to take those distributions as an example, are not supported by CY2015.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+          Is the Visual Effects Society going to create a Linux distro?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSix" class="panel-collapse collapse">
+      <div class="panel-body">
+        No. Creating and maintaining a Linux distribution is an enormous task, and it would be challenging for a single distro to be universally adopted across the industry. The VFX Reference Platform effort is focused on relieving the pain of multiple incompatible versions of libraries across different software products.
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+          Which software vendors are currently involved?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseSeven" class="panel-collapse collapse">
+      <div class="panel-body">
+        The VFX Reference Platform is a collaborative project. So far, we have the enthusiastic support of all of the major application providers for the visual effects and animation industry, including Autodesk, The Foundry and Side Effects Software. 
+        <br>
+        There are two ways to participate: First, any interested person or company may join the discussion at <a href="mailto:vfx-platform-discuss@googlegroups.com">vfx-platform-discuss@googlegroups.com</a>. Second, we have formed a Working Group who do regular conference calls to ensure progress is made in complicated areas. The Working group is made up of interested parties invited by the VES Technology Committee and currently has several members, one representative from the VES and one each from several software vendors.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
+          I'm a software developer, how do I get my software certified?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEight" class="panel-collapse collapse">
+      <div class="panel-body">
+        There is no certification program, but you are encouraged to advertise the fact that your software is compliant with a specific iteration of the VFX Reference Platform and link to our website.
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+          My application provider doesn’t currently support the VFX Reference Platform, what should I do?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse">
+      <div class="panel-body">
+        First, please help ensure your application provider is aware of the VFX Reference Platform and the goal of making it easier to develop for Linux. Asking them to support the VFX Reference Platform as a priority for their development is a great idea for everyone.
+        <br>
+        Second, users should be aware that some developers will have technical challenges changing software to conform to the version requirements in the VFX Reference Platform. Even companies who enthusiastically support the effort may take a few releases to be compliant with the platform.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
+          Why the focus on Linux, what about other operating systems?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTen" class="panel-collapse collapse">
+      <div class="panel-body">
+        Linux is prevalent in VFX, particularly in the larger studios where they build sophisticated automation pipelines that integrate multiple different software vendors’ products together. These Linux-based pipelines are where the problem of conflicting versions most often manifests itself. This issue is made more complicated by the lack of standards across different Linux distros, hence our initial focus on Linux rather an any other OS.
+        <br>
+        Although the issues are not exactly the same, similar ideas could be extended to Windows and MacOS and the Working Group is considering this for the future. If you’re interested in helping with any of these efforts, please contact us at <a href="feedback@vfxplatform.com">feedback@vfxplatform.com</a>. 
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">
+          When will the Reference Platform move to Python 3?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseEleven" class="panel-collapse collapse">
+      <div class="panel-body">
+        This is a complex issue given the lack of backwards compatibility to Python 2.6/2.7. 
+        The right time to make the switch will decided by the software vendors in consultation with their customers and it’s possible Python 3 may not see wide adoption in VFX until and unless Python 3 is fully compatible with all the legacy Python code in active use across the industry.
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">
+          What about standardising compiler flags to ensure that everyone is building from source in a common and compatible manner?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwelve" class="panel-collapse collapse">
+      <div class="panel-body">
+        This has been a common request and is being actively looked into by the Working Group. If you have suggestions as to which flags should be standardised and to what then please contact us.
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">
+          Are there plans to add C++ standard version to the platform? When will we see C++11 as a minimum requirement?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThirteen" class="panel-collapse collapse">
+      <div class="panel-body">
+        The CY2015 platform moves us up to a compiler that is fully compliant with C++11 but it will still take some time for software vendors to ensure that older code is compliant with the C++11 standard. We are considering adding C++11 to the CY2016 platform and keeping a careful eye on the emerging C++14 standard.
+        <br>
+        If you have any feedback on this topic, particularly if you do not want C++11 to be a minimum requirement for major releases in 2016 then please let us know at feedback@vfxplatform.com so your views can be represented.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseForteen">
+          When does a new version of an open source library need to be released in order for it to be considered for use by next year's batch of 3rd party software packages?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseForteen" class="panel-collapse collapse">
+      <div class="panel-body">
+        Ideally two months prior to SIGGRAPH is the time to have your library released so there is time for it to be considered for inclusion in the Reference Platform for the following year. That said, we will consider new library releases right up until the SIGGRAPH deadline, but cutting it too close may mean there is not enough time for the software vendors to fully evaluate the new version before we lock down and publish the final Reference Platform versions for the following year.
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">
+          How can I get involved?
+        </a>
+      </h4>
+    </div>
+    <div id="collapseFifteen" class="panel-collapse collapse">
+      <div class="panel-body">
+        Please send comments, questions, suggestions to: <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a>
+      </div>
+    </div>
+  </div>
+  
 </div>
 
 
