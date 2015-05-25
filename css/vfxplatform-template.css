@@ -9,3 +9,7 @@ body {
 .alert {
 	width:90%;
 }
+
+.table td {
+   text-align: center;   
+}
