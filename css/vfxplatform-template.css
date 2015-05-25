@@ -10,6 +10,6 @@ body {
 	width:90%;
 }
 
-.table td {
+.table td, th {
    text-align: center;   
 }
