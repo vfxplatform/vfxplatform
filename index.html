@@ -18,7 +18,7 @@
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
@@ -53,56 +53,144 @@
         <h3>Introduction</h3>
         <p>The VFX Reference Platform is a set of tool and library versions to be used as a common target platform for building software for the VFX industry. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for Linux-based pipelines and encourage further adoption of Linux by software vendors. The Reference Platform is updated annually by a group of software vendors in collaboration with the <a href="http://www.visualeffectssociety.com/about/committee/technology-committee">Visual Effects Society Technology Committee</a>.</p>
 
-
         <h3>Current Status</h3>
 
-        <p>The Calendar Year 2014 (CY2014) Reference Platform was the first of its kind and represents the closest collaboration yet between major software solutions providers to converge on a common platform. The CY2015 Platform was published at SIGGRAPH 2014 and we are currently accepting feedback and suggestions for CY2016.</p>
+        <p>Major software releases for this year should conform to the CY2015 Platform. The draft of the Calendar Year 2016 (CY2016) Reference Platform was published below in May 2015 and we are currently <a href="mailto:feedback@vfxplatform.com">soliciting feedback</a> for any further modifications prior to publishing the final version in August. Major software releases scheduled for next year should initially target this draft CY2016 Platform.</p>
 
         <h3>Reference Platform</h3>
 
         <p>Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.</p>
 
-        <h4>Current - VFX Platform CY2015</h4>
-
+		<p>All versions should be considered exact required versions, except for those components where <span class="glyphicon glyphicon-sort" aria-hidden="true"></span> indicates that:</p>
         <ul>
-        <li>gcc 4.8.2</li>
-        <li>glibc 2.12 <span class="glyphicon glyphicon-sort" aria-hidden="true"></span> </li>
-        <li>python 2.7.x</li>
-        <li>Qt 4.8.x</li>
-        <li>PySide 1.2.x  </li>
-        <li>OpenEXR 2.2.x  </li>
-        <li>OpenColorIO 1.0.9 </li>
-        <li>OpenSubdiv 2.5.x </li>
-        <li>OpenVDB 3.0.x <small>(<i>Amended October 2014</i>)</small>  </li>
-        <li>Alembic 1.5.x</li>
-        <li>Boost 1.55</li>
-        <li>FBX latest</li>
-        <li>Intel TBB 4.2 <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></li>
+			<li>for software developers, versions should be considered <em>highest version allowed</em></li>
+			<li>for systems maintainers, versions should be considered <em>minimum version required.</em></li>
         </ul>
 
-        <p>All versions should be considered exact required versions, except where <span class="glyphicon glyphicon-sort" aria-hidden="true"></span> indicates that:</p>
-        <ul>
-          <li>for software developers, versions should be considered <em>highest version allowed</em></li>
-          <li>for systems maintainers, versions should be considered <em>minimum version required.</em></li>
-        </ul>
+		<div class="table-responsive" style="width:80%">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th class="col-md-3">&nbsp;</th>
+					<th class="col-md-3">CY2016 draft</th>
+					<th class="col-md-3">CY2015</th>
+					<th class="col-md-3">CY2014</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="font-weight:bold">gcc</td>
+					<td>4.8.2</td>
+					<td>4.8.2</td>
+					<td>4.1.2</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">glibc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>2.12</td>
+					<td>2.12</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">python<br>(built with ucs4)</td>
+					<td>2.7.5 - 2.7.latest</td>
+					<td>2.7.x</td>
+					<td>2.7.3</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Qt</td>
+					<td>5.4.x (modified)</td>
+					<td>4.8.x</td>
+					<td>4.8.5</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">PyQt</td>
+					<td>5.4.x</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">PySide</td>
+					<td>TBC - pending port to Qt5</td>
+					<td>1.2.x</td>
+					<td>1.2</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">NumPy</td>
+					<td>1.9.2</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">OpenEXR</td>
+					<td>2.2.x</td>
+					<td>2.2.x</td>
+					<td>2.0.1</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Ptex</td>
+					<td>2.0.42</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">OpenSubDiv</td>
+					<td>3.0.x</td>
+					<td>2.5.x</td>
+					<td>2.3.3</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">OpenVDB</td>
+					<td>3.1</td>
+					<td>3.0.x</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Alembic</td>
+					<td>1.5.8</td>
+					<td>1.5.x</td>
+					<td>1.5.x</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">FBX</td>
+					<td>latest</td>
+					<td>latest</td>
+					<td>2015</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">OpenColorIO</td>
+					<td>1.0.9</td>
+					<td>1.0.9</td>
+					<td>1.0.7</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">ACES</td>
+					<td>1.0</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Boost</td>
+					<td>1.55</td>
+					<td>1.55</td>
+					<td>1.53</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>4.3</td>
+					<td>4.2</td>
+					<td>4.1</td>
+				</tr>
+				<tr>
+					<td style="font-weight:bold">C++ API/SDK</td>
+					<td>C++11</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
 
-        <h4>Previous - VFX Platform CY2014</h4>
-
-        <ul>
-        <li>gcc 4.1.2
-        <li>python 2.7.3
-        <li>Qt 4.8.5
-        <li>PySide 1.2
-        <li>OpenEXR 2.0.1
-        <li>OpenColorIO 1.0.7
-        <li>OpenSubdiv 2.3.3
-        <li>Alembic 1.5.x
-        <li>Boost 1.53
-        <li>FBX 2015
-        <li>Intel TBB 4.1 
-        </ul>
-
-        <p>CY2014 was the best summary of the current platforms targeted by products such as Maya 2015, Houdini 13 and Nuke 8. Although some incompatibilities remained between these products, there remains a clear path to convergence for subsequent releases.</p>
+		<p>The CY2016 Platform is a work in progress, <a href="mailto:feedback@vfxplatform.com">feedback is still welcome</a> and will continue to be addressed until August when the final CY2016 Platform will be published during SIGGRAPH. The major change for CY2016 is a move to Qt5 which requires a port of PySide and modifications to vanilla Qt to resolve issues that impact some DCC tools. The Working Group's aim is for this modified Qt to be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
 
         <p>&nbsp;</p>
 
