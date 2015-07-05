@@ -80,7 +80,7 @@
 			<tbody>
 				<tr>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
-					<td>4.8.2</td>
+					<td><em><a href="#" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</em></td>
 					<td>4.8.2</td>
 					<td>4.1.2</td>
 				</tr>
@@ -110,7 +110,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">PySide</td>
-					<td>TBC - pending port to Qt5</td>
+					<td><em>2.0</em></td>
 					<td>1.2.x</td>
 					<td>1.2</td>
 				</tr>
@@ -190,6 +190,14 @@
 		</table>
 		</div>
 
+		<div class="panel panel-default">
+			<div class="panel-heading">Note - gcc</div>
+			<div class="panel-body">
+				<p>The vanilla gcc 4.8.2 has a <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800">serious bug</a> that is fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform gives 4.8.2 as an option is that this release is what ships with <a href="http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/">Redhat Developer Toolset 2.1</a> that some software vendors are committed to using through 2016.</p>
+				<p>The following are the known distributions that ship with a fixed 4.8.2:- Redhat DTS 2.1, RHEL/CentOS 6.</p>
+			</div>
+		</div>
+		
 		<p>The CY2016 Platform is a work in progress, <a href="mailto:feedback@vfxplatform.com">feedback is still welcome</a> and will continue to be addressed until August when the final CY2016 Platform will be published during SIGGRAPH. The major change for CY2016 is a move to Qt5 which requires a port of PySide and modifications to vanilla Qt to resolve issues that impact some DCC tools. The Working Group's aim is for this modified Qt to be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
 
         <p>&nbsp;</p>
