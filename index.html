@@ -57,6 +57,10 @@
 
         <p>Major software releases for this year should conform to the CY2015 Platform. The draft of the Calendar Year 2016 (CY2016) Reference Platform was published below in May 2015 and we are currently <a href="mailto:feedback@vfxplatform.com">soliciting feedback</a> for any further modifications prior to publishing the final version in August. Major software releases scheduled for next year should initially target this draft CY2016 Platform.</p>
 
+		<p>The CY2016 Platform is a work in progress, <a href="mailto:feedback@vfxplatform.com">feedback is still welcome</a> and will continue to be addressed until August when the final CY2016 Platform will be published during SIGGRAPH. </p>
+		
+		<p><em>16th July 2015</em> - CY2016 Draft updated to reflect a change in gcc plans, addition of Intel MKL and to add a version number for the next PySide release.</p>
+
         <h3>Reference Platform</h3>
 
         <p>Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.</p>
@@ -79,8 +83,8 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td style="font-weight:bold">gcc</td>
-					<td>4.8.2</td>
+					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td>4.8.2</td>
 					<td>4.1.2</td>
 				</tr>
@@ -98,7 +102,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
-					<td>5.4.x (modified)</td>
+					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.4.x (modified)</a></td>
 					<td>4.8.x</td>
 					<td>4.8.5</td>
 				</tr>
@@ -110,7 +114,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">PySide</td>
-					<td>TBC - pending port to Qt5</td>
+					<td>2.0</td>
 					<td>1.2.x</td>
 					<td>1.2</td>
 				</tr>
@@ -181,6 +185,12 @@
 					<td>4.1</td>
 				</tr>
 				<tr>
+					<td style="font-weight:bold">Intel MKL</td>
+					<td>11.3</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
 					<td style="font-weight:bold">C++ API/SDK</td>
 					<td>C++11</td>
 					<td>&nbsp;</td>
@@ -190,8 +200,25 @@
 		</table>
 		</div>
 
-		<p>The CY2016 Platform is a work in progress, <a href="mailto:feedback@vfxplatform.com">feedback is still welcome</a> and will continue to be addressed until August when the final CY2016 Platform will be published during SIGGRAPH. The major change for CY2016 is a move to Qt5 which requires a port of PySide and modifications to vanilla Qt to resolve issues that impact some DCC tools. The Working Group's aim is for this modified Qt to be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
+		<div class="panel panel-default" id="footnote-gcc">
+			<div class="panel-heading"><small>Note - gcc</small></div>
+			<div class="panel-body">
+				<small>
+				<p>The vanilla gcc 4.8.2 has a <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800">serious bug</a> that is fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform still gives 4.8.2 as an option for CY2016 is that this gcc version is what ships with <a href="http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/">Redhat Developer Toolset 2.1</a> that some software vendors are committed to using through 2016.</p>
+				<p>The following are the known distributions that ship with a fixed 4.8.2:- Redhat DTS 2.1, RHEL/CentOS 6.</p>
+				</small>
+			</div>
+		</div>
 
+		<div class="panel panel-default" id="footnote-qt">
+			<div class="panel-heading"><small>Note - Qt modifications</small></div>
+			<div class="panel-body">
+				<small>
+				<p>The major change for CY2016 is a move to Qt5 which requires a port of PySide and modifications to vanilla Qt to resolve issues that impact some DCC tools. The Working Group's aim is for this modified Qt to be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
+				</small>
+			</div>
+		</div>
+		
         <p>&nbsp;</p>
 
         <div class="well well-sm"><p><small>
