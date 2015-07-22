@@ -61,6 +61,8 @@
 		
 		<p><em>16th July 2015</em> - CY2016 Draft updated to reflect a change in gcc plans, addition of Intel MKL and to add a version number for the next PySide release.</p>
 
+		<p><em>22nd July 2015</em> - CY2016 Draft updated Qt from 5.4.x to 5.5.x in light of the new release in early July and more details added about the Qt modifications.</p>
+
         <h3>Reference Platform</h3>
 
         <p>Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.</p>
@@ -102,7 +104,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
-					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.4.x (modified)</a></td>
+					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.5.x (modified)</a></td>
 					<td>4.8.x</td>
 					<td>4.8.5</td>
 				</tr>
@@ -214,7 +216,11 @@
 			<div class="panel-heading"><small>Note - Qt modifications</small></div>
 			<div class="panel-body">
 				<small>
-				<p>The major change for CY2016 is a move to Qt5 which requires a port of PySide and modifications to vanilla Qt to resolve issues that impact some DCC tools. The Working Group's aim is for this modified Qt to be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
+				<p>The major change for CY2016 is a move to Qt 5 which requires a port of PySide and modifications to vanilla Qt.</p>
+
+				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. Our aim is to keep these modifications to a minimum and the long term goal is to work collectively as an industry with the Qt community to eliminate the need for them entirely.</p>
+				
+				<p>These Qt modifications will be developed in a private Github repository by a group of major software vendors and published publicly as soon as they are ready for distribution, before the end of 2015. The modified Qt will be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
 				</small>
 			</div>
 		</div>
