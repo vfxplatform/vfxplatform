@@ -57,6 +57,8 @@
 
         <p>Major software releases for this year should conform to the CY2015 Platform. The final version of the Calendar Year 2016 (CY2016) Reference Platform was published below in August 2015 and that should be the target for all major software releases in 2016. We are currently <a href="mailto:feedback@vfxplatform.com">soliciting feedback</a> for CY2017.</p>
 
+		<p><strong>19th May 2016</strong> - CY2016 Qt upped from 5.6.x to 5.6.1 to address critical bug fixes. The agreed source modifications to this Qt release will be posted here very soon.</p>
+
 		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that verion now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details and <a href="mailto:feedback@vfxplatform.com">send us feedback</a> if you prefer we make no further changes to CY2016 at this time.</p>
 
 		<p><strong>15th November 2015</strong> - Further to requests for comment from the community at vfx-platform-discuss and elsewhere, no objections or concerns have been raised so CY2016 has been modified such that Qt and PyQt are now set to 5.6.x .</p>
@@ -102,13 +104,13 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
-					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.x (modified)</a> <i>[updated Nov 2015]</i></td>
+					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a> <i>[updated May 2016]</i></td>
 					<td>4.8.x</td>
 					<td>4.8.5</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">PyQt</td>
-					<td>5.6.x <i>[updated Nov 2015]</i></td>
+					<td>5.6.1 <i>[updated May 2016]</i></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
@@ -180,7 +182,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
-					<td>4.3</td>
+					<td><a href="#footnote-tbb" data-toggle="tooltip" data-placement="top" title="See footnote for a note on TBB">4.3</a></td>
 					<td>4.2</td>
 					<td>4.1</td>
 				</tr>
@@ -214,11 +216,20 @@
 			<div class="panel-heading"><small>Note - Qt modifications</small></div>
 			<div class="panel-body">
 				<small>
-				<p>The major change for CY2016 is a move to Qt 5 which requires a port of PySide and modifications to vanilla Qt.</p>
+				<p>The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement frm the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.</p>
 
-				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. Our aim is to keep these modifications to a minimum and the long term goal is to work collectively as an industry with the Qt community to eliminate the need for them entirely.</p>
+				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. Our aim is to keep these modifications to a minimum and we are working with the Qt Company to eliminate the need for them entirely in future releases.</p>
 				
-				<p>These Qt modifications will be developed in a private Github repository by a group of major software vendors and published publicly as soon as they are ready for distribution, before the end of 2015. The modified Qt will be available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. More details will be shared in due course.</p>
+				<p>These Qt modifications are due to be published publicly on Github imminently. The modified Qt is available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. </p>
+				</small>
+			</div>
+		</div>
+
+		<div class="panel panel-default" id="footnote-tbb">
+			<div class="panel-heading"><small>Note - Intel TBB [added May 2016]</small></div>
+			<div class="panel-body">
+				<small>
+				<p>Most vendors now actually targeting TBB 4.4 instead of 4.3 in order to be compatible with Microsoft Visual Studio 2015. It is not anticipated that this will create any version incompatibility issues, just noted here for clarity.</p>
 				</small>
 			</div>
 		</div>
