@@ -51,12 +51,16 @@
 
       <div class="vfxplatform-template">
         <h3>Introduction</h3>
-        <p>The VFX Reference Platform is a set of tool and library versions to be used as a common target platform for building software for the VFX industry. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for Linux-based pipelines and encourage further adoption of Linux by software vendors. The Reference Platform is updated annually by a group of software vendors in collaboration with the <a href="http://www.visualeffectssociety.com/about/committee/technology-committee">Visual Effects Society Technology Committee</a>.</p>
+        <p>The VFX Reference Platform is a set of tool and library versions to be used as a common target platform for building software for the VFX industry. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for Linux-based pipelines and encourage further adoption of Linux by software vendors. The Reference Platform is updated annually by a group of software vendors in collaboration with the <a href="https://www.visualeffectssociety.com/ves-committees?jump-9">Visual Effects Society Technology Committee</a>.</p>
 
         <h3>Current Status</h3>
 
-        <p>The final version of the Calendar Year 2016 (CY2016) Reference Platform was published below in August 2015 and that should be the target for all major software releases in 2016. We are currently <a href="mailto:feedback@vfxplatform.com">soliciting feedback</a> for CY2017.</p>
+        <p>The Calendar Year 2016 (CY2016) Reference Platform is the target for all major software releases in 2016. 
 
+		<!-- <p><strong>??th June 2016</strong> - For those attending SIGGRAPH, please join us for the VFX Reference Platform BoF at 12pm on Weds 27th July in the Anaheim Hilton.</p>-->
+
+		<p><strong>20th June 2016</strong> - CY2017 Draft published below for comment from the community. <a href="mailto:feedback@vfxplatform.com">Please send feedback privately</a> and expect changes in the lead in to SIGGRAPH at the end of July when the final CY2017 Platform will be published here. The theme for CY2017 is to minmize code changes in the year following the transition to Qt 5 but upgrading glibc to better support software vendors building for more recent Linux distro releases such as RHEL 7.</p>
+		
 		<p><strong>19th May 2016</strong> - CY2016 Qt upped from 5.6.x to 5.6.1 to address critical bug fixes. The agreed source modifications to this Qt release will be posted here very soon.</p>
 
 		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that verion now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details.</p>
@@ -76,6 +80,7 @@
 			<thead>
 				<tr>
 					<th class="col-md-3">&nbsp;</th>
+					<th class="col-md-3">CY2017 (DRAFT)</th>
 					<th class="col-md-3">CY2016</th>
 					<th class="col-md-3">CY2015</th>
 					<th class="col-md-3">CY2014</th>
@@ -84,12 +89,14 @@
 			<tbody>
 				<tr>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>4.8.5</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td>4.8.2</td>
 					<td>4.1.2</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">glibc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>2.17</td>
 					<td>2.12</td>
 					<td>2.12</td>
 					<td>&nbsp;</td>
@@ -97,17 +104,20 @@
 				<tr>
 					<td style="font-weight:bold">python<br>(built with ucs4)</td>
 					<td>2.7.5 - 2.7.latest</td>
+					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.x</td>
 					<td>2.7.3</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
+					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a></td>
 					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a> <i>[updated May 2016]</i></td>
 					<td>4.8.x</td>
 					<td>4.8.5</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">PyQt</td>
+					<td>5.6.1</td>
 					<td>5.6.1 <i>[updated May 2016]</i></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -115,11 +125,13 @@
 				<tr>
 					<td style="font-weight:bold">PySide</td>
 					<td>2.0</td>
+					<td>2.0</td>
 					<td>1.2.x</td>
 					<td>1.2</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">NumPy</td>
+					<td>1.9.2</td>
 					<td>1.9.2</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -128,10 +140,12 @@
 					<td style="font-weight:bold">OpenEXR</td>
 					<td>2.2.x</td>
 					<td>2.2.x</td>
+					<td>2.2.x</td>
 					<td>2.0.1</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Ptex</td>
+					<td>2.0.42</td>
 					<td>2.0.42</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -139,17 +153,20 @@
 				<tr>
 					<td style="font-weight:bold">OpenSubDiv</td>
 					<td>3.0.x</td>
+					<td>3.0.x</td>
 					<td>2.5.x</td>
 					<td>2.3.3</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenVDB</td>
 					<td>3.x</td>
+					<td>3.x</td>
 					<td>3.0.x</td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Alembic</td>
+					<td>1.5.8</td>
 					<td>1.5.8</td>
 					<td>1.5.x</td>
 					<td>1.5.x</td>
@@ -158,28 +175,33 @@
 					<td style="font-weight:bold">FBX</td>
 					<td>latest</td>
 					<td>latest</td>
+					<td>latest</td>
 					<td>2015</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenColorIO</td>
+					<td>TBC</td>
 					<td>1.0.9</td>
 					<td>1.0.9</td>
 					<td>1.0.7</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">ACES</td>
+					<td>1.0.x</td>
 					<td>1.0</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Boost</td>
+					<td>1.61</td>
 					<td>1.55</td>
 					<td>1.55</td>
 					<td>1.53</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>4.4</td>
 					<td><a href="#footnote-tbb" data-toggle="tooltip" data-placement="top" title="See footnote for a note on TBB">4.3</a></td>
 					<td>4.2</td>
 					<td>4.1</td>
@@ -187,11 +209,13 @@
 				<tr>
 					<td style="font-weight:bold">Intel MKL</td>
 					<td>11.3</td>
+					<td>11.3</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">C++ API/SDK</td>
+					<td>C++11</td>
 					<td>C++11</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
