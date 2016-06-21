@@ -133,9 +133,7 @@
     </div>
     <div id="collapseFour" class="panel-collapse collapse">
       <div class="panel-body">
-        While we do not recommend any particular distribution, Redhat’s CentOS and Canonical’s Ubuntu are both commonly used in the industry. By using a resource like <a href="http://distrowatch.com">DistroWatch</a> you can easily see which library versions are used by each distro release and how closely they line up to a given VFX Reference Platform. 
-        <br>
-        For example, the CY2015 platform is fairly close to Ubuntu 14 and CentOS 7 so it is somewhat easier to adapt those distro releases to that platform. To be clear, other distros and some older versions of those distributions are supported by CY2015, it just take a little more effort to build.
+        While we do not recommend any particular distribution, Redhat’s Enterprise Linux and CentOS and Canonical’s Ubuntu are both commonly used in the industry. By using a resource like <a href="http://distrowatch.com">DistroWatch</a> you can easily see which library versions are used by each distro release and how closely they line up to a given VFX Reference Platform. 
       </div>
     </div>
   </div>
@@ -152,7 +150,7 @@
       <div class="panel-body">
         The glibc specified in the VFX Reference Platform is the minimum version of the GNU C library that the platform will work with. Generally speaking, glibc is not upgradeable on a given Linux distro release so if your distro has a glibc version earlier than that specified in the VFX Reference Platform then it will not be supported.
         <br>
-        For example, for CY2015 the minimum glibc is set to 2.12 which means that releases earlier than CentOS 6.0 or Ubuntu 12.04, just to take those distributions as an example, are not supported by CY2015.
+        For example, for CY2015 the minimum glibc was set to 2.12 which meant that releases earlier than CentOS 6.0 or Ubuntu 12.04, just to take those distributions as an example, were not supported by CY2015 because they shipped with an older version of glibc.
       </div>
     </div>
   </div>
@@ -269,23 +267,6 @@
     </div>
   </div>
   
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThirteen">
-          Are there plans to add C++ standard version to the platform? When will we see C++11 as a minimum requirement?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThirteen" class="panel-collapse collapse">
-      <div class="panel-body">
-        The CY2015 platform moves us up to a compiler that is fully compliant with C++11 but it will still take some time for software vendors to ensure that older code is compliant with the C++11 standard. We are considering adding C++11 to the CY2016 platform and are keeping a careful eye on the emerging C++14 standard.
-        <br>
-        If you have any feedback on this topic, particularly if you do not want C++11 to be a minimum requirement for major releases in 2016 then please let us know at <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> so your views can be represented.
-      </div>
-    </div>
-  </div>
-
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
