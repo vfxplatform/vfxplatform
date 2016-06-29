@@ -59,9 +59,11 @@
 
 		<!-- <p><strong>??th June 2016</strong> - For those attending SIGGRAPH, please join us for the VFX Reference Platform BoF at 12pm on Weds 27th July in the Anaheim Hilton.</p>-->
 
+		<p><strong>28th June 2016</strong> - The VFX Reference Platform Qt modifications to the Qt 5.6.1 release are now available from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/autodesk/vfx/5.6.1">qtbase</a> and <a href="https://github.com/autodesk-forks/qtx11extras/tree/autodesk/vfx/5.6.1">qtx11extras</a>.</p>
+
 		<p><strong>20th June 2016</strong> - CY2017 Draft published below for comment from the community. <a href="mailto:feedback@vfxplatform.com">Please send feedback</a> and expect changes in the lead in to SIGGRAPH at the end of July when the final CY2017 Platform will be published here. The theme for CY2017 is to minmize code changes in the year following the transition to Qt 5 but upgrading glibc to better support software vendors building for more recent Linux distro releases such as RHEL 7.</p>
 		
-		<p><strong>19th May 2016</strong> - CY2016 Qt upped from 5.6.x to 5.6.1 to address critical bug fixes. The agreed source modifications to this Qt release will be posted here very soon [UPDATE - expected before end of June].</p>
+		<p><strong>19th May 2016</strong> - CY2016 Qt upped from 5.6.x to 5.6.1 to address critical bug fixes. The agreed source modifications to this Qt release will be posted here soon.</p>
 
 		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that verion now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details.</p>
 
@@ -238,11 +240,11 @@
 			<div class="panel-heading"><small>Note - Qt modifications</small></div>
 			<div class="panel-body">
 				<small>
-				<p>The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement frm the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.</p>
+				<p>The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement from the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.</p>
 
-				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. Our aim is to keep these modifications to a minimum and we are working with the Qt Company to eliminate the need for them entirely in future releases.</p>
+				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of backported bug fixes and critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. We are working with the Qt Company to eliminate the need for these modifications entirely in future releases.</p>
 				
-				<p>These Qt modifications are due to be published publicly on Github imminently. The modified Qt is available to anyone who wishes to target the CY2016 Platform, and for all major software vendors to build their CY2016 releases against the same modified Qt. </p>
+				<p>These Qt modifications are available on Github from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/autodesk/vfx/5.6.1">qtbase</a> and <a href="https://github.com/autodesk-forks/qtx11extras/tree/autodesk/vfx/5.6.1">qtx11extras</a>. These modifications to <a href="http://download.qt.io/official_releases/qt/5.6/5.6.1/">Qt 5.6.1</a> should be used by anyone who wishes to build Qt applications against the CY2016 Platform. </p>
 				</small>
 			</div>
 		</div>
