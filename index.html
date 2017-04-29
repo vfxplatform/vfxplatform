@@ -55,7 +55,9 @@
 
         <h3>Current Status</h3>
 
-        <p>The Calendar Year 2016 (CY2016) Reference Platform is the target for all major software releases in 2016. 
+        <p>The Calendar Year 2017 (CY2017) Reference Platform is the target for all major software releases in 2017. 
+
+		<p><strong>29th April 2017</strong> - CY2018 Draft published with significant upgrades to gcc and glibc. This also comes with advance notice of an intention to move to Python 3 for CY2019 in advance of Python 2 support ending in 2020.</p>
 
 		<p><strong>1st August 2016</strong> - CY2017 Final now published with OpenSubdiv and OpenVDB being updated in addition to Boost, Ptex, Alembic and TBB as result of feedback to the Draft.</p>
 
@@ -63,7 +65,7 @@
 
 		<p><strong>20th June 2016</strong> - CY2017 Draft published for comment from the community. The theme for CY2017 is to minmize code changes in the year following the transition to Qt 5.</p>
 		
-		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that verion now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details.</p>
+		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that version now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details.</p>
 
         <h3>Reference Platform</h3>
 
@@ -80,6 +82,7 @@
 			<thead>
 				<tr>
 					<th class="col-md-3">&nbsp;</th>
+					<th class="col-md-3">CY2018</th>
 					<th class="col-md-3">CY2017</th>
 					<th class="col-md-3">CY2016</th>
 					<th class="col-md-3">CY2015</th>
@@ -89,6 +92,7 @@
 			<tbody>
 				<tr>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>5.3.1</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td>4.8.2</td>
@@ -96,6 +100,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">glibc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>2.17</td>
 					<td>2.12</td>
 					<td>2.12</td>
 					<td>2.12</td>
@@ -105,25 +110,29 @@
 					<td style="font-weight:bold">python<br>(built with ucs4)</td>
 					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.5 - 2.7.latest</td>
+					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.x</td>
 					<td>2.7.3</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
+					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1+ (modified)</a></td>
 					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a></td>
-					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a> <i>[updated May 2016]</i></td>
+					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a></td>
 					<td>4.8.x</td>
 					<td>4.8.5</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">PyQt</td>
 					<td>5.6</td>
-					<td>5.6 <i>[updated May 2016]</i></td>
+					<td>5.6</td>
+					<td>5.6</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">PySide</td>
+					<td>2.0.x</td>
 					<td>2.0.x</td>
 					<td>2.0</td>
 					<td>1.2.x</td>
@@ -131,6 +140,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">NumPy</td>
+					<td>1.12.1</td>
 					<td>1.9.2</td>
 					<td>1.9.2</td>
 					<td>&nbsp;</td>
@@ -141,10 +151,12 @@
 					<td>2.2.x</td>
 					<td>2.2.x</td>
 					<td>2.2.x</td>
+					<td>2.2.x</td>
 					<td>2.0.1</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Ptex</td>
+					<td>2.1.28</td>
 					<td>2.1.28</td>
 					<td>2.0.42</td>
 					<td>&nbsp;</td>
@@ -152,6 +164,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenSubdiv</td>
+					<td>3.3.x</td>
 					<td>3.1.x</td>
 					<td>3.0.x</td>
 					<td>2.5.x</td>
@@ -159,6 +172,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenVDB</td>
+					<td>5.x</td>
 					<td>4.x <i>[released Nov 2016]</i></td>
 					<td>3.x</td>
 					<td>3.0.x</td>
@@ -166,6 +180,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Alembic</td>
+					<td>1.7.x</td>
 					<td>1.6.x</td>
 					<td>1.5.8</td>
 					<td>1.5.x</td>
@@ -173,6 +188,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">FBX</td>
+					<td>2018.x</td>
 					<td>latest</td>
 					<td>latest</td>
 					<td>latest</td>
@@ -183,10 +199,12 @@
 					<td>1.0.9</td>
 					<td>1.0.9</td>
 					<td>1.0.9</td>
+					<td>1.0.9</td>
 					<td>1.0.7</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">ACES</td>
+					<td>1.0.x</td>
 					<td>1.0.x</td>
 					<td>1.0</td>
 					<td>&nbsp;</td>
@@ -195,19 +213,22 @@
 				<tr>
 					<td style="font-weight:bold">Boost</td>
 					<td>1.61</td>
+					<td>1.61</td>
 					<td>1.55</td>
 					<td>1.55</td>
 					<td>1.53</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>2017 Update 5</td>
 					<td>4.4</td>
-					<td><a href="#footnote-tbb" data-toggle="tooltip" data-placement="top" title="See footnote for a note on TBB">4.3</a></td>
+					<td>4.3</td>
 					<td>4.2</td>
 					<td>4.1</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel MKL</td>
+					<td>2017 Update 2</td>
 					<td>11.3</td>
 					<td>11.3</td>
 					<td>&nbsp;</td>
@@ -215,6 +236,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">C++ API/SDK</td>
+					<td>C++14</td>
 					<td>C++11</td>
 					<td>C++11</td>
 					<td>&nbsp;</td>
@@ -225,7 +247,7 @@
 		</div>
 
 		<div class="panel panel-default" id="footnote-gcc">
-			<div class="panel-heading"><small>Note - gcc</small></div>
+			<div class="panel-heading"><small>Note - gcc 4</small></div>
 			<div class="panel-body">
 				<small>
 				<p>The vanilla gcc 4.8.2 has a <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800">serious bug</a> that is fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform still gives 4.8.2 as an option for CY2016 is that this gcc version is what ships with <a href="http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/">Redhat Developer Toolset 2.1</a> that some software vendors are committed to using through 2016.</p>
@@ -242,20 +264,11 @@
 
 				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of backported bug fixes and critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. We are working with the Qt Company to eliminate the need for these modifications entirely in future releases.</p>
 				
-				<p>These Qt modifications are available on Github from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a> and <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a>. These modifications to <a href="http://download.qt.io/official_releases/qt/5.6/5.6.1/">Qt 5.6.1</a> should be used by anyone who wishes to build Qt applications against the CY2016 Platform. </p>
+				<p>These Qt modifications are available on Github from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a> and <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a>. These modifications to <a href="http://download.qt.io/official_releases/qt/5.6/5.6.1/">Qt 5.6.1</a> should be used by anyone who wishes to build Qt applications against the CY2016 or CY2017 Platforms. </p>
 				</small>
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="footnote-tbb">
-			<div class="panel-heading"><small>Note - Intel TBB [added May 2016]</small></div>
-			<div class="panel-body">
-				<small>
-				<p>Most vendors now actually targeting TBB 4.4 instead of 4.3 in order to be compatible with Microsoft Visual Studio 2015. It is not anticipated that this will create any version incompatibility issues, just noted here for clarity.</p>
-				</small>
-			</div>
-		</div>
-		
         <p>&nbsp;</p>
 
         <div class="well well-sm"><p><small>
