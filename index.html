@@ -96,7 +96,7 @@
 			<tbody>
 				<tr>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
-					<td>5.3.1 (ships with <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/4/html/4.1_Release_Notes/index.html">Redhat DTS 4.1</a>)</td>
+					<td>5.3.1 (<a href="#footnote-gcc5" data-toggle="tooltip" data-placement="top" title="See the gcc 5 note below for more information on availability and configuration">see notes</a>)</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td>4.8.2</td>
@@ -250,11 +250,21 @@
 		</table>
 		</div>
 
+		<div class="panel panel-default" id="footnote-gcc5">
+			<div class="panel-heading"><small>Note - gcc 5</small></div>
+			<div class="panel-body">
+				<small>
+				<p>Redhat/CentOS systems can obtain gcc 5.3.1 by installing <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/4/html/4.1_Release_Notes/index.html">Redhat DTS 4.1</a>. Ubuntu 16.04 LTS ships with gcc 5.3.1 as standard.</p>
+				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition. RHEL/CentOS 7 and Redhat DTS still use the original implementations by default.</p>
+				</small>
+			</div>
+		</div>
+
 		<div class="panel panel-default" id="footnote-gcc">
 			<div class="panel-heading"><small>Note - gcc 4</small></div>
 			<div class="panel-body">
 				<small>
-				<p>The vanilla gcc 4.8.2 has a <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800">serious bug</a> that is fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform still gives 4.8.2 as an option for CY2016 is that this gcc version is what ships with <a href="http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/">Redhat Developer Toolset 2.1</a> that some software vendors are committed to using through 2016.</p>
+				<p>The vanilla gcc 4.8.2 has a <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800">serious bug</a> that was fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform gave 4.8.2 as an option for CY2016 is that this gcc version is what ships with <a href="http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/">Redhat Developer Toolset 2.1</a> that some software vendors werw committed to using through 2016.</p>
 				<p>The following are the known distributions that ship with a fixed 4.8.2:- Redhat DTS 2.1, RHEL/CentOS 6.</p>
 				</small>
 			</div>
