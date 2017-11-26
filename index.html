@@ -55,7 +55,7 @@
 
         <h3>Current Status</h3>
 
-        <p>The Calendar Year 2017 (CY2017) Reference Platform is the target for all major software releases in 2017. The CY2018 Draft has been published for comment in advance of the Final version being published in July.
+        <p>The Calendar Year 2018 (CY2018) Reference Platform is the target for all major software releases in 2018.
 
 		<p><strong>26th November 2017</strong> - CY2018 has had a late change to the compiler version which is now gcc 6.3.1. This successfully resolves issues that were discovered with gcc 5.3.1.</p>
 		
@@ -259,7 +259,7 @@
 			<div class="panel-body">
 				<small>
 				<p><strong>UPDATED November 26th 2017</strong> - CY2018 changed from gcc 5 to gcc 6 due to integration issues discovered with the older version. </p>
-				<p>Redhat/CentOS systems can obtain gcc 6.3.1 by installing <a href=https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/6/html/6.1_release_notes/index">Redhat DTS 6.1</a>. </p>
+				<p>Redhat/CentOS systems can obtain gcc 6.3.1 by installing <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/6/html/6.1_release_notes/index">Redhat DTS 6.1</a>. </p>
 				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition. RHEL/CentOS 7 and Redhat DTS still use the original implementations by default.</p>
 				</small>
 			</div>
