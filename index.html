@@ -57,9 +57,11 @@
 
         <p>The Calendar Year 2017 (CY2017) Reference Platform is the target for all major software releases in 2017. The CY2018 Draft has been published for comment in advance of the Final version being published in July.
 
+		<p><strong>26th November 2017</strong> - CY2018 has had a late change to the compiler version which is now gcc 6.3.1. This successfully resolves issues that were discovered with gcc 5.3.1.</p>
+		
 		<p><strong>28th August 2017</strong> - Added a note for gcc 5 and updated the Qt note to include a link to the qtdeclarative modifications.</p>
 
-		<p><strong>3rd August 2017</strong> - The CY2018 Platform was ratified as Final at the annual SIGGRAPH VFX Reference Platform Birds of a Feather with no further changes.</p>
+		<p><strong>3rd August 2017</strong> - The CY2018 Platform was ratified as Final at the annual SIGGRAPH VFX Reference Platform Birds of a Feather with no further planned changes.</p>
 
 		<p><strong>2nd July 2017</strong> - Minor updates to CY2018 Draft for Qt and ACES.</p>
 
@@ -98,7 +100,7 @@
 			<tbody>
 				<tr>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
-					<td>5.3.1 (<a href="#footnote-gcc5" data-toggle="tooltip" data-placement="top" title="See the gcc 5 note below for more information on availability and configuration">see notes</a>)</td>
+					<td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td>4.8.2</td>
@@ -252,11 +254,12 @@
 		</table>
 		</div>
 
-		<div class="panel panel-default" id="footnote-gcc5">
-			<div class="panel-heading"><small>Note - gcc 5</small></div>
+		<div class="panel panel-default" id="footnote-gcc6">
+			<div class="panel-heading"><small>Note - gcc 6</small></div>
 			<div class="panel-body">
 				<small>
-				<p>Redhat/CentOS systems can obtain gcc 5.3.1 by installing <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Developer_Toolset/4/html/4.1_Release_Notes/index.html">Redhat DTS 4.1</a>. Ubuntu 16.04 LTS ships with gcc 5.3.1 as standard.</p>
+				<p><strong>UPDATED November 26th 2017</strong> - CY2018 changed from gcc 5 to gcc 6 due to integration issues discovered with the older version. </p>
+				<p>Redhat/CentOS systems can obtain gcc 6.3.1 by installing <a href=https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/6/html/6.1_release_notes/index">Redhat DTS 6.1</a>. </p>
 				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition. RHEL/CentOS 7 and Redhat DTS still use the original implementations by default.</p>
 				</small>
 			</div>
