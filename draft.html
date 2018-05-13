@@ -121,7 +121,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">python<br>(built with ucs4)</td>
-					<td>2.7.5 - 2.7.latest<br>3.6.x (tech preview release)<br>Python 3 upgrade in CY2020</td>
+					<td>2.7.5 - 2.7.latest<br>(<a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">3.6.x (tech preview release)<br>Python 3 upgrade in CY2020</a></td>
 					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.5 - 2.7.latest</td>
@@ -147,7 +147,7 @@
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
-					<td style="font-weight:bold">Qt for Python<br>(aka PySide)</td>
+					<td style="font-weight:bold">Qt for Python<br>(PySide)</td>
 					<td>5.12 branch</td>
 					<td>2.0.x</td>
 					<td>2.0.x</td>
@@ -276,6 +276,21 @@
 		</table>
 		</div>
 
+		<div class="panel panel-default" id="footnote-python3">
+			<div class="panel-heading"><small>Note - Python 3</small></div>
+			<div class="panel-body">
+				<small>
+				<p>The move to Python 3 has been delayed from CY2019 to CY2020 for the following reasons:</p>
+				<ul>
+				<li>There is no supported combination of Qt 5.6, Python 3 and PySide 2 so we first need to upgrade Qt.</li>
+				<li>Upgrading Qt and Python in the same year is too large a commitment for both software vendors and large studios.</li>
+				<li></li>
+				</ul>
+				<p>Python 3 in CY2020 is a firm commitment at this point, it will be a required upgrade as Python 2 will no longer be supported beyond 2020. Software vendors are strongly encouraged to provide a tech preview release in 2019 to help studios with testing during their Python migration efforts.</p>
+				</small>
+			</div>
+		</div>
+		
 		<div class="panel panel-default" id="footnote-gcc6">
 			<div class="panel-heading"><small>Note - gcc 6</small></div>
 			<div class="panel-body">
@@ -303,9 +318,9 @@
 				<small>
 				<p>The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement from the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.</p>
 
-				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of backported bug fixes and critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represents a significant step forward with the goal of all software vendors sharing an identically modified Qt. We are working with the Qt Company to eliminate the need for these modifications entirely in future releases.</p>
+				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of backported bug fixes and critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represented a significant step forward with the goal of all software vendors sharing an identically modified Qt. We are working with the Qt Company to eliminate the need for these modifications entirely in a future release, potentially as soon as CY2019.</p>
 				
-				<p>These Qt modifications are available on Github from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a>, <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a> and <a href="https://github.com/autodesk-forks/qtdeclarative/tree/adsk-contrib/vfx/5.6.1">qtdeclarative</a>. These modifications to <a href="http://download.qt.io/official_releases/qt/5.6/5.6.1/">Qt 5.6.1</a> should be used by anyone who wishes to build Qt applications against the Platforms from CY2016 or later. </p>
+				<p>These Qt 5.6 modifications are available on Github from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a>, <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a> and <a href="https://github.com/autodesk-forks/qtdeclarative/tree/adsk-contrib/vfx/5.6.1">qtdeclarative</a>. These modifications to <a href="http://download.qt.io/official_releases/qt/5.6/5.6.1/">Qt 5.6.1</a> should be used by anyone who wishes to build Qt applications against the Platforms from CY2016 through to CY2018. </p>
 				</small>
 			</div>
 		</div>
