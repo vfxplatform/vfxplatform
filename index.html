@@ -55,33 +55,9 @@
 
         <h3>Current Status</h3>
 
-       <p>The Calendar Year 2019 (CY2019) Reference Platform is the target for all major software releases in 2019.
+		<p>The Calendar Year 2019 (CY2019) Reference Platform is the target for all major software releases in 2019.</p>
 
-		<p><strong>12th September 2018</strong> - CY2019 Final now published with OpenVDB updated to 6.x and ACES to 1.1 to reflect recent or imminent major releases of these important industry packages.</p>
-
-		<p><strong>22nd July 2018</strong> -  CY2019 Draft updated - OpenEXR upped to 2.3.x.</p>
-
-	      	<p><strong>22nd July 2018</strong> -  CY2019 Draft updated - minimum version of Python is now 2.7.9 to ensure support of PIP via PyPI.</p>
-		
-		<p><strong>20th May 2018</strong> -  CY2019 Draft published. The move to Python 3 has been pushed to CY2020 due to the need to focus on upgrading to the latest Qt Long Term Support release. Software vendors are requested to provide a Python 3 tech preview release in 2019 to help studios with testing during migration efforts. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
-		
-		<p><strong>26th November 2017</strong> - CY2018 has had a late change to the compiler version which is now gcc 6.3.1. This successfully resolves issues that were discovered with gcc 5.3.1.</p>
-		
-		<p><strong>28th August 2017</strong> - Added a note for gcc 5 and updated the Qt note to include a link to the qtdeclarative modifications.</p>
-
-		<p><strong>3rd August 2017</strong> - The CY2018 Platform was ratified as Final at the annual SIGGRAPH VFX Reference Platform Birds of a Feather with no further planned changes.</p>
-
-		<p><strong>2nd July 2017</strong> - Minor updates to CY2018 Draft for Qt and ACES.</p>
-
-		<p><strong>29th April 2017</strong> - CY2018 Draft published with significant upgrades to gcc and glibc. This also comes with notice of our intention to move to Python 3 for CY2019 in advance of Python 2 support ending in 2020. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>. We expect to publish CY2018 Final around SIGGRAPH in July.</p>
-
-		<p><strong>1st August 2016</strong> - CY2017 Final now published with OpenSubdiv and OpenVDB being updated in addition to Boost, Ptex, Alembic and TBB as result of feedback to the Draft.</p>
-
-		<p><strong>28th June 2016</strong> - The VFX Reference Platform Qt modifications to the Qt 5.6.1 release are now available from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a> and <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a>.</p>
-
-		<p><strong>20th June 2016</strong> - CY2017 Draft published for comment from the community. The theme for CY2017 is to minmize code changes in the year following the transition to Qt 5.</p>
-		
-		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that version now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details.</p>
+		<p><strong>1st May 2019</strong> -  CY2020 Draft published which includes the long-awaited move to Python 3. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>. Software vendors are encouraged to provide a Python 3 tech preview release this year to help studios with testing during migration efforts.</p>
 
         <h3>Reference Platform</h3>
 
@@ -98,6 +74,7 @@
 			<thead>
 				<tr>
 					<th class="col-md-3">&nbsp;</th>
+					<th class="col-md-3">CY2020 DRAFT</th>
 					<th class="col-md-3">CY2019</th>
 					<th class="col-md-3">CY2018</th>
 					<th class="col-md-3">CY2017</th>
@@ -111,6 +88,7 @@
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
 					<td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
 					<td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
+					<td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td><a href="#footnote-gcc" data-toggle="tooltip" data-placement="top" title="Vanilla 4.8.2 has a serious bug but some distros ship with it fixed, see footnote below for more details">4.8.2 with bugfix</a> or 4.8.3</td>
 					<td>4.8.2</td>
@@ -120,6 +98,7 @@
 					<td style="font-weight:bold">glibc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
 					<td>2.17</td>
 					<td>2.17</td>
+					<td>2.17</td>
 					<td>2.12</td>
 					<td>2.12</td>
 					<td>2.12</td>
@@ -127,7 +106,8 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Python<br>(built with ucs4)</td>
-					<td>2.7.9 - 2.7.latest<br><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">3.6.x (tech preview release)<br>Python 3 upgrade in CY2020</a></td>
+					<td>3.7.x<br><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
+					<td>2.7.9 - 2.7.latest<br><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(Python 3 tech preview release)</a></td>
 					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.5 - 2.7.latest</td>
 					<td>2.7.5 - 2.7.latest</td>
@@ -136,6 +116,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
+					<td>5.12.x</a></td>
 					<td>5.12.x</a></td>
 					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 - 5.6.latest (modified)</a></td>
 					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a></td>
@@ -146,6 +127,7 @@
 				<tr>
 					<td style="font-weight:bold">PyQt</td>
 					<td>5.12</td>
+					<td>5.12</td>
 					<td>5.6</td>
 					<td>5.6</td>
 					<td>5.6</td>
@@ -155,6 +137,7 @@
 				<tr>
 					<td style="font-weight:bold">Qt for Python<br>(PySide)</td>
 					<td>5.12 branch</td>
+					<td>5.12 branch</td>
 					<td>2.0.x</td>
 					<td>2.0.x</td>
 					<td>2.0</td>
@@ -163,6 +146,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">NumPy</td>
+					<td>1.16.x</td>
 					<td>1.14.x</td>
 					<td>1.12.1</td>
 					<td>1.9.2</td>
@@ -173,6 +157,7 @@
 				<tr>
 					<td style="font-weight:bold">OpenEXR</td>
 					<td>2.3.x</td>
+					<td>2.3.x</td>
 					<td>2.2.x</td>
 					<td>2.2.x</td>
 					<td>2.2.x</td>
@@ -181,6 +166,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Ptex</td>
+					<td>2.3.2</td>
 					<td>2.1.33</td>
 					<td>2.1.28</td>
 					<td>2.1.28</td>
@@ -192,6 +178,7 @@
 					<td style="font-weight:bold">OpenSubdiv</td>
 					<td>3.3.x</td>
 					<td>3.3.x</td>
+					<td>3.3.x</td>
 					<td>3.1.x</td>
 					<td>3.0.x</td>
 					<td>2.5.x</td>
@@ -199,6 +186,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenVDB</td>
+					<td>7.x</td>
 					<td>6.x</td>
 					<td>5.x</td>
 					<td>4.x</td>
@@ -210,6 +198,7 @@
 					<td style="font-weight:bold">Alembic</td>
 					<td>1.7.x</td>
 					<td>1.7.x</td>
+					<td>1.7.x</td>
 					<td>1.6.x</td>
 					<td>1.5.8</td>
 					<td>1.5.x</td>
@@ -217,6 +206,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">FBX</td>
+					<td>2020.x</td>
 					<td>2019.x</td>
 					<td>2018.x</td>
 					<td>latest</td>
@@ -226,6 +216,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenColorIO</td>
+					<td>1.1.x<br>(v2 in CY2021)</td>
 					<td>1.1.0</td>
 					<td>1.0.9</td>
 					<td>1.0.9</td>
@@ -236,6 +227,7 @@
 				<tr>
 					<td style="font-weight:bold">ACES</td>
 					<td>1.1</td>
+					<td>1.1</td>
 					<td>1.0.3 - 1.0.latest</td>
 					<td>1.0.x</td>
 					<td>1.0</td>
@@ -244,6 +236,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Boost</td>
+					<td>1.69</td>
 					<td>1.66</td>
 					<td>1.61</td>
 					<td>1.61</td>
@@ -253,6 +246,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+					<td>2019 Update 6</td>
 					<td>2018</td>
 					<td>2017 Update 6</td>
 					<td>4.4</td>
@@ -262,6 +256,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel MKL</td>
+					<td>2019</td>
 					<td>2018</td>
 					<td>2017 Update 2</td>
 					<td>11.3</td>
@@ -271,6 +266,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">C++ API/SDK</td>
+					<td>C++14</td>
 					<td>C++14</td>
 					<td>C++14</td>
 					<td>C++11</td>
@@ -286,12 +282,12 @@
 			<div class="panel-heading"><small>Note - Python 3</small></div>
 			<div class="panel-body">
 				<small>
-				<p>The move to Python 3 has been delayed from CY2019 to CY2020 for the following reasons:</p>
+				<p>The move to Python 3 was delayed from CY2019 to CY2020 due to:</p>
 				<ul>
-				<li>There is no supported combination of Qt 5.6, Python 3 and PySide 2 so Qt first needs to be upgraded.</li>
-				<li>Upgrading both Qt and Python in the same year is too large a commitment for software vendors and large studios.</li>
+				<li>No supported combination of Qt 5.6, Python 3 and PySide 2 so Qt first needed to be upgraded.</li>
+				<li>Upgrade of both Qt and Python in the same year was too large a commitment for software vendors and large studios.</li>
 				</ul>
-				<p>Python 3 in CY2020 is a firm commitment at this point, it will be a required upgrade as Python 2 will no longer be supported beyond 2020. Software vendors are strongly encouraged to provide a tech preview release in 2019 to help studios with testing during their Python migration efforts.</p>
+				<p>Python 3 in CY2020 is a firm commitment, it will be a required upgrade as Python 2 will no longer be supported beyond 2020. Software vendors are strongly encouraged to provide a tech preview release in 2019 to help studios with testing during their Python migration efforts.</p>
 				</small>
 			</div>
 		</div>
@@ -332,6 +328,36 @@ sudo yum -y install devtoolset-6</pre></code></p>
 				</small>
 			</div>
 		</div>
+
+        <h3>Previous Status Updates</h3>
+
+
+		<p><strong>12th September 2018</strong> - CY2019 Final now published with OpenVDB updated to 6.x and ACES to 1.1 to reflect recent or imminent major releases of these important industry packages.</p>
+
+		<p><strong>22nd July 2018</strong> -  CY2019 Draft updated - OpenEXR upped to 2.3.x.</p>
+
+	      	<p><strong>22nd July 2018</strong> -  CY2019 Draft updated - minimum version of Python is now 2.7.9 to ensure support of PIP via PyPI.</p>
+		
+		<p><strong>20th May 2018</strong> -  CY2019 Draft published. The move to Python 3 has been pushed to CY2020 due to the need to focus on upgrading to the latest Qt Long Term Support release. Software vendors are requested to provide a Python 3 tech preview release in 2019 to help studios with testing during migration efforts. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
+		
+		<p><strong>26th November 2017</strong> - CY2018 has had a late change to the compiler version which is now gcc 6.3.1. This successfully resolves issues that were discovered with gcc 5.3.1.</p>
+		
+		<p><strong>28th August 2017</strong> - Added a note for gcc 5 and updated the Qt note to include a link to the qtdeclarative modifications.</p>
+
+		<p><strong>3rd August 2017</strong> - The CY2018 Platform was ratified as Final at the annual SIGGRAPH VFX Reference Platform Birds of a Feather with no further planned changes.</p>
+
+		<p><strong>2nd July 2017</strong> - Minor updates to CY2018 Draft for Qt and ACES.</p>
+
+		<p><strong>29th April 2017</strong> - CY2018 Draft published with significant upgrades to gcc and glibc. This also comes with notice of our intention to move to Python 3 for CY2019 in advance of Python 2 support ending in 2020. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>. We expect to publish CY2018 Final around SIGGRAPH in July.</p>
+
+		<p><strong>1st August 2016</strong> - CY2017 Final now published with OpenSubdiv and OpenVDB being updated in addition to Boost, Ptex, Alembic and TBB as result of feedback to the Draft.</p>
+
+		<p><strong>28th June 2016</strong> - The VFX Reference Platform Qt modifications to the Qt 5.6.1 release are now available from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a> and <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a>.</p>
+
+		<p><strong>20th June 2016</strong> - CY2017 Draft published for comment from the community. The theme for CY2017 is to minmize code changes in the year following the transition to Qt 5.</p>
+		
+		<p><strong>27th October 2015</strong> - A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that version now being targetted as a Long Term Support release. Please <a href="http://bit.ly/CY2016Qt5">see here</a> for further details.</p>
+
 
         <p>&nbsp;</p>
 
