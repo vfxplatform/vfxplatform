@@ -57,9 +57,9 @@
 
 		<p>The Calendar Year 2020 (CY2020) Reference Platform is the target for all major software releases in 2020.</p>
 
-    <p><strong>16th June 2020</strong> -  CY2021 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
+    	<p><strong>17th July 2020</strong> -  Added gcc notes to CY2021 Draft with details on Redhat Developer Toolset and clang compatibility.</p>
 
-		<p><strong>7th March 2020</strong> -  CY2020 updated - Added required patch for Qt for Python (PySide) and an alternative option of using 5.13.</p>
+    	<p><strong>16th June 2020</strong> -  CY2021 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
 
         <h3>Reference Platform</h3>
 
@@ -89,7 +89,7 @@
 			<tbody>
 				<tr>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
-          <td>9.3.1</td>
+          <td>9.3.1 (<a href="#footnote-gcc9" data-toggle="tooltip" data-placement="top" title="See the gcc 9 note below for more information on clang and Redhat Developer Toolset compatibility">see notes</a>)</td>
           <td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
 					<td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
 					<td>6.3.1 (<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
@@ -309,11 +309,23 @@
 				<li>No supported combination of Qt 5.6, Python 3 and PySide 2 so Qt first needed to be upgraded.</li>
 				<li>Upgrade of both Qt and Python in the same year was too large a commitment for software vendors and large studios.</li>
 				</ul>
-				<p>Python 3 in CY2020 is a firm commitment, it is a required upgrade as Python 2 will no longer be supported beyond 2020.</p>
+				<p>Python 3 in CY2020 is a required upgrade as Python 2 will no longer be supported beyond 2020.</p>
 				</small>
 			</div>
 		</div>
 
+
+		<div class="panel panel-default" id="footnote-gcc9">
+			<div class="panel-heading"><small>Note - gcc 9</small></div>
+			<div class="panel-body">
+				<small>
+				<p>For users of RHEL-derived Linux distributions, the <a href="https://developers.redhat.com/products/developertoolset/overview"></a>Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021.</p>
+				<p>For those who want or need to use llvm, some studios have been successful building <a href="https://clang.llvm.org/">clang</a> with DTS and using that to build software that is compatible with vendor-provided libraries.</p>
+
+				</small>
+			</div>
+		</div>
+		
 		<div class="panel panel-default" id="footnote-gcc6">
 			<div class="panel-heading"><small>Note - gcc 6</small></div>
 			<div class="panel-body">
@@ -361,11 +373,13 @@ sudo yum -y install devtoolset-6</pre></code></p>
 
         <h3>Previous Status Updates</h3>
 
-    <p><strong>2nd November 2019</strong> -  Late change approved to CY2020 - OpenEXR updated to 2.4.x.</p>
+		<p><strong>7th March 2020</strong> -  CY2020 updated - Added required patch for Qt for Python (PySide) and an alternative option of using 5.13.</p>
+
+	    <p><strong>2nd November 2019</strong> -  Late change approved to CY2020 - OpenEXR updated to 2.4.x.</p>
 
 		<p><strong>19th October 2019</strong> -  Late change to CY2020 under review to accomodate an updated OpenEXR release. Proposed change is limited to OpenEXR moving to 2.4.x. Please <a href="mailto:feedback@vfxplatform.com">send feedback on this change</a> by 31st October.</p>
 
-    <p><strong>3rd August 2019</strong> -  The CY2020 Platform is now Final with no further changes planned.</p>
+    	<p><strong>3rd August 2019</strong> -  The CY2020 Platform is now Final with no further changes planned.</p>
 
 		<p><strong>1st May 2019</strong> -  CY2020 Draft published which includes the long-awaited move to Python 3. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>. Software vendors are encouraged to provide a Python 3 tech preview release this year to help studios with testing during migration efforts.</p>
 
@@ -373,7 +387,7 @@ sudo yum -y install devtoolset-6</pre></code></p>
 
 		<p><strong>22nd July 2018</strong> -  CY2019 Draft updated - OpenEXR upped to 2.3.x.</p>
 
-	      	<p><strong>22nd July 2018</strong> -  CY2019 Draft updated - minimum version of Python is now 2.7.9 to ensure support of PIP via PyPI.</p>
+	    <p><strong>22nd July 2018</strong> -  CY2019 Draft updated - minimum version of Python is now 2.7.9 to ensure support of PIP via PyPI.</p>
 
 		<p><strong>20th May 2018</strong> -  CY2019 Draft published. The move to Python 3 has been pushed to CY2020 due to the need to focus on upgrading to the latest Qt Long Term Support release. Software vendors are requested to provide a Python 3 tech preview release in 2019 to help studios with testing during migration efforts. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
 
