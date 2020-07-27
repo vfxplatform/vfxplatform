@@ -321,7 +321,7 @@
 				<small>
 				<p>For users of RHEL-derived Linux distributions, the <a href="https://developers.redhat.com/products/developertoolset/overview">Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021.</p>
 				<p>For those who want or need to use llvm, some studios have been successful building <a href="https://clang.llvm.org/">clang</a> with DTS and using that to build software that is compatible with vendor-provided libraries.</p>
-
+				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0, although that setting <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1546704">may not be supported</a> by some distros yet. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition.</p>
 				</small>
 			</div>
 		</div>
