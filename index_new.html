@@ -134,7 +134,7 @@
 				<tr>
                     <td class="text-center active" style="vertical-align:middle;font-weight:bold;font-size:16px" rowspan="17">Common Components</td>
 					<td style="font-weight:bold">Python<br/>(built with ucs4)</td>
-                    <td>3.8.x<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
+                    <td>3.8.3 - 3.8.latest<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
                     <td>3.7.x<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
 					<td>2.7.9 - 2.7.latest<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(Python 3 tech preview release)</a></td>
 					<td>2.7.5 - 2.7.latest</td>
@@ -142,9 +142,9 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
-                    <td>5.15.x</a></td>
-                    <td>5.12.x</a></td>
-					<td>5.12.x</a></td>
+                    <td>5.15.x</td>
+                    <td>5.12.x</td>
+					<td>5.12.x</td>
 					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 - 5.6.latest (modified)</a></td>
 					<td><a href="#footnote-qt" data-toggle="tooltip" data-placement="top" title="See footnote for details on Qt modifications">5.6.1 (modified)</a></td>
 				</tr>
@@ -306,7 +306,7 @@
 				<p>UPDATE: November 26th 2017 - CY2018 changed from gcc 5 to gcc 6 due to integration issues discovered with the older version. </p>
 				<p>Redhat/CentOS systems can obtain gcc 6.3.1 by installing <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/6/html/6.1_release_notes/index">Redhat DTS 6.1</a>. To install Red Hat Developer Toolset 6.1 on CentOS 7:
 <pre><code>sudo yum -y install centos-release-scl
-sudo yum -y install devtoolset-6</pre></code></p>
+sudo yum -y install devtoolset-6</code></pre></p>
 				<p>If you are looking for gcc 6.3.1 source code then a copy can be found in <a href="http://vault.centos.org/7.5.1804/sclo/Source/rh/devtoolset-6/">the CentOS Vault</a>.</p>
 				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition. RHEL/CentOS 7 and Redhat DTS still use the original implementations by default.</p>
 				</small>
