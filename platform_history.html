@@ -105,7 +105,7 @@
                     <tr>
                         <td class="text-center info" style="font-weight:bold;font-size:16px;vertical-align:middle" rowspan="1">macOS</td>
                         <td style="font-weight:bold">Minimum Deployment Target in Xcode</td>
-                        <td>10.13</td>
+                        <td>10.13<br/><a href="#footnote-macos" data-toggle="tooltip" data-placement="top" title="Notes on Minimum Deployment Target in Xcode">(see notes)</a></td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -329,6 +329,19 @@
             </table>
             </div>
 
+            <div class="panel panel-default" id="footnote-macos">
+              <div class="panel-heading"><small>Note - Minimum Deployment Target in Xcode</small></div>
+              <div class="panel-body">
+                <small>
+                <p>Xcode’s “Deployment Target” identifies the earliest OS version on which your software can run.</p>
+                <p>To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
+                <p>The MACOSX_DEPLOYMENT_TARGET environment variable also sets the minimum deployment target and is used if the compiler option is not specified.  The environment variable is also <a href="https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html">recognized by CMake</a>.</p>
+                <p>Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.</p>
+                <p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the SDK documentation.</a></p>
+                </small>
+              </div>
+            </div>
+        
 		<div class="panel panel-default" id="footnote-python3">
 			<div class="panel-heading"><small>Note - Python 3</small></div>
 			<div class="panel-body">

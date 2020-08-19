@@ -57,7 +57,7 @@
 
 		<p>The Calendar Year 2020 (CY2020) Reference Platform is the target for all major software releases in 2020.</p>
 
-        <p><strong>20th August 2020</strong> - From CY2021 the VFX Reference Platform now supports Windows and macOS in addition to Linux. Details added below, and feedback welcome. CY2021 should be finalized within the next 4 weeks.</p>
+        <p><strong>20th August 2020</strong> - From CY2021 the VFX Reference Platform supports Windows and macOS in addition to Linux. Details added below, and feedback welcome. CY2021 should be finalized within the next 4 weeks.</p>
 
     	<p><strong>17th July 2020</strong> -  Added gcc notes to CY2021 Draft with details on Redhat Developer Toolset and clang compatibility.</p>
 
@@ -107,8 +107,8 @@
 				</tr>
 				<tr>
                     <td class="text-center info" style="font-weight:bold;font-size:16px;vertical-align:middle" rowspan="1">macOS</td>
-					<td style="font-weight:bold">Minimum Deployment Target <a href="#footnote-macos" data-toggle="tooltip" data-placement="top" title="Notes on Minimum Deployment Target in Xcode">(note)</a></td>
-					<td>10.13</td>
+					<td style="font-weight:bold">Minimum Deployment Target</td>
+					<td>10.13<br/><a href="#footnote-macos" data-toggle="tooltip" data-placement="top" title="Notes on Minimum Deployment Target in Xcode">(see notes)</a></td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -280,7 +280,7 @@
 				<p>To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
 				<p>The MACOSX_DEPLOYMENT_TARGET environment variable also sets the minimum deployment target and is used if the compiler option is not specified.  The environment variable is also <a href="https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html">recognized by CMake</a>.</p>
 				<p>Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.</p>
-				<p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the documentation.</a></p>
+				<p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the SDK documentation.</a></p>
 				</small>
 			</div>
 		</div>
