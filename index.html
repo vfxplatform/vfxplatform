@@ -57,11 +57,9 @@
 
 		<p>The Calendar Year 2020 (CY2020) Reference Platform is the target for all major software releases in 2020.</p>
 
+		<p><strong>12th September 2020</strong> - CY2021 is now Final. Further changes are not anticipated unless a major issue is discovered and the community supports a late change.</p>
+
         <p><strong>20th August 2020</strong> - From CY2021 the VFX Reference Platform will support Windows and macOS in addition to Linux. Details added below, and feedback welcome. CY2021 will be finalized within the next 4 weeks.</p>
-
-    	<p><strong>17th July 2020</strong> -  Added gcc notes to CY2021 Draft with details on Redhat Developer Toolset and clang compatibility.</p>
-
-    	<p><strong>16th June 2020</strong> -  CY2021 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
 
         <h3>Reference Platform</h3>
 
@@ -78,7 +76,7 @@
 			<thead>
 				<tr>
 					<th class="col-md-3" colspan="2">&nbsp;</th>
-                    <th class="col-md-3">CY2021 DRAFT</th>
+                    <th class="col-md-3">CY2021</th>
                     <th class="col-md-3">CY2020</th>
 					<th class="col-md-3">CY2019</th>
 					<th class="col-md-3">CY2018</th>
@@ -273,14 +271,17 @@
 		</div>
 
 		<div class="panel panel-default" id="footnote-macos">
-			<div class="panel-heading"><small>Note - Minimum Deployment Target in Xcode</small></div>
+			<div class="panel-heading"><small>Notes - macOS</small></div>
 			<div class="panel-body">
 				<small>
+				<p><u>Minimum Deployment Target in Xcode</u></p>
 				<p>Xcode’s “Deployment Target” identifies the earliest OS version on which your software can run.</p>
 				<p>To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
 				<p>The MACOSX_DEPLOYMENT_TARGET environment variable also sets the minimum deployment target and is used if the compiler option is not specified.  The environment variable is also <a href="https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html">recognized by CMake</a>.</p>
 				<p>Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.</p>
 				<p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the SDK documentation.</a></p>
+				<p><u>Frameworks vs Shared Libraries</u></p>
+				<p>In general, the Frameworks approach is recommended over shared libraries for building and deploying components like Qt and Python on macOS.</p>
 				</small>
 			</div>
 		</div>
@@ -358,6 +359,10 @@ sudo yum -y install devtoolset-6</code></pre></p>
 		</ul>
 
         <h3>Previous Status Updates</h3>
+
+    	<p><strong>17th July 2020</strong> -  Added gcc notes to CY2021 Draft with details on Redhat Developer Toolset and clang compatibility.</p>
+
+    	<p><strong>16th June 2020</strong> -  CY2021 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/forum/#!forum/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
 
 		<p><strong>7th March 2020</strong> -  CY2020 updated - Added required patch for Qt for Python (PySide) and an alternative option of using 5.13.</p>
 
