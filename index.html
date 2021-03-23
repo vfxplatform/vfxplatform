@@ -55,7 +55,9 @@
 
         <h3>Current Status</h3>
 
-		<p>The Calendar Year 2020 (CY2020) Reference Platform is the target for all major software releases in 2020.</p>
+		<p>The Calendar Year 2021 (CY2021) Reference Platform is the target for all major software releases in 2021.</p>
+
+		<p><strong>22nd March 2021</strong> - CY2021 has been updated to revert OpenEXR from 3.0.x back to 2.4.x due to a late release of OpenEXR 3 meaning that software vendors continued to ship products using 2.4. A change in policy to only allow released versions to be included in each year's VFX Reference Platform should prevent this from happening again in future. Also, FBX has been reverted to 2020.x due to there being no 2021.x released in time for CY2021.</p>
 
 		<p><strong>12th September 2020</strong> - CY2021 is now Final. Further changes are not anticipated unless a major issue is discovered and the community supports a late change.</p>
 
@@ -172,7 +174,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenEXR</td>
-                    <td>3.0.x</td>
+                    <td>2.4.x</td>
                     <td>2.4.x</td>
 					<td>2.3.x</td>
 					<td>2.2.x</td>
@@ -244,7 +246,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
-                    <td>2020 Update 2</td>
+                    <td>2020 Update 2 <br/>(<a href="#footnote-tbb" data-toggle="tooltip" data-placement="top" title="See the Intel TBB note below for known compilation issues">see notes</a>)</td>
                     <td>2019 Update 6</td>
 					<td>2018</td>
 					<td>2017 Update 6</td>
@@ -346,6 +348,15 @@ sudo yum -y install devtoolset-6</code></pre></p>
 				<p>These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of backported bug fixes and critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represented a significant step forward with the goal of all software vendors sharing an identically modified Qt. We are working with the Qt Company to eliminate the need for these modifications entirely in a future release, potentially as soon as CY2019.</p>
 
 				<p>These Qt 5.6 modifications are available on Github from these forks of <a href="https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1">qtbase</a>, <a href="https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1">qtx11extras</a> and <a href="https://github.com/autodesk-forks/qtdeclarative/tree/adsk-contrib/vfx/5.6.1">qtdeclarative</a>. These modifications to <a href="http://download.qt.io/official_releases/qt/5.6/5.6.1/">Qt 5.6.1</a> should be used by anyone who wishes to build Qt applications against the Platforms from CY2016 through to CY2018. </p>
+				</small>
+			</div>
+		</div>
+
+		<div class="panel panel-default" id="footnote-tbb">
+			<div class="panel-heading"><small>Note - Intel TBB</small></div>
+			<div class="panel-body">
+				<small>
+				<p>There is <a href="https://github.com/oneapi-src/oneTBB/issues/274">a known issue compiling TBB 2020 with MSVC 2017</a> that can be resolved with <a href="https://github.com/oneapi-src/oneTBB/pull/299">this workaround</a>. </p>
 				</small>
 			</div>
 		</div>
