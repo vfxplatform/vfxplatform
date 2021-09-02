@@ -11,16 +11,11 @@
     <title>VFX Reference Platform</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/css/vfxplatform-template.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -57,17 +52,13 @@
 
 		<p>The Calendar Year 2021 (CY2021) Reference Platform is the target for all major software releases in 2021.</p>
 
+		<p><strong>1st September 2021</strong> - CY2022 is now Final. The only anticipated change is the pending OpenVDB release which is due by November 1st. If any major issues are discovered then they will be shared with the community to decide whether a late change is required. In addition, a new Support Guidance section has been added towards the bottom of this page.</p>
+
 		<p><strong>23rd August 2021</strong> -  A recording of the Birds of a Feather event <a href="https://youtu.be/i4tXrtJBqK0">is now available</a>.</p>
 
 		<p><strong>16th August 2021</strong> -  Thank you to all those who attended the Birds of a Feather event last week, the <a href="https://bit.ly/3iFPkpJ">slide deck is now available</a>. This is a last call for feedback on CY2022 before it is locked for Final on September 1st.</p>
 
 		<p><strong>1st August 2021</strong> -  Everyone is invited to attend the annual <a href="https://s2021.siggraph.org/presentation/?id=bof_138&sess=sess434">VFX Reference Platform Birds of a Feather session at SIGGRAPH</a> on Wednesday August 11th at 12:30pm PT / 3:30pm ET / 8:30pm UK. This is an online session again this year, and <a href="https://s2021.siggraph.org/register/#reg-level-comparison">Basic Attendee</a> registration for the conference is required at a cost of $50, although <a href="https://www.google.com/search?q=Use+code+to+get+a+free+basic+pass+to+SIGGRAPH+2021">some vendors are offering a promo code</a> that provides free registration.</p>
-
-		<p><strong>31st July 2021</strong> -  Updates to CY2022 Draft for MKL, OpenEXR, and OpenVDB.</p>
-
-		<p><strong>22nd May 2021</strong> -  Minor updates to CY2022 Draft for Ptex, with additional notes for ACES and macOS</p>
-
-		<p><strong>16th May 2021</strong> -  CY2022 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/g/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
 
         <h3>Reference Platform</h3>
 
@@ -84,7 +75,7 @@
 			<thead>
 				<tr>
 					<th class="col-md-3" colspan="2">&nbsp;</th>
-					<th class="col-md-3">CY2022 DRAFT</th>
+					<th class="col-md-3">CY2022</th>
                     <th class="col-md-3">CY2021</th>
                     <th class="col-md-3">CY2020</th>
 					<th class="col-md-3">CY2019</th>
@@ -140,7 +131,7 @@
 				<tr>
                     <td class="text-center active" style="vertical-align:middle;font-weight:bold;font-size:16px" rowspan="17">Common Components</td>
 					<td style="font-weight:bold">Python<br/>(built with ucs4)</td>
-                    <td>3.9.x</td>
+                    <td>3.9.1 - 3.9.latest</td>
                     <td>3.7.x<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
                     <td>3.7.x<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
 					<td>2.7.9 - 2.7.latest</td>
@@ -228,7 +219,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenColorIO</td>
-                    <td>2.1.x<br/>(Pending release by Aug<br/> 31st otherwise 2.0.x)</td>
+                    <td>2.1.x</td>
                     <td>2.0.x</td>
 					<td>1.1.x<br/>(v2 in CY2021)</td>
 					<td>1.1.0</td>
@@ -236,7 +227,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">ACES</td>
-                    <td>1.3<br/>(Pending OCIO 2.1 <br/>release by Aug 31st)</td>
+                    <td>1.3</td>
                     <td>1.2</td>
                     <td>1.1</td>
 					<td>1.1</td>
@@ -371,6 +362,11 @@ sudo yum -y install devtoolset-6</code></pre></p>
 			</div>
 		</div>
 
+        <h3>Support Guidance</h3>
+
+		<p>Providers of software libraries focused on VFX and animation content creation should aim to support their releases for the current calendar year and the three preceding years. Studios and end users should have no expectation of support for older libraries. </p>
+		<p>The VFX Reference Platform strongly recommends open source project maintainers provide a level of support described by the <a href="https://bestpractices.coreinfrastructure.org/en/criteria">FLOSS Best Practices Criteria</a>, which is already a requirement for all Academy Software Foundation projects.</p>
+
         <h3>Useful Links</h3>
 
 		<ul>
@@ -380,6 +376,12 @@ sudo yum -y install devtoolset-6</code></pre></p>
 		</ul>
 
         <h3>Previous Status Updates</h3>
+
+		<p><strong>31st July 2021</strong> -  Updates to CY2022 Draft for MKL, OpenEXR, and OpenVDB.</p>
+
+		<p><strong>22nd May 2021</strong> -  Minor updates to CY2022 Draft for Ptex, with additional notes for ACES and macOS</p>
+
+		<p><strong>16th May 2021</strong> -  CY2022 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/g/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
 
 		<p><strong>22nd March 2021</strong> - CY2021 has been updated to revert OpenEXR from 3.0.x back to 2.4.x due to a late release of OpenEXR 3 meaning that software vendors continued to ship products using 2.4. A change in policy to only allow released versions to be included in each year's VFX Reference Platform should prevent this from happening again in future. Also, FBX has been reverted to 2020.x due to there being no 2021.x released in time for CY2021.</p>
 
@@ -441,7 +443,7 @@ sudo yum -y install devtoolset-6</code></pre></p>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
