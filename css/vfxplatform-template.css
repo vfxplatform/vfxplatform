@@ -13,3 +13,11 @@ body {
 .table td, th {
    text-align: center;   
 }
+
+[id]::before {
+  content: '';
+  display: block;
+  height: 50px;
+  margin-top: -50px;
+  visibility: hidden;
+}
