@@ -60,8 +60,6 @@
 
 		<p><strong>23rd August 2021</strong> -  A recording of the Birds of a Feather event <a href="https://youtu.be/i4tXrtJBqK0">is now available</a>.</p>
 
-		<p><strong>16th August 2021</strong> -  Thank you to all those who attended the Birds of a Feather event last week, the <a href="https://bit.ly/3iFPkpJ">slide deck is now available</a>. This is a last call for feedback on CY2022 before it is locked for Final on September 1st.</p>
-
         <h3 id="reference-platform">Reference Platform</h3>
 
         <p>Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.</p>
@@ -77,6 +75,7 @@
 			<thead>
 				<tr>
 					<th class="col-md-3" colspan="2">&nbsp;</th>
+					<th class="col-md-3">CY2023 DRAFT</th>
 					<th class="col-md-3">CY2022</th>
                     <th class="col-md-3">CY2021</th>
                     <th class="col-md-3">CY2020</th>
@@ -88,6 +87,7 @@
 				<tr>
                     <td class="text-center warning" style="font-weight:bold;font-size:16px;vertical-align:middle" rowspan="2">Linux</td>
 					<td style="font-weight:bold">gcc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+                    <td>11.2.1 <br/>Switch to new libstdc++ ABI<br/>(<a href="#footnote-gcc9" data-toggle="tooltip" data-placement="top" title="See the gcc 9 and 11 note below for more information on libstdc++ ABI, clang and Redhat Developer Toolset compatibility">see notes</a>)</td>
                     <td>9.3.1 <br/>(<a href="#footnote-gcc9" data-toggle="tooltip" data-placement="top" title="See the gcc 9 note below for more information on clang and Redhat Developer Toolset compatibility">see notes</a>)</td>
                     <td>9.3.1 <br/>(<a href="#footnote-gcc9" data-toggle="tooltip" data-placement="top" title="See the gcc 9 note below for more information on clang and Redhat Developer Toolset compatibility">see notes</a>)</td>
                     <td>6.3.1 <br/>(<a href="#footnote-gcc6" data-toggle="tooltip" data-placement="top" title="See the gcc 6 note below for more information on availability and configuration">see notes</a>)</td>
@@ -96,6 +96,7 @@
                 </tr>
 				<tr>
 					<td style="font-weight:bold">glibc  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+                    <td>2.28</td>
                     <td>2.17</td>
                     <td>2.17</td>
                     <td>2.17</td>
@@ -104,6 +105,7 @@
 				<tr>
                     <td class="text-center info" style="font-weight:bold;font-size:16px;vertical-align:middle" rowspan="1">macOS</td>
 					<td style="font-weight:bold">Minimum Deployment Target</td>
+					<td>11.0<br/><a href="#footnote-macos" data-toggle="tooltip" data-placement="top" title="Notes on Minimum Deployment Target in Xcode">(see notes)</a></td>
 					<td>10.15<br/><a href="#footnote-macos" data-toggle="tooltip" data-placement="top" title="Notes on Minimum Deployment Target in Xcode">(see notes)</a></td>
 					<td>10.13<br/><a href="#footnote-macos" data-toggle="tooltip" data-placement="top" title="Notes on Minimum Deployment Target in Xcode">(see notes)</a></td>
 					<td>&nbsp;</td>
@@ -112,6 +114,7 @@
 				<tr>
                     <td class="text-center success" style="vertical-align:middle;font-weight:bold;font-size:16px" rowspan="2">Windows</td>
 					<td style="font-weight:bold">Minimum Platform Toolset</td>
+					<td>Visual Studio 2022 <br/> v17.0 or later</td>
 					<td>Visual Studio 2019 <br/> v16.9 or later</td>
 					<td>Visual Studio 2017</td>
 					<td>&nbsp;</td>
@@ -120,6 +123,7 @@
 				<tr>
 					<td style="font-weight:bold">Windows SDK</td>
 					<td>10.0.19041 or later</td>
+					<td>10.0.19041 or later</td>
 					<td>v10</td>
 					<td>&nbsp;</td>
 					<td>&nbsp;</td>
@@ -127,6 +131,7 @@
 				<tr>
                     <td class="text-center active" style="vertical-align:middle;font-weight:bold;font-size:16px" rowspan="17">Common Components</td>
 					<td style="font-weight:bold">Python<br/>(built with ucs4)</td>
+                    <td>3.10.x</td>
                     <td>3.9.1 - 3.9.latest</td>
                     <td>3.7.x<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
                     <td>3.7.x<br/><a href="#footnote-python3" data-toggle="tooltip" data-placement="top" title="Notes on migration to Python 3">(see notes)</a></td>
@@ -134,6 +139,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Qt</td>
+                    <td>5.15.x<br/>(6.5 planned for CY2024)</td>
                     <td>5.15.x</td>
                     <td>5.15.x</td>
                     <td>5.12.x</td>
@@ -143,6 +149,7 @@
 					<td style="font-weight:bold">PyQt</td>
                     <td>5.15</td>
                     <td>5.15</td>
+                    <td>5.15</td>
                     <td>5.12</td>
 					<td>5.12</td>
 				</tr>
@@ -150,11 +157,13 @@
 					<td style="font-weight:bold">Qt for Python<br/>(PySide)</td>
                     <td>5.15</td>
                     <td>5.15</td>
+                    <td>5.15</td>
 					<td>5.12 (with <a href="https://bugreports.qt.io/browse/PYSIDE-1073">patch</a>)<br/> or 5.13 </td>
 					<td>5.12</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">NumPy</td>
+                    <td>1.22.x</td>
                     <td>1.20.x</td>
                     <td>1.19.x</td>
                     <td>1.17.x</td>
@@ -162,13 +171,15 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenEXR</td>
-                    <td>3.1.x</td>
+                    <td>3.1.x<br/>(or 3.2.x if released by Oct 31st)</td>
+					<td>3.1.x</td>
                     <td>2.4.x</td>
                     <td>2.4.x</td>
 					<td>2.3.x</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Ptex</td>
+                    <td>2.4.x</td>
                     <td>2.4.x</td>
                     <td>2.3.2</td>
                     <td>2.3.2</td>
@@ -179,10 +190,12 @@
                     <td>3.4.x</td>
                     <td>3.4.x</td>
                     <td>3.4.x</td>
+                    <td>3.4.x</td>
 					<td>3.3.x</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenVDB</td>
+                    <td>9.x<br/>(or 10.x if released by Oct 31st)</td>
                     <td>9.x</td>
                     <td>8.x</td>
                     <td>7.x</td>
@@ -191,12 +204,14 @@
 				<tr>
 					<td style="font-weight:bold">Alembic</td>
                     <td>1.8.x</td>
+                    <td>1.8.x</td>
                     <td>1.7.x</td>
                     <td>1.7.x</td>
 					<td>1.7.x</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">FBX</td>
+                    <td>2020.2 - 2020.latest</td>
                     <td>2020.x</td>
                     <td>2020.x</td>
                     <td>2020.x</td>
@@ -204,6 +219,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">OpenColorIO</td>
+                    <td>2.1.x<br/>(or 2.2.x if released by Oct 31st)</td>
                     <td>2.1.x</td>
                     <td>2.0.x</td>
 					<td>1.1.x<br/>(v2 in CY2021)</td>
@@ -211,6 +227,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">ACES</td>
+                    <td>1.3<br/>(or 2.0 if released by Oct 31st)</td>
                     <td>1.3</td>
                     <td>1.2</td>
                     <td>1.1</td>
@@ -218,6 +235,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Boost</td>
+                    <td>1.79</td>
                     <td>1.76</td>
                     <td>1.73</td>
                     <td>1.70</td>
@@ -225,6 +243,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight:bold">Intel TBB  <span class="glyphicon glyphicon-sort" aria-hidden="true"></span></td>
+                    <td>2020 Update 3 <br/>(Plan to move to <br/> OneTBB in CY2024)</td>
                     <td>2020 Update 3 </td>
                     <td>2020 Update 2 <br/>(<a href="#footnote-tbb" data-toggle="tooltip" data-placement="top" title="See the Intel TBB note below for known compilation issues">see notes</a>)</td>
                     <td>2019 Update 6</td>
@@ -234,11 +253,13 @@
 					<td style="font-weight:bold">Intel MKL</td>
                     <td>2020</td>
                     <td>2020</td>
+                    <td>2020</td>
                     <td>2019</td>
 					<td>2018</td>
 				</tr>
 				<tr>
 					<td style="font-weight:bold">C++ API/SDK</td>
+                    <td>C++17</td>
                     <td>C++17</td>
                     <td>C++17</td>
                     <td>C++14</td>
@@ -279,12 +300,13 @@
 
 
 		<div class="panel panel-default" id="footnote-gcc9">
-			<div class="panel-heading"><small>Note - gcc 9</small></div>
+			<div class="panel-heading"><small>Note - gcc 9 and 11</small></div>
 			<div class="panel-body">
 				<small>
-				<p>For users of RHEL-derived Linux distributions, the <a href="https://developers.redhat.com/products/developertoolset/overview">Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021.</p>
+				<p>For users of Red Hat Enterprise Linux and RHEL-derived Linux distributions (such as CentOS Linux and Rocky Linux), the <a href="https://developers.redhat.com/products/developertoolset/overview">Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021, and <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/11/html/11.0_release_notes/index">DTS 11.0</a> provides gcc 11.2.1 for compatibility with CY2023.</p>
 				<p>For those who want or need to use llvm, some studios have been successful building <a href="https://clang.llvm.org/">clang</a> with DTS and using that to build software that is compatible with vendor-provided libraries.</p>
-				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0, although that setting <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1546704">may not be supported</a> by some distros yet. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition.</p>
+				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform up to CY2022 still used the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0, although that setting <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1546704">may not be supported</a> by some older Linux distros.</p>
+				<p>From CY2023, the Platform has moved to the newer implementations since all the major Linux distributions have made the transition. <strong>This is a major change for CY2023 that may require a rebuild of all software against the new ABI for those moving from earlier Platforms</strong>. It is intentional that the Platform moved to the new ABI at the same time as upgrading glibc as it is expected this triggers a major version distro upgrade for many studios.</p>
 				</small>
 			</div>
 		</div>
@@ -309,6 +331,7 @@ sudo yum -y install devtoolset-6</code></pre></p>
 			<div class="panel-body">
 				<small>
 				<p>There is <a href="https://github.com/oneapi-src/oneTBB/issues/274">a known issue compiling TBB 2020 with MSVC 2017</a> that can be resolved with <a href="https://github.com/oneapi-src/oneTBB/pull/299">this workaround</a>. </p>
+				<p>Please plan to port to OneTBB for CY2024.</p>
 				</small>
 			</div>
 		</div>
@@ -327,6 +350,8 @@ sudo yum -y install devtoolset-6</code></pre></p>
 		</ul>
 
         <h3 id="previous-status-updates">Previous Status Updates</h3>
+
+		<p><strong>16th August 2021</strong> -  Thank you to all those who attended the Birds of a Feather event last week, the <a href="https://bit.ly/3iFPkpJ">slide deck is now available</a>. This is a last call for feedback on CY2022 before it is locked for Final on September 1st.</p>
 
 		<p><strong>1st August 2021</strong> -  Everyone is invited to attend the annual <a href="https://s2021.siggraph.org/presentation/?id=bof_138&sess=sess434">VFX Reference Platform Birds of a Feather session at SIGGRAPH</a> on Wednesday August 11th at 12:30pm PT / 3:30pm ET / 8:30pm UK. This is an online session again this year, and <a href="https://s2021.siggraph.org/register/#reg-level-comparison">Basic Attendee</a> registration for the conference is required at a cost of $50, although <a href="https://www.google.com/search?q=Use+code+to+get+a+free+basic+pass+to+SIGGRAPH+2021">some vendors are offering a promo code</a> that provides free registration.</p>
 
