@@ -52,6 +52,8 @@
 
 		<p>The Calendar Year 2022 (CY2022) Reference Platform is the target for all major software releases in 2022.</p>
 
+		<p><strong>8th May 2022</strong> -  CY2023 Draft published. We are currently soliciting feedback on this Draft so please either send to <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a> or share on <a href="https://groups.google.com/g/vfx-platform-discuss">vfx-platform-discuss</a>.</p>
+
 		<p><strong>1st January 2022</strong> - Software providers should now use CY2022 as the build target for all new major releases.</p>
 
 		<p><strong>31st October 2021</strong> - OpenVDB 9.x confirmed for CY2022 following the release of 9.0.0 supporting OpenEXR 3.</p>
@@ -306,7 +308,7 @@
 				<p>For users of Red Hat Enterprise Linux and RHEL-derived Linux distributions (such as CentOS Linux and Rocky Linux), the <a href="https://developers.redhat.com/products/developertoolset/overview">Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021, and <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/11/html/11.0_release_notes/index">DTS 11.0</a> provides gcc 11.2.1 for compatibility with CY2023.</p>
 				<p>For those who want or need to use llvm, some studios have been successful building <a href="https://clang.llvm.org/">clang</a> with DTS and using that to build software that is compatible with vendor-provided libraries.</p>
 				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform up to CY2022 used the older option so the compiler setting for those Platforms should be _GLIBCXX_USE_CXX11_ABI=0, although that setting <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1546704">may not be supported</a> by some older Linux distros.</p>
-				<p>From CY2023, the Platform has moved to the newer implementation since all the major Linux distributions have made the transition. <strong>This is a major change for CY2023 that may require a rebuild of all software against the new ABI for those moving from earlier Platforms</strong>. It is intentional that the Platform moved to the new ABI at the same time as upgrading glibc as it is expected these changes together trigger a major version distro upgrade for many studios.</p>
+				<p>From CY2023, the Platform has moved to the newer implementation since all the major Linux distributions have made the transition. <strong>This is a major change for CY2023 that may require a rebuild of all software against the new ABI for those moving from earlier Platforms</strong>.</p>
 				</small>
 			</div>
 		</div>
