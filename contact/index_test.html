@@ -15,42 +15,36 @@
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">VFX Reference Platform</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/linux">Linux</a></li>
-            <li><a href="/FAQ">FAQ</a></li>
-            <li><a href="/about">About</a></li>
-            <li class="active"><a href="/contact">Contact</a></li>
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">VFX Reference Platform</a>
+        <button type="button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vfx-navbar" aria-controls="vfx-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="vfx-navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/linux">Linux</a></li>
+            <li class="nav-item"><a class="nav-link" href="/FAQ">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            <li class="nav-item"><a aria-current="page" class="nav-link" href="/contact">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
-    </div>
+    </nav>
 
     <div class="container">
 
       <div class="vfxplatform-template">
         <h3>Contact</h3>
         <p>Please send any feedback or suggestions for the next VFX Reference Platform to the VFX Reference Platform Working Group at <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a>.</p>
-        <p>There is also an open mailing list for general VFX Platform discussion, please visit the archives and sign up at the <a href="https://groups.google.com/forum/m/#!forum/vfx-platform-discuss">vfx-platform-discuss Google Group</a> or email <a href="mailto:vfx-platform-discuss+subscribe@googlegroups.com">vfx-platform-discuss+subscribe@googlegroups.com</a> to subscribe. 
+        <p>There is also an open mailing list for general VFX Platform discussion, please visit the archives and sign up at the <a href="https://groups.google.com/forum/m/#!forum/vfx-platform-discuss">vfx-platform-discuss Google Group</a> or email <a href="mailto:vfx-platform-discuss+subscribe@googlegroups.com">vfx-platform-discuss+subscribe@googlegroups.com</a> to subscribe. </p>
         <p><a href="https://twitter.com/vfxplatform" class="twitter-follow-button" data-show-count="false">Follow @vfxplatform</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
         </p>
       </div>
 
-    </div><!-- /.container -->
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
