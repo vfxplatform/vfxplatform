@@ -22,7 +22,7 @@ body {
   visibility: hidden;
 }
 
-.navbar-nav>.active>a {
+.navbar-nav>a.active {
   background-color: #111111;
   color: #eeeeee;
 }
