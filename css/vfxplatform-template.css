@@ -21,3 +21,8 @@ body {
   margin-top: -50px;
   visibility: hidden;
 }
+
+.navbar-nav>.active>a {
+  background-color: #111111;
+  color: #eeeeee;
+}
