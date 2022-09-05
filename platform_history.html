@@ -355,8 +355,8 @@
       <div class="card-header"><small>Note - Minimum Deployment Target in Xcode</small></div>
       <div class="card-body">
         <small>
-        <p class="card-text">Xcode’s “Deployment Target” identifies the earliest OS version on which your software can run.</p>
-        <p class="card-text">To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
+        <p>Xcode’s “Deployment Target” identifies the earliest OS version on which your software can run.</p>
+        <p>To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
         <p>The MACOSX_DEPLOYMENT_TARGET environment variable also sets the minimum deployment target and is used if the compiler option is not specified.  The environment variable is also <a href="https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html">recognized by CMake</a>.</p>
         <p>Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.</p>
         <p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the SDK documentation.</a></p>
@@ -364,9 +364,9 @@
       </div>
     </div>
         
-		<div class="panel panel-default" id="footnote-python3">
-			<div class="panel-heading"><small>Note - Python 3</small></div>
-			<div class="panel-body">
+		<div class="card" id="footnote-python3">
+			<div class="card-header"><small>Note - Python 3</small></div>
+			<div class="card-body">
 				<small>
 				<p>The move to Python 3 was delayed from CY2019 to CY2020 due to:</p>
 				<ul>
@@ -379,9 +379,9 @@
 		</div>
 
 
-		<div class="panel panel-default" id="footnote-gcc9">
-			<div class="panel-heading"><small>Note - gcc 9</small></div>
-			<div class="panel-body">
+		<div class="card" id="footnote-gcc9">
+			<div class="card-header"><small>Note - gcc 9</small></div>
+			<div class="card-body">
 				<small>
 				<p>For users of RHEL-derived Linux distributions, the <a href="https://developers.redhat.com/products/developertoolset/overview">Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021.</p>
 				<p>For those who want or need to use llvm, some studios have been successful building <a href="https://clang.llvm.org/">clang</a> with DTS and using that to build software that is compatible with vendor-provided libraries.</p>
@@ -390,9 +390,9 @@
 			</div>
 		</div>
 		
-		<div class="panel panel-default" id="footnote-gcc6">
-			<div class="panel-heading"><small>Note - gcc 6</small></div>
-			<div class="panel-body">
+		<div class="card" id="footnote-gcc6">
+			<div class="card-header"><small>Note - gcc 6</small></div>
+			<div class="card-body">
 				<small>
 				<p>UPDATE: May 10th 2020 - Redhat DTS 6.1 is no longer actively supported so availability may be limited. More information available on <a href="https://groups.google.com/forum/#!topic/vfx-platform-discuss/_-_CPw1fD3c">this vfx-platform-discuss thread</a>. </p>
 				<p>UPDATE: November 26th 2017 - CY2018 changed from gcc 5 to gcc 6 due to integration issues discovered with the older version. </p>
@@ -405,9 +405,9 @@ sudo yum -y install devtoolset-6</code></pre></p>
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="footnote-gcc">
-			<div class="panel-heading"><small>Note - gcc 4</small></div>
-			<div class="panel-body">
+		<div class="card" id="footnote-gcc">
+			<div class="card-header"><small>Note - gcc 4</small></div>
+			<div class="card-body">
 				<small>
 				<p>The vanilla gcc 4.8.2 has a <a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800">serious bug</a> that was fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform gave 4.8.2 as an option for CY2016 is that this gcc version is what ships with <a href="http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/">Redhat Developer Toolset 2.1</a> that some software vendors were committed to using through 2016.</p>
 				<p>The following are the known distributions that ship with a fixed 4.8.2:- Redhat DTS 2.1, RHEL/CentOS 6.</p>
@@ -415,9 +415,9 @@ sudo yum -y install devtoolset-6</code></pre></p>
 			</div>
 		</div>
 
-		<div class="panel panel-default" id="footnote-qt">
-			<div class="panel-heading"><small>Note - Qt modifications</small></div>
-			<div class="panel-body">
+		<div class="card" id="footnote-qt">
+			<div class="card-header"><small>Note - Qt modifications</small></div>
+			<div class="card-body">
 				<small>
 				<p>The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement from the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.</p>
 
@@ -429,8 +429,10 @@ sudo yum -y install devtoolset-6</code></pre></p>
 		</div>
 
 
-        <div class="well well-sm"><p><small>
-          Any reference made in the VFX Reference Platform to any company or any other entity, or to their services or products, is not an endorsement or recommendation nor should it imply any such endorsement or recommendation of the quality or fitness of purpose of that company or entity, or its services or products.  In no event shall the Visual Effects Society be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services identified in the VFX Reference Platform or the Visual Effects Society website.</small></p>
+        <div class="card">
+          <div class="card-header">
+            <p><small>Any reference made in the VFX Reference Platform to any company or any other entity, or to their services or products, is not an endorsement or recommendation nor should it imply any such endorsement or recommendation of the quality or fitness of purpose of that company or entity, or its services or products.  In no event shall the Visual Effects Society be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services identified in the VFX Reference Platform or the Visual Effects Society website.</small></p>
+        </div>
         </div>
       </div>
 
