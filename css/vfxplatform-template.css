@@ -23,11 +23,11 @@ body {
 }
 
 .navbar-nav .active {
-  background-color: #111111;
-  color: #ee0000;
+  background-color: #1111ff;
+  color:#ee0000 !important;
 }
 
 .nav-link.active {
-  background-color: #111111;
-  color: #00ee00;
+  background-color: #ff1111;
+  color:#00ee00 !important;
 }
