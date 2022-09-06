@@ -1,6 +1,7 @@
 body {
   padding-top: 50px;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
@@ -9,6 +10,17 @@ body {
 .alert {
 	width:90%;
 }
+
+a.link-secondary {
+  color: #0c53bd;
+  text-decoration: none; 
+}
+
+a.link-secondary:hover {
+  color: #0c53bda1;
+  text-decoration: underline; 
+}
+
 
 .table td, th {
    text-align: center;   
