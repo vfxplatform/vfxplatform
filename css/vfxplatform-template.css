@@ -12,12 +12,12 @@ body {
 }
 
 a.link-secondary {
-  color: #0c53bd;
+  color: #337ab7;
   text-decoration: none; 
 }
 
 a.link-secondary:hover {
-  color: #0c53bda1;
+  color: #225fa6;
   text-decoration: underline; 
 }
 
