@@ -13,12 +13,14 @@ body {
 
 a.link-secondary {
   color: #337ab7 !important;
-  text-decoration: none; 
+  text-decoration: none;
+  font-weight: normal; 
 }
 
 a.link-secondary:hover {
   color: #225fa6 !important;
   text-decoration: underline; 
+  font-weight: normal; 
 }
 
 
