@@ -11,6 +11,10 @@ body {
 	width:90%;
 }
 
+a.link-primary {
+  color: #337ab7 !important;
+}
+
 a.link-secondary {
   color: #337ab7 !important;
   text-decoration: none;
@@ -29,6 +33,14 @@ a.link-secondary:hover {
 
 .table td, th {
    text-align: center;   
+}
+
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+
+.card-header .collapsed .fa {
+  transform: rotate(90deg);
 }
 
 [id]::before {
