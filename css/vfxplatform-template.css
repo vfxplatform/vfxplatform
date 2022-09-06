@@ -23,6 +23,9 @@ a.link-secondary:hover {
   font-weight: normal;
 }
 
+.nav-link.active {
+  color:#eeeeee !important;
+}
 
 .table td, th {
    text-align: center;   
@@ -34,8 +37,4 @@ a.link-secondary:hover {
   height: 50px;
   margin-top: -50px;
   visibility: hidden;
-}
-
-.nav-link.active {
-  color:#eeeeee !important;
 }
