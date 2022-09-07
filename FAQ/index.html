@@ -2,298 +2,260 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="VFX Platform : Reference Platform for VFX Software, Frequently Asked Questions" />
-    <meta name="author" content="Visual Effects Society Technology Committee">
-    <!-- link rel="shortcut icon" href="../../assets/ico/favicon.ico" -->
+    <meta name="description" content="VFX Platform : Reference Platform for VFX Software" />
+    <meta name="author" content="VFX Reference Platform Working Group">
 
     <title>VFX Reference Platform: Frequently Asked Questions</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="/css/vfxplatform-template.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://kit.fontawesome.com/b5bba24d22.js" crossorigin="anonymous"></script>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LK2P1Q61BQ"></script>
+    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LK2P1Q61BQ'); </script>
+  
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(){
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar.fixed-top').offsetHeight + 24;
+        document.body.style.paddingTop = navbar_height + 'px';
+      }); 
+    </script>
   </head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient fixed-top">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">VFX Platform Reference</a>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/linux">Linux</a></li>
-            <li class="active"><a href="/FAQ">FAQ</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+        <a class="navbar-brand" href="/">VFX Reference Platform</a>
+        <button type="button" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vfx-navbar" aria-controls="vfx-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="vfx-navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/linux">Linux</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/FAQ">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div>
       </div>
-    </div>
+    </nav>
+
 
     <div class="container">
 
       <div class="vfxplatform-template">
-        <h3>Frequently Asked Questions</h3>
 
+        <h3 class="display-6">Frequently Asked Questions</h3>
 
-<div class="panel-group" id="accordion">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          As a VFX artist, what does the VFX Reference Platform mean to me?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse">
-      <div class="panel-body">
-        Building software products for a common platform means they are easier to install and integrate into pipelines so may result in quicker adoption of new software releases at your studio. It has also made it easier for the industry to adopt new technologies more rapidly.
-        <br>
-        We also hope that by making it simpler for vendors to support Linux we will see more applications available on Linux in the future.
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOneA">
-          Does the inclusion of a particular tool or library represent its endorsement by the VES?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOneA" class="panel-collapse collapse">
-      <div class="panel-body">
-        No, neither the VES nor the VFX Reference Platform working group endorse or promote any specific software packages for use in the creation of visual effects. The decision to include a particular library or tool in the Platform is based primarily on whether using differing versions introduces compatibility issues.
-        <br>
-        There are plenty of excellent libraries and tools in common use throughout the VFX industry that are not included in the Platform because they do not present version compatibility issues. 
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-          Is there a VFX Reference Platform certified Linux distribution that I can download and install?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-        There is no VFX Reference Platform certified Linux distro available today so it is currently up to VFX and animation studios to take a standard Linux distribution and upgrade/install the relevant platform versions. In the future it’s possible that a Linux distribution vendor or service provider will choose to provide a VFX Reference Platform compliant distro, either by providing a distro with pre-packaged platform components or providing the components in a manner that is easy to add to a vanilla distro.
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-          Why can't you just recommend a particular Linux distribution?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
-        There are numerous reasons to pick one Linux distribution over another. Some distros offer paid support, some offer an update schedule that is favorable for a particular studio’s upgrade schedule and many other factors impact the decision for which distro to run in a studio.
-        <br>
-        Our goal with the VFX Reference Platform is to make it more straightforward to run a wide variety of Visual Effects and Animation software on any major operating system, including the modern Linux distribution of your choice.
-      </div>
-    </div>
-  </div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingOne">
+                <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  <i class="fa fa-chevron-down pull-right"></i>As a VFX artist, what does the VFX Reference Platform mean to me?
+                </a>
+            </h5>
+            <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+              <div class="card-body">
+                Building software products for a common platform means they are easier to install and integrate into pipelines so may result in quicker adoption of new software releases at your studio. It has also made it easier for the industry to adopt new technologies more rapidly.
+                <br>
+                We also hope that by making it simpler for vendors to support Linux we will see more applications available on Linux in the future.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingOneA">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseOneA" aria-expanded="false" aria-controls="collapseOneA">
+                <i class="fa fa-chevron-down pull-right"></i>Does the inclusion of a particular tool or library represent its endorsement by the VES?
+              </a>
+            </h5>
+            <div id="collapseOneA" class="collapse" role="tabpanel" aria-labelledby="headingOneA">
+              <div class="card-body">
+                No, neither the VES nor the VFX Reference Platform working group endorse or promote any specific software packages for use in the creation of visual effects. The decision to include a particular library or tool in the Platform is based primarily on whether using differing versions introduces compatibility issues.
+                <br>
+                There are plenty of excellent libraries and tools in common use throughout the VFX industry that are not included in the Platform because they do not present version compatibility issues. 
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingTwo">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="fa fa-chevron-down pull-right"></i>Is there a VFX Reference Platform certified Linux distribution that I can download and install?
+              </a>
+            </h5>
+            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="card-body">
+                There is no VFX Reference Platform certified Linux distro available today so it is currently up to VFX and animation studios to take a standard Linux distribution and upgrade/install the relevant platform versions. In the future it’s possible that a Linux distribution vendor or service provider will choose to provide a VFX Reference Platform compliant distro, either by providing a distro with pre-packaged platform components or providing the components in a manner that is easy to add to a vanilla distro.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingThree">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="fa fa-chevron-down pull-right"></i>Why can't you just recommend a particular Linux distribution?
+              </a>
+            </h5>
+            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="card-body">
+                There are numerous reasons to pick one Linux distribution over another. Some distros offer paid support, some offer an update schedule that is favorable for a particular studio’s upgrade schedule and many other factors impact the decision for which distro to run in a studio.
+                <br>
+                Our goal with the VFX Reference Platform is to make it more straightforward to run a wide variety of Visual Effects and Animation software on any major operating system, including the modern Linux distribution of your choice.
+              </div>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-          Are there particular Linux distributions that are close to the Reference Platform and thus easier to adopt?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFour" class="panel-collapse collapse">
-      <div class="panel-body">
-        While we do not recommend any particular distribution, Redhat’s Enterprise Linux and CentOS and Canonical’s Ubuntu are both commonly used in the industry. By using a resource like <a href="http://distrowatch.com">DistroWatch</a> you can easily see which library versions are used by each distro release and how closely they line up to a given VFX Reference Platform. 
-      </div>
-    </div>
-  </div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingFour">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <i class="fa fa-chevron-down pull-right"></i>Are there particular Linux distributions that are close to the Reference Platform and thus easier to adopt?
+              </a>
+            </h5>
+            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+              <div class="card-body">
+                While we do not recommend any particular distribution, Redhat’s Enterprise Linux and CentOS and Canonical’s Ubuntu are both commonly used in the industry. By using a resource like <a href="http://distrowatch.com">DistroWatch</a> you can easily see which library versions are used by each distro release and how closely they line up to a given VFX Reference Platform. 
+              </div>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-          What is the significance of the glibc version to which Linux distro releases are not supported?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFive" class="panel-collapse collapse">
-      <div class="panel-body">
-        The glibc specified in the VFX Reference Platform is the minimum version of the GNU C library that the platform will work with. Generally speaking, glibc is not upgradeable on a given Linux distro release so if your distro has a glibc version earlier than that specified in the VFX Reference Platform then it will not be supported.
-        <br>
-        For example, for CY2015 the minimum glibc was set to 2.12 which meant that releases earlier than CentOS 6.0 or Ubuntu 12.04, just to take those distributions as an example, were not supported by CY2015 because they shipped with an older version of glibc.
-      </div>
-    </div>
-  </div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingFive">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  <i class="fa fa-chevron-down pull-right"></i>What is the significance of the glibc version to which Linux distro releases are not supported?
+              </a>
+            </h5>
+            <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+              <div class="card-body">
+                The glibc specified in the VFX Reference Platform is the minimum version of the GNU C library that the platform will work with. Generally speaking, glibc is not upgradeable on a given Linux distro release so if your distro has a glibc version earlier than that specified in the VFX Reference Platform then it will not be supported.
+                <br>
+                For example, for CY2015 the minimum glibc was set to 2.12 which meant that releases earlier than CentOS 6.0 or Ubuntu 12.04, just to take those distributions as an example, were not supported by CY2015 because they shipped with an older version of glibc.
+              </div>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-          Is the Visual Effects Society going to create a Linux distro?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseSix" class="panel-collapse collapse">
-      <div class="panel-body">
-        No. Creating and maintaining a Linux distribution is an enormous task, and it would be challenging for a single distro to be universally adopted across the industry. The VFX Reference Platform effort is focused on relieving the pain of multiple incompatible versions of libraries across different software products.
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
-          Which software vendors are currently involved?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseSeven" class="panel-collapse collapse">
-      <div class="panel-body">
-        The VFX Reference Platform is a collaborative project. So far, we have the enthusiastic support of all of the major application providers for the visual effects and animation industry, including Autodesk, The Foundry and Side Effects Software. 
-        <br>
-        There are two ways to participate: First, any interested person or company may join the discussion at <a href="mailto:vfx-platform-discuss@googlegroups.com">vfx-platform-discuss@googlegroups.com</a>. Second, we have formed a Working Group who hold regular conference calls to ensure progress is made in complicated areas. The Working group is made up of interested parties invited by the VES Technology Committee and currently has several members, one representative from the VES and one each from several software vendors.
-      </div>
-    </div>
-  </div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingSix">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                  <i class="fa fa-chevron-down pull-right"></i>Is the Visual Effects Society going to create a Linux distro?
+              </a>
+            </h5>
+            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+              <div class="card-body">
+                No. Creating and maintaining a Linux distribution is an enormous task, and it would be challenging for a single distro to be universally adopted across the industry. The VFX Reference Platform effort is focused on relieving the pain of multiple incompatible versions of libraries across different software products.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingSeven">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                  <i class="fa fa-chevron-down pull-right"></i>Which software vendors are currently involved?
+              </a>
+            </h5>
+            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
+              <div class="card-body">
+                The VFX Reference Platform is a collaborative project. So far, we have the enthusiastic support of all of the major application providers for the visual effects and animation industry, including Autodesk, The Foundry and Side Effects Software. 
+                <br>
+                There are two ways to participate: First, any interested person or company may join the discussion at <a href="mailto:vfx-platform-discuss@googlegroups.com">vfx-platform-discuss@googlegroups.com</a>. Second, we have formed a Working Group who hold regular conference calls to ensure progress is made in complicated areas. The Working group is made up of interested parties invited by the VES Technology Committee and currently has several members, one representative from the VES and one each from several software vendors.
+              </div>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseEight">
-          I'm a software developer, how do I get my software certified?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseEight" class="panel-collapse collapse">
-      <div class="panel-body">
-        There is no certification program, but you are encouraged to advertise the fact that your software is compliant with a specific iteration of the VFX Reference Platform and link to this website.
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
-          My application provider doesn’t currently support the VFX Reference Platform, what should I do?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseNine" class="panel-collapse collapse">
-      <div class="panel-body">
-        First, please help ensure your application provider is aware of the VFX Reference Platform and the goal of making it easier to develop for Linux. Asking them to support the VFX Reference Platform as a priority for their development is a great idea for everyone.
-        <br>
-        Second, users should be aware that some developers will have technical challenges changing software to conform to the version requirements in the VFX Reference Platform. Even companies who enthusiastically support the effort may take a few releases to be compliant with the platform.
-      </div>
-    </div>
-  </div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingEight">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                  <i class="fa fa-chevron-down pull-right"></i>I'm a software developer, how do I get my software certified?
+              </a>
+            </h5>
+            <div id="collapseEight" class="collapse" role="tabpanel" aria-labelledby="headingEight">
+              <div class="card-body">
+                There is no certification program, but you are encouraged to advertise the fact that your software is compliant with a specific iteration of the VFX Reference Platform and link to this website.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingNine">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                  <i class="fa fa-chevron-down pull-right"></i>My application provider doesn’t currently support the VFX Reference Platform, what should I do?
+              </a>
+            </h5>
+            <div id="collapseNine" class="collapse" role="tabpanel" aria-labelledby="headingNine">
+              <div class="card-body">
+                First, please help ensure your application provider is aware of the VFX Reference Platform and the goal of making it easier to develop for Linux. Asking them to support the VFX Reference Platform as a priority for their development is a great idea for everyone.
+                <br>
+                Second, users should be aware that some developers will have technical challenges changing software to conform to the version requirements in the VFX Reference Platform. Even companies who enthusiastically support the effort may take a few releases to be compliant with the platform.
+              </div>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTen">
-          Why the focus on Linux, what about other operating systems?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTen" class="panel-collapse collapse">
-      <div class="panel-body">
-        Linux is prevalent in VFX, particularly in the larger studios where they build sophisticated automation pipelines that integrate multiple different software vendors’ products together. These Linux-based pipelines are where the problem of conflicting versions most often manifests itself. This issue is made more complicated by the lack of standards across different Linux distros, hence our initial focus on Linux rather an any other OS.
-        <br/>
-        In 2020 we introduced support for macOS and Windows to encourage people to adopt and integrate more VFX and animation software regardless of their choice of operating system.</a>. 
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve">
-          What about standardising compiler flags to ensure that everyone is building from source in a common and compatible manner?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwelve" class="panel-collapse collapse">
-      <div class="panel-body">
-        We partner with the <a href="https://aswf.io">Academy Software Foundation</a> on many initiatives and the <a href="https://github.com/AcademySoftwareFoundation/aswf-docker">ASWF Docker project</a> is an excellent resource providing easy to use Docker images of all the VFX Reference Platform components. These are created through an automated build system and you can consider the build process, and choice of compiler flags, as the canonical reference for build recipies.
-      </div>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseForteen">
-          When does a new version of an open source library need to be released in order for it to be considered for use by next year's batch of 3rd party software packages?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseForteen" class="panel-collapse collapse">
-      <div class="panel-body">
-        Ideally two months prior to SIGGRAPH is the time to have your library released so there is time for it to be considered for inclusion in the Reference Platform for the following year. That said, we will consider new library releases right up until the SIGGRAPH deadline, but cutting it too close may mean there is not enough time for the software vendors to fully evaluate the new version before we lock down and publish the final Reference Platform versions for the following year.
-      </div>
-    </div>
-  </div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingTen">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                  <i class="fa fa-chevron-down pull-right"></i>Why the focus on Linux, what about other operating systems?
+              </a>
+            </h5>
+            <div id="collapseTen" class="collapse" role="tabpanel" aria-labelledby="headingTen">
+              <div class="card-body">
+                Linux is prevalent in VFX, particularly in the larger studios where they build sophisticated automation pipelines that integrate multiple different software vendors’ products together. These Linux-based pipelines are where the problem of conflicting versions most often manifests itself. This issue is made more complicated by the lack of standards across different Linux distros, hence our initial focus on Linux rather an any other OS.
+                <br/>
+                In 2020 we introduced support for macOS and Windows to encourage people to adopt and integrate more VFX and animation software regardless of their choice of operating system.</a>. 
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingTwelve">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                  <i class="fa fa-chevron-down pull-right"></i>What about standardising compiler flags to ensure that everyone is building from source in a common and compatible manner?
+              </a>
+            </h5>
+            <div id="collapseTwelve" class="collapse" role="tabpanel" aria-labelledby="headingTwelve">
+              <div class="card-body">
+                We partner with the <a href="https://aswf.io">Academy Software Foundation</a> on many initiatives and the <a href="https://github.com/AcademySoftwareFoundation/aswf-docker">ASWF Docker project</a> is an excellent resource providing easy to use Docker images of all the VFX Reference Platform components. These are created through an automated build system and you can consider the build process, and choice of compiler flags, as the canonical reference for build recipies.
+              </div>
+            </div>
+          </div>
+          
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingForteen">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseForteen" aria-expanded="false" aria-controls="collapseForteen">
+                  <i class="fa fa-chevron-down pull-right"></i>When does a new version of an open source library need to be released in order for it to be considered for use by next year's batch of 3rd party software packages?
+              </a>
+            </h5>
+            <div id="collapseForteen" class="collapse" role="tabpanel" aria-labelledby="headingForteen">
+              <div class="card-body">
+                Ideally two months prior to SIGGRAPH is the time to have your library released so there is time for it to be considered for inclusion in the Reference Platform for the following year. That said, we will consider new library releases right up until the SIGGRAPH deadline, but cutting it too close may mean there is not enough time for the software vendors to fully evaluate the new version before we lock down and publish the final Reference Platform versions for the following year.
+              </div>
+            </div>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen">
-          How can I get involved?
-        </a>
-      </h4>
-    </div>
-    <div id="collapseFifteen" class="panel-collapse collapse">
-      <div class="panel-body">
-        Please send comments, questions, suggestions to: <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a>
-      </div>
-    </div>
-  </div>
-  
-</div>
+          <div class="card">
+            <h5 class="card-header" role="tab" id="headingFifteen">
+              <a class="collapsed d-block" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                  <i class="fa fa-chevron-down pull-right"></i>How can I get involved?
+              </a>
+            </h5>
+            <div id="collapseFifteen" class="collapse" role="tabpanel" aria-labelledby="headingFifteen">
+              <div class="card-body">
+                Please send comments, questions, suggestions to: <a href="mailto:feedback@vfxplatform.com">feedback@vfxplatform.com</a>
+              </div>
+            </div>
+          </div>
 
+        </div>
 
       </div>
 
-    </div><!-- /.container -->
+    </div>
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-51320429-1', 'vfxplatform.com');
