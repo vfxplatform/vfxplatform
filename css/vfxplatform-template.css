@@ -43,11 +43,6 @@ a.link-secondary:hover {
   transform: rotate(90deg);
 }
 
-iframe {
-  max-width: 800px;
-  max-height: 450px;
-}
-
 [id]::before {
   content: '';
   display: block;
