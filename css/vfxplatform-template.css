@@ -35,6 +35,10 @@ a.link-secondary:hover {
    text-align: center;   
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 [id]::before {
   content: '';
   display: block;
