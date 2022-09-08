@@ -425,13 +425,20 @@
     <div class="card mb-md-3" id="footnote-macos">
       <div class="card-header"><small>Note - Minimum Deployment Target in Xcode</small></div>
       <div class="card-body">
-        <small>
-        <p>Xcode’s “Deployment Target” identifies the earliest OS version on which your software can run.</p>
-        <p>To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
-        <p>The MACOSX_DEPLOYMENT_TARGET environment variable also sets the minimum deployment target and is used if the compiler option is not specified.  The environment variable is also <a href="https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html">recognized by CMake</a>.</p>
-        <p>Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.</p>
-        <p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the SDK documentation.</a></p>
-        </small>
+				<small>
+          <p><u>Minimum Deployment Target in Xcode</u></p>
+          <p>Xcode’s “Deployment Target” identifies the earliest OS version on which your software can run.</p>
+          <p>To set the Deployment Target for the compiler, use the option "-mmacosx-version-min=10.13“ to specify the APIs marked as available. For the linker, use the option "-macosx_version_min 10.13" to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.</p>
+          <p>The MACOSX_DEPLOYMENT_TARGET environment variable also sets the minimum deployment target and is used if the compiler option is not specified.  The environment variable is also <a href="https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html">recognized by CMake</a>.</p>
+          <p>Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.</p>
+          <p>More information on configuring developer tools is <a href="https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html">available in the SDK documentation.</a></p>
+          <p><u>Frameworks vs Shared Libraries</u></p>
+          <p>In general, the Frameworks approach is recommended over shared libraries for building and deploying components like Qt and Python on macOS.</p>
+          <p><u>UPDATE: May 22nd 2021 - CY2022 dropping 32-bit support</u></p>
+          <p>The move to 10.15 requires all apps to be 64-bit, with 32-bit releases no longer supported.</p>
+          <p><u>UPDATE: April 4th 2021 - Building Qt for macOS</u></p>
+          <p>Building Qt against C++17 requires a minimum macOS version of 10.14 otherwise Qt fails during configuration. If 10.13 support is needed then a known workaround is to build Qt against C++14.</p>
+          </small>
       </div>
     </div>
         
@@ -457,6 +464,7 @@
 				<p>For users of RHEL-derived Linux distributions, the <a href="https://developers.redhat.com/products/developertoolset/overview">Redhat Developer Toolset (DTS)</a> offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. <a href="https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index">DTS 9.1</a> provides gcc 9.3.1 for compatibility with CY2021.</p>
 				<p>For those who want or need to use llvm, some studios have been successful building <a href="https://clang.llvm.org/">clang</a> with DTS and using that to build software that is compatible with vendor-provided libraries.</p>
 				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0, although that setting <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1546704">may not be supported</a> by some distros yet. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition.</p>
+				<p>From CY2023, the Platform has moved to the newer implementation since all the major Linux distributions have made the transition. <strong>This is a major change for CY2023 that may require a rebuild of all software against the new ABI for those moving from earlier Platforms</strong>.</p>
 				</small>
 			</div>
 		</div>
@@ -472,6 +480,16 @@
 sudo yum -y install devtoolset-6</code></pre></p>
 				<p>If you are looking for gcc 6.3.1 source code then a copy can be found in <a href="http://vault.centos.org/7.5.1804/sclo/Source/rh/devtoolset-6/">the CentOS Vault</a>.</p>
 				<p>Since gcc 5.1, libstdc++ <a href="https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html"> introduced a new library ABI</a> that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the _GLIBCXX_USE_CXX11_ABI macro, and the VFX Reference Platform is still using the older option so the compiler setting should be _GLIBCXX_USE_CXX11_ABI=0. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition. RHEL/CentOS 7 and Redhat DTS still use the original implementations by default.</p>
+				</small>
+			</div>
+		</div>
+
+		<div class="card mb-md-3" id="footnote-tbb">
+			<div class="card-header"><small>Note - Intel TBB</small></div>
+			<div class="card-body">
+				<small>
+				<p>There is <a href="https://github.com/oneapi-src/oneTBB/issues/274">a known issue compiling TBB 2020 with MSVC 2017</a> that can be resolved with <a href="https://github.com/oneapi-src/oneTBB/pull/299">this workaround</a>. </p>
+				<p>Please plan to port to oneTBB for CY2024.</p>
 				</small>
 			</div>
 		</div>
