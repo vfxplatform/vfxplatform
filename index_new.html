@@ -362,7 +362,7 @@ sudo yum -y install devtoolset-6</code></pre></p>
 			<div class="card-body">
 				<small>
 				<p>There is <a href="https://github.com/oneapi-src/oneTBB/issues/274">a known issue compiling TBB 2020 with MSVC 2017</a> that can be resolved with <a href="https://github.com/oneapi-src/oneTBB/pull/299">this workaround</a>. </p>
-				<p>Please plan to port to oneTBB for CY2024.</p>
+				<p>Please plan to <a href="https://www.intel.com/content/www/us/en/docs/onetbb/developer-guide-api-reference/2021-9/migrating-from-threading-building-blocks-tbb.htm">migrate to oneTBB</a> and have compatible releases published by September 1st 2024 to enable DCC providers to complete a planned move in CY2025. The original plan was to move to the oneAPI in CY2024 but more time was needed to migrate critical dependencies without impacting performance or introducing multiple conflicting thread pools.</p>
 				</small>
 			</div>
 		</div>
