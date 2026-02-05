@@ -42,7 +42,7 @@ author:
   name: VFX Reference Platform Working Group
 
 # Analytics
-google_analytics: G-LK2P1Q61BQ
+cloudflare_analytics: 75ac194cb08e4271aa16a0649ac38734
 
 # Defaults
 defaults:
