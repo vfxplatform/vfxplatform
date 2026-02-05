@@ -2,8 +2,6 @@
 
 This repo hosts the VFX Reference Platform web site hosted at https://vfxplatform.com.
 
-This document is a guide for site maintainers on how to update content on this Jekyll-based website.
-
 ## Table of Contents
 
 1. [Introduction](#introduction)
