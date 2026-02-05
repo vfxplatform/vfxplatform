@@ -29,7 +29,7 @@ This website is built using **Jekyll**, a static site generator. Unlike traditio
 - **Templates automatically generate HTML** from these data files
 - **Most updates require no code changes** — just edit the relevant data file
 
-This approach makes content updates straightforward: find the right file, edit the text, and push to `master`. The site rebuilds automatically using the Github Actions workflow defined in .github/workflows.
+This approach makes content updates straightforward: find the right file, edit the text, and push to `main`. The site rebuilds automatically using the Github Actions workflow defined in .github/workflows.
 
 ---
 
@@ -40,7 +40,7 @@ This approach makes content updates straightforward: find the right file, edit t
 For most content updates:
 
 1. Edit the relevant YAML file in `_data/` (see [Common Tasks](#common-tasks) below)
-2. Commit and push to the `master` branch
+2. Commit and push to the `main` branch
 3. GitHub Actions automatically builds and deploys the site
 4. Changes appear live within a few minutes
 
@@ -379,7 +379,7 @@ Deployment is **fully automated** via GitHub Actions.
 
 ### How It Works
 
-1. Push changes to the `master` branch
+1. Push changes to the `main` branch
 2. GitHub Actions automatically:
    - Builds Tailwind CSS
    - Builds the Jekyll site
