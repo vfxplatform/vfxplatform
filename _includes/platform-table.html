@@ -12,12 +12,12 @@
   <table class="platform-table">
     <thead>
       <tr>
-        <th class="text-left" colspan="2"></th>
+        <th scope="col" class="text-left" colspan="2"></th>
         {% for year in include.years %}
-        <th>CY{{ year }}</th>
+        <th scope="col">CY{{ year }}</th>
         {% endfor %}
         {% if include.show_history_link %}
-        <th></th>
+        <th scope="col"></th>
         {% endif %}
       </tr>
     </thead>

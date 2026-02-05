@@ -14,10 +14,11 @@ This repo hosts the VFX Reference Platform web site hosted at https://vfxplatfor
    - [Adding/Editing Notes (Footnotes)](#addingediting-notes-footnotes)
    - [Adding FAQ Entries](#adding-faq-entries)
    - [Modifying Navigation](#modifying-navigation)
-5. [YAML Syntax Reference](#yaml-syntax-reference)
-6. [Deployment](#deployment)
-7. [Configuration Reference](#configuration-reference)
-8. [Troubleshooting](#troubleshooting)
+5. [SEO & Discoverability](#seo--discoverability)
+6. [YAML Syntax Reference](#yaml-syntax-reference)
+7. [Deployment](#deployment)
+8. [Configuration Reference](#configuration-reference)
+9. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -298,6 +299,37 @@ main:
 Add, remove, or reorder items as needed. URLs can be:
 - Relative paths (`/about/`)
 - Full URLs (`https://example.com`)
+
+---
+
+## SEO & Discoverability
+
+The site includes several SEO features that work automatically:
+
+### robots.txt
+
+The `robots.txt` file at the site root tells search engines they can crawl all pages and provides the sitemap location. This file rarely needs changes.
+
+### Structured Data (Schema.org)
+
+The site uses JSON-LD structured data to help search engines understand the content:
+
+- **Organization Schema** (`_includes/head.html`): Included on every page, identifies the site as an organization
+- **FAQ Schema** (`FAQ/index.html`): Enables rich FAQ snippets in search results by marking up Q&A content
+
+These schemas are generated automatically from the site's data files. No manual updates needed.
+
+### Validating Structured Data
+
+To verify structured data is working correctly:
+
+1. Go to [Google's Rich Results Test](https://search.google.com/test/rich-results)
+2. Enter the page URL (e.g., `https://vfxplatform.com/FAQ/`)
+3. Check that FAQ or Organization schemas are detected without errors
+
+### Sitemap
+
+Jekyll automatically generates a sitemap at `/sitemap.xml` via the `jekyll-sitemap` plugin. This is referenced in `robots.txt` for search engines.
 
 ---
 

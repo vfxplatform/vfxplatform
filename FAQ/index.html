@@ -4,6 +4,25 @@ title: Frequently Asked Questions
 description: "VFX Reference Platform - Frequently Asked Questions"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in site.data.faq.questions %}
+    {
+      "@type": "Question",
+      "name": {{ item.question | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.answer | strip_html | strip_newlines | jsonify }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+
 <h2 class="text-2xl font-semibold mb-8">Frequently Asked Questions</h2>
 
 {% include faq-accordion.html %}
