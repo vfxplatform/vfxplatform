@@ -1,0 +1,52 @@
+# VFX Reference Platform - Jekyll Configuration
+
+title: VFX Reference Platform
+description: Reference Platform for VFX Software
+url: "https://vfxplatform.com"
+baseurl: ""
+
+# Platform year configuration
+current_year: 2026
+supported_years_count: 4
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - postcss.config.js
+  - README.md
+  - .github
+
+# Data directory
+data_dir: _data
+
+# Sass
+sass:
+  style: compressed
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# SEO
+author:
+  name: VFX Reference Platform Working Group
+
+# Analytics
+google_analytics: G-LK2P1Q61BQ
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

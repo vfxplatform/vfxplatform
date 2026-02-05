@@ -1,0 +1,11 @@
+{% comment %}
+  Note card include
+  Usage: {% include note-card.html note=note %}
+{% endcomment %}
+
+<div class="note-card" id="{{ include.note.id }}">
+  <h4 class="note-card-title">{{ include.note.title }}</h4>
+  <div class="prose dark:prose-invert prose-sm max-w-none">
+    {{ include.note.content | markdownify }}
+  </div>
+</div>

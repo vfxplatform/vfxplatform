@@ -1,0 +1,62 @@
+year: 2016
+status: final
+last_updated: "2015-10-27"
+
+linux:
+  gcc:
+    version: "4.8.2 with bugfix or 4.8.3"
+    min_max: true
+    note: footnote-gcc
+  glibc:
+    version: "2.12"
+    min_max: true
+
+macos:
+  deployment_target:
+    version: ~
+
+windows:
+  visual_studio:
+    version: ~
+  sdk:
+    version: ~
+
+components:
+  python:
+    version: "2.7.5 - 2.7.latest"
+  qt:
+    version: "5.6.1 (modified)"
+    note: footnote-qt
+  pyqt:
+    version: "5.6"
+  pyside:
+    version: "2.0"
+  numpy:
+    version: "1.9.2"
+  imath:
+    version: ~
+  openexr:
+    version: "2.2.x"
+  ptex:
+    version: "2.0.42"
+  opensubdiv:
+    version: "3.0.x"
+  openvdb:
+    version: "3.x"
+  alembic:
+    version: "1.5.8"
+  fbx:
+    version: "latest"
+  opencolorio:
+    version: "1.0.9"
+  aces:
+    version: "1.0"
+  boost:
+    version: "1.55"
+  onetbb:
+    version: "4.3"
+    min_max: true
+  onemkl:
+    version: "11.3"
+  cpp_standard:
+    version: "C++11"

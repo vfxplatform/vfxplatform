@@ -1,0 +1,63 @@
+year: 2019
+status: final
+last_updated: "2018-09-12"
+
+linux:
+  gcc:
+    version: "6.3.1"
+    min_max: true
+    note: footnote-gcc6
+  glibc:
+    version: "2.17"
+    min_max: true
+
+macos:
+  deployment_target:
+    version: ~
+
+windows:
+  visual_studio:
+    version: ~
+  sdk:
+    version: ~
+
+components:
+  python:
+    version: "2.7.9 - 2.7.latest"
+    inline_note: "Python 3 tech preview release"
+    note: footnote-python3
+  qt:
+    version: "5.12.x"
+  pyqt:
+    version: "5.12"
+  pyside:
+    version: "5.12"
+  numpy:
+    version: "1.14.x"
+  imath:
+    version: ~
+  openexr:
+    version: "2.3.x"
+  ptex:
+    version: "2.1.33"
+  opensubdiv:
+    version: "3.3.x"
+  openvdb:
+    version: "6.x"
+  alembic:
+    version: "1.7.x"
+  fbx:
+    version: "2019.x"
+  opencolorio:
+    version: "1.1.0"
+  aces:
+    version: "1.1"
+  boost:
+    version: "1.66"
+  onetbb:
+    version: "2018"
+    min_max: true
+  onemkl:
+    version: "2018"
+  cpp_standard:
+    version: "C++14"

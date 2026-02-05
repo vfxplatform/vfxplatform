@@ -1,0 +1,71 @@
+categories:
+  - id: linux
+    name: Linux
+    color: amber
+    items:
+      - id: gcc
+        name: gcc
+        min_max: true
+      - id: glibc
+        name: glibc
+        min_max: true
+
+  - id: macos
+    name: macOS
+    color: cyan
+    items:
+      - id: deployment_target
+        name: Minimum Deployment Target
+
+  - id: windows
+    name: Windows
+    color: emerald
+    items:
+      - id: visual_studio
+        name: Minimum Platform Toolset
+      - id: sdk
+        name: Windows SDK
+
+  - id: components
+    name: Common Components
+    color: gray
+    items:
+      - id: python
+        name: Python
+        subtitle: "(built with ucs4 pre-3.x)"
+      - id: qt
+        name: Qt
+      - id: pyqt
+        name: PyQt
+      - id: pyside
+        name: "Qt for Python (PySide)"
+      - id: numpy
+        name: NumPy
+      - id: imath
+        name: Imath
+        first_year: 2021
+      - id: openexr
+        name: OpenEXR
+      - id: ptex
+        name: Ptex
+      - id: opensubdiv
+        name: OpenSubdiv
+      - id: openvdb
+        name: OpenVDB
+      - id: alembic
+        name: Alembic
+      - id: fbx
+        name: FBX
+      - id: opencolorio
+        name: OpenColorIO
+      - id: aces
+        name: ACES
+      - id: boost
+        name: Boost
+      - id: onetbb
+        name: "oneTBB/TBB"
+        min_max: true
+      - id: onemkl
+        name: "oneMKL/MKL"
+      - id: cpp_standard
+        name: "C++ API/SDK"

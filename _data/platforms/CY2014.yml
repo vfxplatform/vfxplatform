@@ -1,0 +1,60 @@
+year: 2014
+status: final
+last_updated: "2013-08-01"
+
+linux:
+  gcc:
+    version: "4.1.2"
+    min_max: true
+  glibc:
+    version: ~
+    min_max: true
+
+macos:
+  deployment_target:
+    version: ~
+
+windows:
+  visual_studio:
+    version: ~
+  sdk:
+    version: ~
+
+components:
+  python:
+    version: "2.7.3"
+  qt:
+    version: "4.8.5"
+  pyqt:
+    version: ~
+  pyside:
+    version: "1.2"
+  numpy:
+    version: ~
+  imath:
+    version: ~
+  openexr:
+    version: "2.0.1"
+  ptex:
+    version: ~
+  opensubdiv:
+    version: "2.3.3"
+  openvdb:
+    version: ~
+  alembic:
+    version: "1.5.x"
+  fbx:
+    version: "2015"
+  opencolorio:
+    version: "1.0.7"
+  aces:
+    version: ~
+  boost:
+    version: "1.53"
+  onetbb:
+    version: "4.1"
+    min_max: true
+  onemkl:
+    version: ~
+  cpp_standard:
+    version: ~

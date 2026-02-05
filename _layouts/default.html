@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  {% include head.html %}
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased min-h-screen flex flex-col">
+  {% include header.html %}
+
+  <main class="flex-1 container mx-auto px-4 py-8 max-w-6xl">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include analytics.html %}
+
+  <script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>
+</body>
+</html>

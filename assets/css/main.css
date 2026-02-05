@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Platform table styles */
+  .platform-table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .platform-table th,
+  .platform-table td {
+    @apply border border-gray-200 dark:border-gray-700 px-3 py-2 text-center;
+  }
+
+  .platform-table th {
+    @apply bg-gray-50 dark:bg-gray-800 font-semibold;
+  }
+
+  /* Category row colors */
+  .category-linux {
+    @apply bg-amber-50 dark:bg-amber-900/20;
+  }
+
+  .category-macos {
+    @apply bg-cyan-50 dark:bg-cyan-900/20;
+  }
+
+  .category-windows {
+    @apply bg-emerald-50 dark:bg-emerald-900/20;
+  }
+
+  .category-components {
+    @apply bg-gray-50 dark:bg-gray-800/50;
+  }
+
+  /* Comparison highlighting - target td cells, excluding category cells with rowspan */
+  .diff-changed td:not([rowspan]) {
+    @apply bg-yellow-100 dark:bg-yellow-900/30 font-medium;
+  }
+
+  .diff-added td:not([rowspan]) {
+    @apply bg-green-100 dark:bg-green-900/30;
+  }
+
+  .diff-removed td:not([rowspan]) {
+    @apply bg-red-100 dark:bg-red-900/30;
+  }
+
+  .diff-unchanged td:not([rowspan]) {
+    /* No special styling - inherits default */
+  }
+
+  /* Year cards for history page */
+  .year-card {
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;
+  }
+
+  .year-card-header {
+    @apply bg-gray-100 dark:bg-gray-800 px-4 py-3 flex justify-between items-center;
+  }
+
+  .year-card-content {
+    @apply p-4 space-y-4;
+  }
+
+  .year-card-section {
+    @apply rounded-lg p-3;
+  }
+
+  .year-card-table {
+    @apply w-full text-sm;
+  }
+
+  .year-card-table td {
+    @apply py-1 px-2;
+  }
+
+  .year-card-table td:first-child {
+    @apply text-left;
+  }
+
+  .year-card-table td:last-child {
+    @apply text-right whitespace-nowrap;
+  }
+
+  /* Note cards */
+  .note-card {
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg p-4 mb-4;
+  }
+
+  .note-card-title {
+    @apply font-semibold text-gray-900 dark:text-gray-100 mb-2;
+  }
+
+  /* Accordion styles */
+  .accordion-item {
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg mb-2;
+  }
+
+  .accordion-header {
+    @apply w-full px-4 py-3 text-left font-medium flex justify-between items-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors;
+  }
+
+  .accordion-content {
+    @apply px-4 pb-4 prose dark:prose-invert max-w-none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

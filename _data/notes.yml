@@ -1,0 +1,102 @@
+notes:
+  - id: footnote-macos
+    title: "Notes - macOS"
+    from_year: 2018
+    content: |
+      **Minimum Deployment Target in Xcode**
+
+      Xcode's "Deployment Target" identifies the earliest OS version on which your software can run.
+
+      To set the Deployment Target for the compiler, use the option `-mmacosx-version-min=10.13` to specify the APIs marked as available. For the linker, use the option `-macosx_version_min 10.13` to instruct the linker to create a key in the Info.plist file which marks the executable as being able to run or not for a given OS version.
+
+      The `MACOSX_DEPLOYMENT_TARGET` environment variable also sets the minimum deployment target and is used if the compiler option is not specified. The environment variable is also [recognized by CMake](https://cmake.org/cmake/help/latest/envvar/MACOSX_DEPLOYMENT_TARGET.html).
+
+      Note: Despite the backward compatibility, it is still possible for runtime behavior to be affected by SDK and OS version, hardware etc.
+
+      More information about configuring developer tools is [available in the SDK documentation](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/cross_development/Configuring/configuring.html).
+
+      **Frameworks vs Shared Libraries**
+
+      In general, the Frameworks approach is recommended over shared libraries for building and deploying components like Qt and Python on macOS.
+
+      **UPDATE: May 22nd 2021 - CY2022 dropping 32-bit support**
+
+      The move to 10.15 requires all apps to be 64-bit, with 32-bit releases no longer supported.
+
+      **UPDATE: April 4th 2021 - Building Qt for macOS**
+
+      Building Qt against C++17 requires a minimum macOS version of 10.14 otherwise Qt fails during configuration. If 10.13 support is needed then a known workaround is to build Qt against C++14.
+
+  - id: footnote-gcc9
+    title: "Note - gcc 9 and 11"
+    from_year: 2021
+    to_year: 2024
+    content: |
+      For users of Red Hat Enterprise Linux and RHEL-derived Linux distributions (such as CentOS Linux and Rocky Linux), the [Redhat Developer Toolset (DTS)](https://developers.redhat.com/products/developertoolset/overview) offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. [DTS 9.1](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index) provides gcc 9.3.1 for compatibility with CY2021, and [DTS 11.0](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/11/html/11.0_release_notes/index) provides gcc 11.2.1 for compatibility with CY2023.
+
+      For those who want or need to use llvm, some studios have been successful building [clang](https://clang.llvm.org/) with DTS and using that to build software that is compatible with vendor-provided libraries.
+
+      Since gcc 5.1, libstdc++ [introduced a new library ABI](https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html) that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the `_GLIBCXX_USE_CXX11_ABI` macro, and the VFX Reference Platform up to CY2022 used the older option so the compiler setting for those Platforms should be `_GLIBCXX_USE_CXX11_ABI=0`, although that setting [may not be supported](https://bugzilla.redhat.com/show_bug.cgi?id=1546704) by some older Linux distros.
+
+      From CY2023, the Platform has moved to the newer implementation since all the major Linux distributions have made the transition. **This is a major change for CY2023 that may require a rebuild of all software against the new ABI for those moving from earlier Platforms**.
+
+  - id: footnote-gcc6
+    title: "Note - gcc 6"
+    from_year: 2018
+    to_year: 2020
+    content: |
+      **UPDATE: May 10th 2020** - Redhat DTS 6.1 is no longer actively supported so availability may be limited. More information available on [this vfx-platform-discuss thread](https://groups.google.com/forum/#!topic/vfx-platform-discuss/_-_CPw1fD3c).
+
+      **UPDATE: November 26th 2017** - CY2018 changed from gcc 5 to gcc 6 due to integration issues discovered with the older version.
+
+      Redhat/CentOS systems can obtain gcc 6.3.1 by installing [Redhat DTS 6.1](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/6/html/6.1_release_notes/index). To install Red Hat Developer Toolset 6.1 on CentOS 7:
+
+      ```
+      sudo yum -y install centos-release-scl
+      sudo yum -y install devtoolset-6
+      ```
+
+      If you are looking for gcc 6.3.1 source code then a copy can be found in [the CentOS Vault](http://vault.centos.org/7.5.1804/sclo/Source/rh/devtoolset-6/).
+
+      Since gcc 5.1, libstdc++ [introduced a new library ABI](https://gcc.gnu.org/onlinedocs/libstdc++/manual/using_dual_abi.html) that includes new implementations of std::string and std::list. In order to maintain backwards compatibility the old implementations are still supported in parallel with the new ones. The choice of implementation is made using the `_GLIBCXX_USE_CXX11_ABI` macro, and the VFX Reference Platform is still using the older option so the compiler setting should be `_GLIBCXX_USE_CXX11_ABI=0`. The Platform will move to the newer implementations in a future year once the major Linux distributions have made the transition. RHEL/CentOS 7 and Redhat DTS still use the original implementations by default.
+
+  - id: footnote-gcc
+    title: "Note - gcc 4"
+    from_year: 2014
+    to_year: 2017
+    content: |
+      The vanilla gcc 4.8.2 has a [serious bug](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800) that was fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform gave 4.8.2 as an option for CY2016 is that this gcc version is what ships with [Redhat Developer Toolset 2.1](http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/) that some software vendors were committed to using through 2016.
+
+      The following are the known distributions that ship with a fixed 4.8.2: Redhat DTS 2.1, RHEL/CentOS 6.
+
+  - id: footnote-python3
+    title: "Note - Python 3"
+    from_year: 2019
+    to_year: 2020
+    content: |
+      The move to Python 3 was delayed from CY2019 to CY2020 due to:
+
+      - No supported combination of Qt 5.6, Python 3 and PySide 2 so Qt first needed to be upgraded.
+      - Upgrade of both Qt and Python in the same year was too large a commitment for software vendors and large studios.
+
+      Python 3 in CY2020 is a required upgrade as Python 2 will no longer be supported beyond 2020.
+
+  - id: footnote-qt
+    title: "Note - Qt modifications"
+    from_year: 2016
+    to_year: 2018
+    content: |
+      The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement from the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.
+
+      These modifications are required to avoid the introduction of functional UI regressions impacting DCC tools and consist only of backported bug fixes and critical changes that have not yet been accepted into the mainline Qt distribution. The need for these modifications is not new, currently some software vendors ship their own differently modified Qt so CY2016 represented a significant step forward with the goal of all software vendors sharing an identically modified Qt. We are working with the Qt Company to eliminate the need for these modifications entirely in a future release, potentially as soon as CY2019.
+
+      These Qt 5.6 modifications are available on Github from these forks of [qtbase](https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1), [qtx11extras](https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1) and [qtdeclarative](https://github.com/autodesk-forks/qtdeclarative/tree/adsk-contrib/vfx/5.6.1). These modifications to [Qt 5.6.1](http://download.qt.io/official_releases/qt/5.6/5.6.1/) should be used by anyone who wishes to build Qt applications against the Platforms from CY2016 through to CY2018.
+
+  - id: footnote-tbb
+    title: "Note - Intel TBB"
+    from_year: 2020
+    to_year: 2024
+    content: |
+      There is [a known issue compiling TBB 2020 with MSVC 2017](https://github.com/oneapi-src/oneTBB/issues/274) that can be resolved with [this workaround](https://github.com/oneapi-src/oneTBB/pull/299).
+
+      Please plan to [migrate to oneTBB](https://www.intel.com/content/www/us/en/docs/onetbb/developer-guide-api-reference/2021-9/migrating-from-threading-building-blocks-tbb.htm) and have compatible releases published by September 1st 2024 to enable DCC providers to complete a planned move in CY2025. The original plan was to move to the oneAPI in CY2024 but more time was needed to migrate critical dependencies without impacting performance or introducing multiple conflicting thread pools.

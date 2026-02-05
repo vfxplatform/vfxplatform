@@ -1,0 +1,79 @@
+questions:
+  - id: artist-meaning
+    question: "As a VFX artist, what does the VFX Reference Platform mean to me?"
+    answer: |
+      Building software products for a common platform means they are easier to install and integrate into pipelines so may result in quicker adoption of new software releases at your studio. It has also made it easier for the industry to adopt new technologies more rapidly.
+
+      We also hope that by making it simpler for vendors to support Linux we will see more applications available on Linux in the future.
+
+  - id: endorsement
+    question: "Does the inclusion of a particular tool or library represent its endorsement by the VES?"
+    answer: |
+      No, neither the VES nor the VFX Reference Platform working group endorse or promote any specific software packages for use in the creation of visual effects. The decision to include a particular library or tool in the Platform is based primarily on whether using differing versions introduces compatibility issues.
+
+      There are plenty of excellent libraries and tools in common use throughout the VFX industry that are not included in the Platform because they do not present version compatibility issues.
+
+  - id: linux-distro
+    question: "What Linux distribution do you recommend?"
+    answer: |
+      As of 2022, studios are strongly recommended to adopt Red Hat Enterprise Linux or one of its freely available compatible downstream distributions such as AlmaLinux or Rocky Linux. For more details on this recommendation, please refer to the [VFX Linux Distribution Recommendation Report (pdf)](https://bit.ly/VFXlinux22).
+
+      For more general information about the use of Linux in VFX and Animation studios, please see the [Linux page](/linux/) on this site.
+
+  - id: certified-distro
+    question: "Is there a VFX Reference Platform-certified Linux distribution that I can download and install?"
+    answer: |
+      There is no VFX Reference Platform-certified Linux distro available today, so it is currently up to VFX and animation studios to take the recommended Linux distribution and upgrade/install the relevant platform versions.
+
+  - id: ves-distro
+    question: "Is the Visual Effects Society going to create a Linux distro?"
+    answer: |
+      No. Creating and maintaining a Linux distribution is an enormous task, and it would be challenging for a single distro to be universally adopted across the industry. The VFX Reference Platform effort is focused on relieving the pain of multiple incompatible versions of libraries across different software products.
+
+  - id: glibc-significance
+    question: "What is the significance of the glibc version to which Linux distro releases are not supported?"
+    answer: |
+      The glibc specified in the VFX Reference Platform is the minimum version of the GNU C library that the platform will work with. Generally speaking, glibc is not upgradeable on a given Linux distro release so if your distro has a glibc version earlier than that specified in the VFX Reference Platform then it will not be supported.
+
+      For example, for CY2015 the minimum glibc was set to 2.12 which meant that releases earlier than CentOS 6.0 or Ubuntu 12.04, just to take those distributions as an example, were not supported by CY2015 because they shipped with an older version of glibc.
+
+  - id: vendors-involved
+    question: "Which software vendors are currently involved?"
+    answer: |
+      The VFX Reference Platform is a collaborative project. So far, we have the enthusiastic support of all of the major application providers for the visual effects and animation industry, including Autodesk, Foundry and Side Effects Software.
+
+      There are two ways to participate: First, any interested person or company may join the discussion at [vfx-platform-discuss@googlegroups.com](mailto:vfx-platform-discuss@googlegroups.com). Second, we have formed a Working Group who hold regular conference calls to ensure progress is made in complicated areas. The Working Group is made up of interested parties invited by the VES Technology Committee and currently has several members, one representative from the VES and one each from several software vendors.
+
+  - id: certification
+    question: "I'm a software developer, how do I get my software certified?"
+    answer: |
+      There is no certification program, but you are encouraged to advertise the fact that your software is compliant with a specific iteration of the VFX Reference Platform and link to this website.
+
+  - id: provider-not-supporting
+    question: "My application provider doesn't currently support the VFX Reference Platform, what should I do?"
+    answer: |
+      First, please help ensure your application provider is aware of the VFX Reference Platform and the goal of making it easier to develop for Linux. Asking them to support the VFX Reference Platform as a priority for their development is a great idea for everyone.
+
+      Second, users should be aware that some developers will have technical challenges changing software to conform to the version requirements in the VFX Reference Platform. Even companies who enthusiastically support the effort may take a few releases to be compliant with the platform.
+
+  - id: why-linux
+    question: "Why the initial focus on Linux, what about other operating systems?"
+    answer: |
+      Linux is prevalent in VFX, particularly in the larger studios where they build sophisticated automation pipelines that integrate multiple different software vendors' products together. These Linux-based pipelines are where the problem of conflicting versions most often manifests itself. This issue is made more complicated by the lack of standards across different Linux distros, hence our initial focus on Linux rather an any other OS.
+
+      In 2020 we introduced support for macOS and Windows to encourage people to adopt and integrate more VFX and animation software regardless of their choice of operating system.
+
+  - id: compiler-flags
+    question: "What about standardising compiler flags to ensure that everyone is building from source in a common and compatible manner?"
+    answer: |
+      We partner with the [Academy Software Foundation](https://www.aswf.io/) on many initiatives, and the [ASWF Docker project](https://github.com/AcademySoftwareFoundation/aswf-docker) is an excellent resource providing easy-to-use Docker images of all the VFX Reference Platform components. These are created through an automated build system, and you can consider the build process, and choice of compiler flags, as the canonical reference for build recipes.
+
+  - id: release-timing
+    question: "When does a new version of an open source library need to be released in order for it to be considered for use by next year's batch of 3rd-party software packages?"
+    answer: |
+      Ideally two months prior to SIGGRAPH is the time to have your library released so there is time for it to be considered for inclusion in the Reference Platform for the following year. That said, we will consider new library releases right up until the SIGGRAPH deadline, but cutting it too close may mean there is not enough time for the software vendors to fully evaluate the new version before we lock down and publish the final Reference Platform versions for the following year.
+
+  - id: get-involved
+    question: "How can I get involved?"
+    answer: |
+      Please send comments, questions, suggestions to: [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com)

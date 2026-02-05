@@ -1,0 +1,66 @@
+---
+layout: default
+title: Platform History
+description: "VFX Reference Platform - Historical platform versions from CY2014 to present"
+---
+
+{% assign current_year = site.current_year %}
+{% assign supported_count = site.supported_years_count %}
+
+{% comment %} Get all years and filter out the supported ones {% endcomment %}
+{% assign all_years = "" | split: "" %}
+{% for platform in site.data.platforms %}
+  {% assign year_num = platform[0] | remove: "CY" | plus: 0 %}
+  {% assign all_years = all_years | push: year_num %}
+{% endfor %}
+{% assign all_years = all_years | sort | reverse %}
+
+{% comment %} History years = all years except the most recent 4 {% endcomment %}
+{% assign history_years = "" | split: "" %}
+{% for year in all_years %}
+  {% assign diff = current_year | minus: year %}
+  {% if diff >= supported_count %}
+    {% assign history_years = history_years | push: year %}
+  {% endif %}
+{% endfor %}
+
+<h2 class="text-2xl font-semibold mb-4">Reference Platform History</h2>
+
+<p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
+  Below is a list of all the VFX Reference Platform targets going back to the initial release for CY2014.
+</p>
+
+<p class="mb-4 text-gray-600 dark:text-gray-300">
+  Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.
+</p>
+
+<p class="mb-4 text-gray-600 dark:text-gray-300">
+  All versions should be considered exact required versions, except for those components where
+  <span class="whitespace-nowrap text-gray-500">&#8595;&#8593;</span>
+  indicates that:
+</p>
+
+<ul class="list-disc list-inside mb-6 text-gray-600 dark:text-gray-300 space-y-1">
+  <li>for systems (or software) providing the library at runtime, versions should be considered <em>minimum version required.</em></li>
+  <li>otherwise, for software building software against the library, versions should be considered <em>highest version allowed</em></li>
+</ul>
+
+<p class="mb-8 text-gray-600 dark:text-gray-300">
+  <a href="/compare.html" class="text-blue-600 dark:text-blue-400 hover:underline">Compare years side-by-side &rarr;</a>
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+  {% for year in history_years %}
+    {% include year-card.html year=year %}
+  {% endfor %}
+</div>
+
+<h2 class="text-2xl font-semibold mb-6 mt-12" id="previous-status-updates">Previous Status Updates</h2>
+
+{% include status-updates.html offset=5 %}
+
+<hr class="border-gray-200 dark:border-gray-700 my-8">
+
+<h2 class="text-2xl font-semibold mb-6" id="additional-notes">Additional Notes</h2>
+
+{% include filtered-notes.html years=history_years %}

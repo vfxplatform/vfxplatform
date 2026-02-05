@@ -1,0 +1,13 @@
+main:
+  - title: Home
+    url: /
+  - title: Compare
+    url: /compare.html
+  - title: Linux
+    url: /linux/
+  - title: FAQ
+    url: /FAQ/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/

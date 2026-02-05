@@ -1,0 +1,69 @@
+---
+layout: default
+title: Home
+description: "VFX Reference Platform - Reference Platform for VFX Software"
+---
+
+{% assign current_year = site.current_year %}
+{% assign supported_years = "" | split: "" %}
+{% for i in (0..3) %}
+  {% assign year = current_year | minus: i %}
+  {% assign supported_years = supported_years | push: year %}
+{% endfor %}
+
+<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+  The VFX Reference Platform is a set of tool and library versions to be used as a common target platform for building software for the VFX industry. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for integrated pipelines and encourage further adoption of Linux by both studios and software vendors. The Reference Platform is updated annually by a group of software vendors in collaboration with the <a href="https://www.vesglobal.org/technology-committee-activities/" class="text-blue-600 dark:text-blue-400 hover:underline">Visual Effects Society Technology Committee</a>.
+</p>
+
+<h2 class="text-2xl font-semibold mb-4" id="current-status">Current Status</h2>
+
+<p class="mb-4">The Calendar Year {{ current_year }} (CY{{ current_year }}) Reference Platform is the target for all major software releases in {{ current_year }}.</p>
+
+{% include status-updates.html limit=5 %}
+
+<p class="mt-6 mb-8">
+  <a href="/platform_history.html#previous-status-updates" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Previous status updates...</a>
+</p>
+
+<h2 class="text-2xl font-semibold mb-4" id="reference-platform">Reference Platform</h2>
+
+<p class="mb-4">Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.</p>
+
+<p class="mb-4">
+  All versions should be considered exact required versions, except for those components where
+  <span class="whitespace-nowrap text-gray-500">&#8595;&#8593;</span>
+  indicates that:
+</p>
+
+<ul class="list-disc list-inside mb-6 text-gray-600 dark:text-gray-300 space-y-1">
+  <li>for systems (or software) providing the library at runtime, versions should be considered <em>minimum version required.</em></li>
+  <li>otherwise, for software building software against the library, versions should be considered <em>highest version allowed</em></li>
+</ul>
+
+{% include platform-table.html years=supported_years show_history_link=true %}
+
+<h2 class="text-2xl font-semibold mb-4 mt-12" id="support-guidance">Support Guidance</h2>
+
+<p class="mb-4 text-gray-600 dark:text-gray-300">
+  Providers of software libraries focused on VFX and animation content creation should aim to support their releases for the current calendar year and the three preceding years with compatible updates. Studios and end users should have no expectation of support for older libraries.
+</p>
+
+<p class="mb-8 text-gray-600 dark:text-gray-300">
+  The VFX Reference Platform strongly recommends open source project maintainers provide a level of support described by the <a href="https://bestpractices.coreinfrastructure.org/en/criteria" class="text-blue-600 dark:text-blue-400 hover:underline">FLOSS Best Practices Criteria</a>, which is already a requirement for all Academy Software Foundation projects.
+</p>
+
+<h2 class="text-2xl font-semibold mb-4" id="useful-links">Useful Links</h2>
+
+<ul class="list-disc list-inside mb-8 text-gray-600 dark:text-gray-300 space-y-2">
+  <li><a href="https://bit.ly/VRP21Rep" class="text-blue-600 dark:text-blue-400 hover:underline">2021 Studio Platform Survey Report</a>.</li>
+  <li><a href="https://vfxpy.com/" class="text-blue-600 dark:text-blue-400 hover:underline">VFXpy Python 3 Compatibility Tracker</a> for common VFX and animation software packages.</li>
+  <li>ASWF <a href="https://github.com/academySoftwareFoundation/aswf-docker" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a> and <a href="https://hub.docker.com/u/aswf" class="text-blue-600 dark:text-blue-400 hover:underline">Docker Hub</a> repositories for "ready to build" containers implementing VFX Reference Platform compliant build environments.</li>
+  <li>Tracking <a href="https://docs.google.com/spreadsheets/d/1-8VdfspUBpkYJzfKKovI-H2bZeb5Wn3cuNPsq_Ho3S8/edit?usp=sharing" class="text-blue-600 dark:text-blue-400 hover:underline">major digital content creation tool version compatibility</a> with VFX Reference Platform.</li>
+  <li><a href="https://docs.google.com/spreadsheets/d/1EwRlz5ZYObEOdBfIk8iTX5thlpTyEAfp3bxOgAfFOiU/edit?usp=sharing" class="text-blue-600 dark:text-blue-400 hover:underline">VFX Industry Build Matrix</a></li>
+</ul>
+
+<hr class="border-gray-200 dark:border-gray-700 my-8">
+
+<h2 class="text-2xl font-semibold mb-6" id="additional-notes">Additional Notes</h2>
+
+{% include filtered-notes.html years=supported_years %}

@@ -1,0 +1,65 @@
+year: 2024
+status: final
+last_updated: "2023-11-01"
+
+linux:
+  gcc:
+    version: "11.2.1"
+    min_max: true
+    inline_note: "New libstdc++ ABI"
+    note: footnote-gcc9
+  glibc:
+    version: "2.28"
+    min_max: true
+
+macos:
+  deployment_target:
+    version: "11.0"
+    note: footnote-macos
+
+windows:
+  visual_studio:
+    version: "Visual Studio 2022 v17.4 or later"
+  sdk:
+    version: "10.0.20348 or later"
+
+components:
+  python:
+    version: "3.11.x"
+  qt:
+    version: "6.5.x"
+  pyqt:
+    version: "6.5.x"
+  pyside:
+    version: "6.5.x"
+  numpy:
+    version: "1.24.x"
+  imath:
+    version: "3.1.x"
+  openexr:
+    version: "3.2.x"
+  ptex:
+    version: "2.4.x"
+  opensubdiv:
+    version: "3.6.x"
+  openvdb:
+    version: "11.x"
+  alembic:
+    version: "1.8.x"
+  fbx:
+    version: "2020.2 - 2020.latest"
+  opencolorio:
+    version: "2.3.x"
+  aces:
+    version: "1.3"
+  boost:
+    version: "1.82"
+  onetbb:
+    version: "2020 Update 3"
+    min_max: true
+    inline_note: "Move to oneTBB deferred to CY2025"
+  onemkl:
+    version: "2020"
+    inline_note: "Move to oneMKL deferred to CY2025"
+  cpp_standard:
+    version: "C++17"

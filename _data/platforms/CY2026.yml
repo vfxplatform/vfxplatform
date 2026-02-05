@@ -1,0 +1,61 @@
+year: 2026
+status: final
+last_updated: "2025-11-05"
+
+linux:
+  gcc:
+    version: "14.2"
+    min_max: true
+  glibc:
+    version: "2.28"
+    min_max: true
+
+macos:
+  deployment_target:
+    version: "14.0"
+    note: footnote-macos
+
+windows:
+  visual_studio:
+    version: "Visual Studio 2022 v17.6 or later"
+  sdk:
+    version: "10.0.22621 or later"
+
+components:
+  python:
+    version: "3.13.x"
+  qt:
+    version: "6.8.x"
+  pyqt:
+    version: "6.8.x"
+  pyside:
+    version: "6.8.x"
+  numpy:
+    version: "2.3.x"
+  imath:
+    version: "3.2.x"
+  openexr:
+    version: "3.4.x"
+  ptex:
+    version: "2.4.x"
+  opensubdiv:
+    version: "3.7.x"
+  openvdb:
+    version: "13.x"
+  alembic:
+    version: "1.8.x"
+  fbx:
+    version: "2020.2 - 2020.latest"
+  opencolorio:
+    version: "2.5.x"
+  aces:
+    version: "2.0"
+  boost:
+    version: "1.88"
+  onetbb:
+    version: "2022.x"
+    min_max: true
+  onemkl:
+    version: "2025"
+  cpp_standard:
+    version: "C++20"

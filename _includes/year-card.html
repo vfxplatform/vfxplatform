@@ -1,0 +1,55 @@
+{% comment %}
+  Year card include - displays a single year's platform data as a compact card
+  Usage: {% include year-card.html year=2022 %}
+{% endcomment %}
+
+{% assign year_key = "CY" | append: include.year %}
+{% assign year_data = site.data.platforms[year_key] %}
+
+<div class="year-card">
+  <div class="year-card-header">
+    <h3 class="text-xl font-bold">CY{{ include.year }}</h3>
+    {% if year_data.status %}
+      <span class="text-sm px-2 py-1 rounded {% if year_data.status == 'final' %}bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400{% else %}bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400{% endif %}">
+        {{ year_data.status | capitalize }}
+      </span>
+    {% endif %}
+  </div>
+
+  <div class="year-card-content">
+    {% for category in site.data.components.categories %}
+      <div class="year-card-section category-{{ category.id }}">
+        <h4 class="font-semibold text-sm mb-2 text-gray-700 dark:text-gray-300">{{ category.name }}</h4>
+        <table class="year-card-table">
+          <tbody>
+            {% for item in category.items %}
+              {% if category.id == "components" %}
+                {% assign item_data = year_data.components[item.id] %}
+              {% else %}
+                {% assign section = year_data[category.id] %}
+                {% assign item_data = section[item.id] %}
+              {% endif %}
+
+              {% if item_data and item_data.version %}
+                <tr>
+                  <td class="text-gray-600 dark:text-gray-400">
+                    {{ item.name }}
+                    {% if item.min_max %}
+                      <span class="text-xs text-gray-400" title="Minimum/Maximum version semantics">&#8595;&#8593;</span>
+                    {% endif %}
+                  </td>
+                  <td class="font-mono text-right">
+                    {{ item_data.version }}
+                    {% if item_data.inline_note %}
+                      <br><small class="text-gray-500 dark:text-gray-400 font-sans">({{ item_data.inline_note }})</small>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endfor %}
+  </div>
+</div>

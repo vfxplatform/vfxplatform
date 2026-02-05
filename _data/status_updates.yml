@@ -1,0 +1,255 @@
+updates:
+  - date: "2025-11-05"
+    display_date: "5th November 2025"
+    content: |
+      CY2026 is now Final and will be effective from January 1st. All package versions called out by the platform are now released. In 2021, the Imath library was split off from the OpenEXR 3 release into its own separately released package. Since Imath types are part of the OpenEXR API/ABI (as well other libraries such as Alembic), the OpenEXR / Imath maintainers have requested that the VFX Platform call out a specific, compatible version of Imath to avoid ambiguity.
+
+  - date: "2025-05-07"
+    display_date: "7th May 2025"
+    content: |
+      CY2026 Draft published, with a number of significant changes to gcc, glibc, and Qt. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/g/vfx-platform-discuss).
+
+  - date: "2024-11-03"
+    display_date: "3rd November 2024"
+    content: |
+      CY2025 updated to confirm the planned new releases for ACES, OpenColorIO, OpenEXR, and OpenVDB.
+
+  - date: "2024-09-02b"
+    display_date: "2nd September 2024"
+    content: |
+      New report published! The [2024 VFX/Animation Studio Workstation Linux Report](https://bit.ly/VFXlinux24) is now available giving an insight into the current state of Linux on studio workstations.
+
+  - date: "2024-09-02"
+    display_date: "2nd September 2024"
+    content: |
+      CY2025 is now Final and will be effective from January 1st. Confirmation of versions for ACES, OpenColorIO, and OpenEXR will follow by early October, and OpenVDB by early November pending the timely release of new versions. As always, if any major issues are discovered with CY2025 then they will be shared with the community to decide whether a late change is required.
+
+  - date: "2024-08-18"
+    display_date: "18th August 2024"
+    content: |
+      CY2025 Draft updated. OpenEXR release window extended until Oct 1st. Minimum version of Visual Studio bumped to 17.6 (note the [limited support window of the "long-term servicing channel"](https://learn.microsoft.com/en-us/visualstudio/releases/2022/release-history#evergreen-bootstrappers)). Python reluctantly reverted to 3.11 due to a [compatibility issue with Qt 6.5](https://groups.google.com/g/vfx-platform-discuss/c/yFbqXs2Pg_o/m/wBd7V8dsBAAJ). Upgrades to Qt 6.8 and a newer Python are planned for CY2026.
+
+  - date: "2024-06-16"
+    display_date: "16th June 2024"
+    content: |
+      CY2024 and CY2025 Draft updated to Windows SDK 10.0.20348 due to [compatibility requirements of Qt 6.5 WebEngine](https://github.com/AcademySoftwareFoundation/aswf-docker/issues/274).
+
+  - date: "2024-05-14"
+    display_date: "14th May 2024"
+    content: |
+      CY2025 Draft published, with the main change being a move to Intel's oneAPI for TBB and MKL. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/g/vfx-platform-discuss).
+
+  - date: "2023-11-01"
+    display_date: "1st November 2023"
+    content: |
+      New versions of OpenSubdiv and OpenVDB were released as scheduled and CY2024 has been updated accordingly.
+
+  - date: "2023-09-05"
+    display_date: "5th September 2023"
+    content: |
+      [The recording of the 2023 User Group meeting is now available](https://youtu.be/lA0dZMhqlSo). Please note that the recommendation from the [VFX Linux Distribution Recommendation Report](https://bit.ly/VFXlinux22) published last year is still as valid today as it was a year ago.
+
+  - date: "2023-09-04"
+    display_date: "4th September 2023"
+    content: |
+      CY2024 is now Final. Confirmation of versions for OpenSubdiv and OpenVDB will follow by early November pending the timely release of new versions. As always, if any major issues are discovered with CY2024 then they will be shared with the community to decide whether a late change is required.
+
+  - date: "2023-07-24"
+    display_date: "24th July 2023"
+    content: |
+      The annual VFX Reference Platform User Group will be held on August 1st at 1pm PDT. This is a free online meeting for the whole community, no registration required. [See here for details.](https://groups.google.com/g/vfx-platform-discuss/c/hbaG5fXkbcs)
+
+  - date: "2023-05-16"
+    display_date: "16th May 2023"
+    content: |
+      CY2024 Draft published, with the main change being a move to Qt 6. Due to ongoing work required to migrate critical dependencies, the planned move to Intel's oneAPI has been deferred until CY2025. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/g/vfx-platform-discuss).
+
+  - date: "2022-10-31"
+    display_date: "31st October 2022"
+    content: |
+      Late changes to CY2023 have been applied to OpenSubdiv, OpenVDB, and OpenColorIO which all completed major new releases before the extended deadline of October 31st.
+
+  - date: "2022-10-09"
+    display_date: "9th October 2022"
+    content: |
+      Late change to CY2023 due to new OpenSubdiv release, and after community consultation. OpenSubdiv will be updated to 3.5.x if a compatible USD release is published by October 31st.
+
+  - date: "2022-09-07"
+    display_date: "7th September 2022"
+    content: |
+      CY2023 is now Final. Confirmation of versions for OpenEXR, OpenVDB, OpenColorIO, and ACES will follow by early November pending the timely release of new versions. As always, if any major issues are discovered with CY2023 then they will be shared with the community to decide whether a late change is required. Please note the change to glibc may require a major Linux distro upgrade, and the [recent recommendation](/linux/) for studios to migrate to RHEL, Rocky Linux, or AlmaLinux.
+
+  - date: "2022-08-09"
+    display_date: "9th August 2022"
+    content: |
+      [VFX Linux Distribution Recommendation Report](https://bit.ly/VFXlinux22) (pdf) published and [new Linux page](/linux/) added.
+
+  - date: "2022-07-30"
+    display_date: "30th July 2022"
+    content: |
+      CY2023 Draft updated. Boost bumped to 1.80 and NumPy to 1.23.x
+
+  - date: "2022-05-08"
+    display_date: "8th May 2022"
+    content: |
+      CY2023 Draft published. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/g/vfx-platform-discuss).
+
+  - date: "2022-01-01"
+    display_date: "1st January 2022"
+    content: |
+      Software providers should now use CY2022 as the build target for all new major releases.
+
+  - date: "2021-10-31"
+    display_date: "31st October 2021"
+    content: |
+      OpenVDB 9.x confirmed for CY2022 following the release of 9.0.0 supporting OpenEXR 3.
+
+  - date: "2021-09-01"
+    display_date: "1st September 2021"
+    content: |
+      CY2022 is now Final. The only anticipated change is the pending OpenVDB release which is due by November 1st. If any major issues are discovered then they will be shared with the community to decide whether a late change is required. In addition, a new Support Guidance section has been added towards the bottom of this page.
+
+  - date: "2021-08-23"
+    display_date: "23rd August 2021"
+    content: |
+      A recording of the Birds of a Feather event [is now available](https://youtu.be/i4tXrtJBqK0).
+
+  - date: "2021-08-16"
+    display_date: "16th August 2021"
+    content: |
+      Thank you to all those who attended the Birds of a Feather event last week, the [slide deck is now available](https://bit.ly/3iFPkpJ). This is a last call for feedback on CY2022 before it is locked for Final on September 1st.
+
+  - date: "2021-08-01"
+    display_date: "1st August 2021"
+    content: |
+      Everyone is invited to attend the annual [VFX Reference Platform Birds of a Feather session at SIGGRAPH](https://s2021.siggraph.org/presentation/?id=bof_138&sess=sess434) on Wednesday August 11th at 12:30pm PT / 3:30pm ET / 8:30pm UK. This is an online session again this year, and [Basic Attendee](https://s2021.siggraph.org/register/#reg-level-comparison) registration for the conference is required at a cost of $50.
+
+  - date: "2021-07-31"
+    display_date: "31st July 2021"
+    content: |
+      Updates to CY2022 Draft for MKL, OpenEXR, and OpenVDB.
+
+  - date: "2021-05-22"
+    display_date: "22nd May 2021"
+    content: |
+      Minor updates to CY2022 Draft for Ptex, with additional notes for ACES and macOS.
+
+  - date: "2021-05-16"
+    display_date: "16th May 2021"
+    content: |
+      CY2022 Draft published. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/g/vfx-platform-discuss).
+
+  - date: "2021-03-22"
+    display_date: "22nd March 2021"
+    content: |
+      CY2021 has been updated to revert OpenEXR from 3.0.x back to 2.4.x due to a late release of OpenEXR 3 meaning that software vendors continued to ship products using 2.4. A change in policy to only allow released versions to be included in each year's VFX Reference Platform should prevent this from happening again in future. Also, FBX has been reverted to 2020.x due to there being no 2021.x released in time for CY2021.
+
+  - date: "2020-09-12"
+    display_date: "12th September 2020"
+    content: |
+      CY2021 is now Final. Further changes are not anticipated unless a major issue is discovered and the community supports a late change.
+
+  - date: "2020-08-20"
+    display_date: "20th August 2020"
+    content: |
+      From CY2021 the VFX Reference Platform will support Windows and macOS in addition to Linux. Details added below, and feedback welcome. CY2021 will be finalized within the next 4 weeks.
+
+  - date: "2020-07-17"
+    display_date: "17th July 2020"
+    content: |
+      Added gcc notes to CY2021 Draft with details on Redhat Developer Toolset and clang compatibility.
+
+  - date: "2020-06-16"
+    display_date: "16th June 2020"
+    content: |
+      CY2021 Draft published. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/forum/#!forum/vfx-platform-discuss).
+
+  - date: "2020-03-07"
+    display_date: "7th March 2020"
+    content: |
+      CY2020 updated - Added required patch for Qt for Python (PySide) and an alternative option of using 5.13.
+
+  - date: "2019-11-02"
+    display_date: "2nd November 2019"
+    content: |
+      Late change approved to CY2020 - OpenEXR updated to 2.4.x.
+
+  - date: "2019-10-19"
+    display_date: "19th October 2019"
+    content: |
+      Late change to CY2020 under review to accommodate an updated OpenEXR release. Proposed change is limited to OpenEXR moving to 2.4.x. Please [send feedback on this change](mailto:feedback@vfxplatform.com) by 31st October.
+
+  - date: "2019-08-03"
+    display_date: "3rd August 2019"
+    content: |
+      The CY2020 Platform is now Final with no further changes planned.
+
+  - date: "2019-05-01"
+    display_date: "1st May 2019"
+    content: |
+      CY2020 Draft published which includes the long-awaited move to Python 3. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/forum/#!forum/vfx-platform-discuss). Software vendors are encouraged to provide a Python 3 tech preview release this year to help studios with testing during migration efforts.
+
+  - date: "2018-09-12"
+    display_date: "12th September 2018"
+    content: |
+      CY2019 Final now published with OpenVDB updated to 6.x and ACES to 1.1 to reflect recent or imminent major releases of these important industry packages.
+
+  - date: "2018-07-22b"
+    display_date: "22nd July 2018"
+    content: |
+      CY2019 Draft updated - OpenEXR upped to 2.3.x.
+
+  - date: "2018-07-22"
+    display_date: "22nd July 2018"
+    content: |
+      CY2019 Draft updated - minimum version of Python is now 2.7.9 to ensure support of PIP via PyPI.
+
+  - date: "2018-05-20"
+    display_date: "20th May 2018"
+    content: |
+      CY2019 Draft published. The move to Python 3 has been pushed to CY2020 due to the need to focus on upgrading to the latest Qt Long Term Support release. Software vendors are requested to provide a Python 3 tech preview release in 2019 to help studios with testing during migration efforts. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/forum/#!forum/vfx-platform-discuss).
+
+  - date: "2017-11-26"
+    display_date: "26th November 2017"
+    content: |
+      CY2018 has had a late change to the compiler version which is now gcc 6.3.1. This successfully resolves issues that were discovered with gcc 5.3.1.
+
+  - date: "2017-08-28"
+    display_date: "28th August 2017"
+    content: |
+      Added a note for gcc 5 and updated the Qt note to include a link to the qtdeclarative modifications.
+
+  - date: "2017-08-03"
+    display_date: "3rd August 2017"
+    content: |
+      The CY2018 Platform was ratified as Final at the annual SIGGRAPH VFX Reference Platform Birds of a Feather with no further planned changes.
+
+  - date: "2017-07-02"
+    display_date: "2nd July 2017"
+    content: |
+      Minor updates to CY2018 Draft for Qt and ACES.
+
+  - date: "2017-04-29"
+    display_date: "29th April 2017"
+    content: |
+      CY2018 Draft published with significant upgrades to gcc and glibc. This also comes with notice of our intention to move to Python 3 for CY2019 in advance of Python 2 support ending in 2020. We are currently soliciting feedback on this Draft so please either send to [feedback@vfxplatform.com](mailto:feedback@vfxplatform.com) or share on [vfx-platform-discuss](https://groups.google.com/forum/#!forum/vfx-platform-discuss). We expect to publish CY2018 Final around SIGGRAPH in July.
+
+  - date: "2016-08-01"
+    display_date: "1st August 2016"
+    content: |
+      CY2017 Final now published with OpenSubdiv and OpenVDB being updated in addition to Boost, Ptex, Alembic and TBB as result of feedback to the Draft.
+
+  - date: "2016-06-28"
+    display_date: "28th June 2016"
+    content: |
+      The VFX Reference Platform Qt modifications to the Qt 5.6.1 release are now available from these forks of [qtbase](https://github.com/autodesk-forks/qtbase/tree/adsk-contrib/vfx/5.6.1) and [qtx11extras](https://github.com/autodesk-forks/qtx11extras/tree/adsk-contrib/vfx/5.6.1).
+
+  - date: "2016-06-20"
+    display_date: "20th June 2016"
+    content: |
+      CY2017 Draft published for comment from the community. The theme for CY2017 is to minimize code changes in the year following the transition to Qt 5.
+
+  - date: "2015-10-27"
+    display_date: "27th October 2015"
+    content: |
+      A late change has been proposed to CY2016 to move from Qt 5.5.x to Qt 5.6.x due to that version now being targeted as a Long Term Support release. Please [see here](http://bit.ly/CY2016Qt5) for further details.

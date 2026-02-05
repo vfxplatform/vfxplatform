@@ -1,0 +1,38 @@
+{% comment %}
+  FAQ accordion include
+  Usage: {% include faq-accordion.html %}
+{% endcomment %}
+
+<div class="space-y-2">
+  {% for question in site.data.faq.questions %}
+  <div class="accordion-item" x-data="{ open: false }">
+    <button
+      class="accordion-header rounded-t-lg {% unless forloop.last %}rounded-b-lg{% endunless %}"
+      onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('hidden')"
+    >
+      <span class="flex items-center gap-2">
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        {{ question.question }}
+      </span>
+      <svg class="w-5 h-5 transform transition-transform accordion-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+    <div class="accordion-content hidden">
+      {{ question.answer | markdownify }}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<style>
+  .accordion-item.open .accordion-chevron {
+    transform: rotate(180deg);
+  }
+  .accordion-item.open .accordion-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+</style>

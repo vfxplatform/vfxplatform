@@ -1,0 +1,23 @@
+{% comment %}
+  Status updates include
+  Usage: {% include status-updates.html limit=5 %}
+  Or: {% include status-updates.html offset=5 %}
+{% endcomment %}
+
+{% assign updates = site.data.status_updates.updates %}
+
+{% if include.limit %}
+  {% assign updates = updates | slice: 0, include.limit %}
+{% endif %}
+
+{% if include.offset %}
+  {% assign updates = updates | slice: include.offset, updates.size %}
+{% endif %}
+
+<div class="space-y-4 text-gray-600 dark:text-gray-300">
+  {% for update in updates %}
+  <p>
+    <strong>{{ update.display_date }}</strong> - {{ update.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}
+  </p>
+  {% endfor %}
+</div>
