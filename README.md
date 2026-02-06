@@ -19,7 +19,6 @@ This repo hosts the VFX Reference Platform web site hosted at https://vfxplatfor
 7. [Deployment](#deployment)
 8. [Configuration Reference](#configuration-reference)
 9. [Troubleshooting](#troubleshooting)
-10. [Brand Identity](#brand-identity)
 
 ---
 
@@ -507,43 +506,6 @@ bundle exec jekyll serve --livereload
 ```
 
 Or just use `npm run dev` which runs both.
-
----
-
-## Brand Identity
-
-The site uses a cohesive soft-blue brand palette derived from the gear logo (`assets/images/vfxplatform.jpg`).
-
-### Color Palette
-
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `brand-50` | `#f0f7ff` | Subtle backgrounds (table headers, footer) |
-| `brand-100` | `#e0efff` | Hover states, active nav items |
-| `brand-200` | `#b9d9fe` | Borders, dividers |
-| `brand-500` | `#3b82f6` | Links, interactive elements |
-| `brand-600` | `#2563eb` | Link hover, primary buttons |
-| `brand-700` | `#1e40af` | Navbar background |
-| `brand-800` | `#1e3a5f` | Dark nav states, headings |
-| `brand-900` | `#172554` | Darkest brand color |
-
-These are defined in `tailwind.config.js` under `theme.extend.colors.brand` and used via Tailwind classes like `bg-brand-700`, `text-brand-500`, etc.
-
-### Logo
-
-The logo (`assets/images/vfxplatform.jpg`) appears in the navbar at 32px height next to the site title. It features blue and white interlocking gears.
-
-### Typography
-
-- **Body text:** Inter (with system font fallbacks)
-- **Code/monospace:** JetBrains Mono (with Fira Code/Consolas fallbacks)
-
-Font families are configured in `tailwind.config.js`.
-
-### Light/Dark Mode
-
-- **Light mode** uses the brand palette: blue navbar (`brand-700`), soft blue table headers (`brand-50`), blue-tinted borders (`brand-200`), and branded link colors (`brand-500`/`brand-600`).
-- **Dark mode** retains gray backgrounds (`gray-800`/`gray-900`) with `blue-400` links for good contrast. Dark mode colors are intentionally kept gray-based to avoid excessive blue in dark environments.
 
 ---
 

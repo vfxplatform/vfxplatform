@@ -1,8 +1,7 @@
-<nav class="bg-brand-700 sticky top-0 z-50">
+<nav class="bg-gray-900 sticky top-0 z-50">
   <div class="container mx-auto px-4 max-w-6xl">
     <div class="flex items-center justify-between h-16">
-      <a href="/" class="flex items-center gap-2 text-white font-semibold text-lg hover:text-gray-300 transition-colors">
-        <img src="/assets/images/vfxplatform.jpg" alt="" class="h-8 w-8 rounded" aria-hidden="true">
+      <a href="/" class="text-white font-semibold text-lg hover:text-gray-300 transition-colors">
         VFX Reference Platform
       </a>
 
@@ -17,7 +16,7 @@
       <div class="hidden md:flex items-center space-x-1">
         {% for item in site.data.navigation.main %}
         <a href="{{ item.url }}"
-           class="px-3 py-2 text-sm text-gray-300 hover:text-white rounded-md transition-colors {% if page.url == item.url or page.url == item.url | append: 'index.html' %}text-white bg-brand-800{% endif %}">
+           class="px-3 py-2 text-sm text-gray-300 hover:text-white rounded-md transition-colors {% if page.url == item.url or page.url == item.url | append: 'index.html' %}text-white bg-gray-800{% endif %}">
           {{ item.title }}
         </a>
         {% endfor %}
@@ -29,7 +28,7 @@
     <!-- Mobile navigation -->
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       {% for item in site.data.navigation.main %}
-      <a href="{{ item.url }}" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-brand-800 rounded-md">
+      <a href="{{ item.url }}" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">
         {{ item.title }}
       </a>
       {% endfor %}
