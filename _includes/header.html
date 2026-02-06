@@ -6,7 +6,7 @@
       </a>
 
       <!-- Mobile menu button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -42,5 +42,7 @@
 <script>
   document.getElementById('mobile-menu-btn').addEventListener('click', function() {
     document.getElementById('mobile-menu').classList.toggle('hidden');
+    var expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
   });
 </script>

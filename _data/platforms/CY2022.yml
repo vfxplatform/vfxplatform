@@ -56,6 +56,7 @@ components:
   onetbb:
     version: "2020 Update 3"
     min_max: true
+    note: footnote-tbb
   onemkl:
     version: "2020"
   cpp_standard:

@@ -30,7 +30,7 @@ notes:
   - id: footnote-gcc9
     title: "Note - gcc 9 and 11"
     from_year: 2021
-    to_year: 2024
+    to_year: 2025
     content: |
       For users of Red Hat Enterprise Linux and RHEL-derived Linux distributions (such as CentOS Linux and Rocky Linux), the [Redhat Developer Toolset (DTS)](https://developers.redhat.com/products/developertoolset/overview) offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. [DTS 9.1](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index) provides gcc 9.3.1 for compatibility with CY2021, and [DTS 11.0](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/11/html/11.0_release_notes/index) provides gcc 11.2.1 for compatibility with CY2023.
 
@@ -95,7 +95,7 @@ notes:
   - id: footnote-tbb
     title: "Note - Intel TBB"
     from_year: 2020
-    to_year: 2024
+    to_year: 2025
     content: |
       There is [a known issue compiling TBB 2020 with MSVC 2017](https://github.com/oneapi-src/oneTBB/issues/274) that can be resolved with [this workaround](https://github.com/oneapi-src/oneTBB/pull/299).
 

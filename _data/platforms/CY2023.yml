@@ -59,6 +59,7 @@ components:
     version: "2020 Update 3"
     min_max: true
     inline_note: "Plan to move to oneTBB in CY2024"
+    note: footnote-tbb
   onemkl:
     version: "2020"
     inline_note: "Plan to move to oneMKL in CY2024"

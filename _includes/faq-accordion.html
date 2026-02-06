@@ -5,10 +5,12 @@
 
 <div class="space-y-2">
   {% for question in site.data.faq.questions %}
-  <div class="accordion-item" x-data="{ open: false }">
+  <div class="accordion-item">
     <button
       class="accordion-header rounded-t-lg {% unless forloop.last %}rounded-b-lg{% endunless %}"
-      onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('hidden')"
+      aria-expanded="false"
+      aria-controls="faq-panel-{{ forloop.index }}"
+      onclick="this.parentElement.classList.toggle('open'); this.nextElementSibling.classList.toggle('hidden'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')"
     >
       <span class="flex items-center gap-2">
         <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,7 +22,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
       </svg>
     </button>
-    <div class="accordion-content hidden">
+    <div id="faq-panel-{{ forloop.index }}" class="accordion-content hidden">
       {{ question.answer | markdownify }}
     </div>
   </div>

@@ -33,8 +33,6 @@ components:
     version: "5.12 (with patch) or 5.13"
   numpy:
     version: "1.17.x"
-  imath:
-    version: ~
   openexr:
     version: "2.4.x"
   ptex:
@@ -56,6 +54,7 @@ components:
   onetbb:
     version: "2019 Update 6"
     min_max: true
+    note: footnote-tbb
   onemkl:
     version: "2019"
   cpp_standard:

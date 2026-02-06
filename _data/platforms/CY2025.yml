@@ -59,6 +59,7 @@ components:
     version: "2021.x"
     min_max: true
     inline_note: "Move to oneTBB"
+    note: footnote-tbb
   onemkl:
     version: "2024"
     inline_note: "Move to oneMKL"

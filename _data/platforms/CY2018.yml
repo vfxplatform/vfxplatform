@@ -33,8 +33,6 @@ components:
     version: "2.0.x"
   numpy:
     version: "1.12.1"
-  imath:
-    version: ~
   openexr:
     version: "2.2.x"
   ptex:

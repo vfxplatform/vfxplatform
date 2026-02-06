@@ -58,6 +58,7 @@ components:
     version: "2020 Update 3"
     min_max: true
     inline_note: "Move to oneTBB deferred to CY2025"
+    note: footnote-tbb
   onemkl:
     version: "2020"
     inline_note: "Move to oneMKL deferred to CY2025"
