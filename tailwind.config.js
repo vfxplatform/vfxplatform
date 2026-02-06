@@ -19,9 +19,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'vfx-dark': '#1a1a2e',
-        'vfx-primary': '#16213e',
-        'vfx-accent': '#0f3460',
+        brand: {
+          50: '#f0f7ff',
+          100: '#e0efff',
+          200: '#b9d9fe',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1e40af',
+          800: '#1e3a5f',
+          900: '#172554',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
