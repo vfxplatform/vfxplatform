@@ -1,0 +1,13 @@
+{% comment %}
+  Hidden note content templates for popover/bottom-sheet display.
+  Usage: {% include note-popover-content.html %}
+{% endcomment %}
+
+{% for note in site.data.notes.notes %}
+  <template id="note-content-{{ note.id }}">
+    <h4 class="font-semibold text-gray-900 dark:text-gray-100 mb-2">{{ note.title }}</h4>
+    <div class="prose dark:prose-invert max-w-none text-sm">
+      {{ note.content | markdownify }}
+    </div>
+  </template>
+{% endfor %}

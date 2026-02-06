@@ -43,6 +43,9 @@
                     {% if item_data.inline_note %}
                       <br><small class="text-gray-500 dark:text-gray-400 font-sans">({{ item_data.inline_note }})</small>
                     {% endif %}
+                    {% if item_data.note %}
+                      <br><small><a href="#{{ item_data.note }}" data-note-id="{{ item_data.note }}" class="text-blue-600 dark:text-blue-400 hover:underline font-sans">(see notes)</a></small>
+                    {% endif %}
                   </td>
                 </tr>
               {% endif %}
