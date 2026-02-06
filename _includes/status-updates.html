@@ -14,7 +14,7 @@
   {% assign updates = updates | slice: include.offset, updates.size %}
 {% endif %}
 
-<div class="space-y-4 text-gray-600 dark:text-gray-300">
+<div class="space-y-5 text-gray-600 dark:text-gray-300">
   {% for update in updates %}
   <p>
     <strong>{{ update.display_date }}</strong> - {{ update.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}

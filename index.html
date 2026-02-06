@@ -11,7 +11,7 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
   {% assign supported_years = supported_years | push: year %}
 {% endfor %}
 
-<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
   The VFX Reference Platform is a set of tool and library versions to be used as a common target platform for building software for the VFX industry. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for integrated pipelines and encourage further adoption of Linux by both studios and software vendors. The Reference Platform is updated annually by a group of software vendors in collaboration with the <a href="https://www.vesglobal.org/technology-committee-activities/" class="text-blue-600 dark:text-blue-400 hover:underline">Visual Effects Society Technology Committee</a>.
 </p>
 
@@ -42,7 +42,7 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
 
 {% include platform-table.html years=supported_years show_history_link=true %}
 
-<h2 class="text-2xl font-semibold mb-4 mt-12" id="support-guidance">Support Guidance</h2>
+<h2 class="text-2xl font-semibold mb-4 mt-16" id="support-guidance">Support Guidance</h2>
 
 <p class="mb-4 text-gray-600 dark:text-gray-300">
   Providers of software libraries focused on VFX and animation content creation should aim to support their releases for the current calendar year and the three preceding years with compatible updates. Studios and end users should have no expectation of support for older libraries.
@@ -62,8 +62,8 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
   <li><a href="https://docs.google.com/spreadsheets/d/1EwRlz5ZYObEOdBfIk8iTX5thlpTyEAfp3bxOgAfFOiU/edit?usp=sharing" class="text-blue-600 dark:text-blue-400 hover:underline">VFX Industry Build Matrix</a></li>
 </ul>
 
-<hr class="border-gray-200 dark:border-gray-700 my-8">
+<hr class="border-gray-200 dark:border-gray-700 my-12">
 
-<h2 class="text-2xl font-semibold mb-6" id="additional-notes">Additional Notes</h2>
+<h2 class="text-2xl font-semibold mb-8" id="additional-notes">Additional Notes</h2>
 
 {% include filtered-notes.html years=supported_years %}
