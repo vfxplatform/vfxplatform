@@ -1,6 +1,6 @@
 # VFX Reference Platform Web Site
 
-This repo hosts the VFX Reference Platform web site hosted at https://vfxplatform.com.
+This repo hosts the VFX Reference Platform web site hosted at https://vfxplatform.com. Optionally, major changes can be deployed to a staging site at https://vfxplatform.github.io/vfxplatform-staging/ for review before pushing to production.
 
 ## Table of Contents
 
@@ -14,10 +14,10 @@ This repo hosts the VFX Reference Platform web site hosted at https://vfxplatfor
    - [Adding/Editing Notes (Footnotes)](#addingediting-notes-footnotes)
    - [Adding FAQ Entries](#adding-faq-entries)
    - [Modifying Navigation](#modifying-navigation)
-5. [SEO & Discoverability](#seo--discoverability)
-6. [YAML Syntax Reference](#yaml-syntax-reference)
-7. [Deployment](#deployment)
+5. [Deployment](#deployment)
    - [Staging](#staging)
+6. [SEO & Discoverability](#seo--discoverability)
+7. [YAML Syntax Reference](#yaml-syntax-reference)
 8. [Configuration Reference](#configuration-reference)
 9. [Troubleshooting](#troubleshooting)
 
@@ -303,6 +303,74 @@ Add, remove, or reorder items as needed. URLs can be:
 
 ---
 
+## Deployment
+
+Deployment is **fully automated** via GitHub Actions.
+
+### How It Works
+
+1. Push changes to the `main` branch
+2. GitHub Actions automatically:
+   - Builds Tailwind CSS
+   - Builds the Jekyll site
+   - Deploys to GitHub Pages
+3. Changes appear live within a few minutes
+
+### Checking Deployment Status
+
+1. Go to the GitHub repository
+2. Click the **Actions** tab
+3. Look for the latest "Deploy Jekyll with Tailwind" workflow run
+4. Green checkmark = success, Red X = failure
+
+### Staging
+
+For major changes, you can deploy to a staging site for review before pushing to production.
+
+**Staging URL:** https://vfxplatform.github.io/vfxplatform-staging/
+
+**How to use:**
+
+1. Create or switch to the `staging` branch:
+   ```bash
+   git checkout -b staging
+   ```
+2. Make your changes and push:
+   ```bash
+   git push -u origin staging
+   ```
+3. GitHub Actions automatically builds and deploys to the staging URL
+4. Share the staging URL with other maintainers for review
+5. Once approved, merge your changes into `main` to deploy to production
+
+**Notes:**
+- The staging site updates on every push to the `staging` branch
+- You can also trigger a staging deploy manually from the Actions tab ("Deploy to Staging" workflow)
+
+#### Syncing Branches
+
+**Deploy latest production content to staging (for review):**
+```bash
+git checkout staging
+git merge main
+git push origin staging
+```
+
+**Promote staging changes to production:**
+```bash
+git checkout main
+git merge staging
+git push origin main
+```
+
+**If the `staging` branch doesn't exist yet locally:**
+```bash
+git checkout -b staging
+git push -u origin staging
+```
+
+---
+
 ## SEO & Discoverability
 
 The site includes several SEO features that work automatically:
@@ -403,70 +471,6 @@ updates:
 | Missing quotes | Special characters break parsing | Wrap in quotes: `"value: with colon"` |
 | Wrong indentation | Breaks structure | Align child items under parent |
 | Trailing spaces | Can cause issues | Remove whitespace at end of lines |
-
----
-
-## Deployment
-
-Deployment is **fully automated** via GitHub Actions.
-
-### How It Works
-
-1. Push changes to the `main` branch
-2. GitHub Actions automatically:
-   - Builds Tailwind CSS
-   - Builds the Jekyll site
-   - Deploys to GitHub Pages
-3. Changes appear live within a few minutes
-
-### Checking Deployment Status
-
-1. Go to the GitHub repository
-2. Click the **Actions** tab
-3. Look for the latest "Deploy Jekyll with Tailwind" workflow run
-4. Green checkmark = success, Red X = failure
-
-### Staging
-
-For major changes, you can deploy to a staging site for review before pushing to production.
-
-**Staging URL:** https://vfxplatform.github.io/vfxplatform-staging/
-
-**How to use:**
-
-1. Create or switch to the `staging` branch:
-   ```bash
-   git checkout -b staging
-   ```
-2. Make your changes and push:
-   ```bash
-   git push -u origin staging
-   ```
-3. GitHub Actions automatically builds and deploys to the staging URL
-4. Share the staging URL with other maintainers for review
-5. Once approved, merge your changes into `main` to deploy to production
-
-**Notes:**
-- The staging site updates on every push to the `staging` branch
-- You can also trigger a staging deploy manually from the Actions tab ("Deploy to Staging" workflow)
-- There is one shared staging environment — coordinate with other maintainers if multiple changes need staging at the same time
-
-**First-time setup:**
-
-1. Create an empty `vfxplatform/vfxplatform-staging` repository
-2. Create a fine-grained Personal Access Token scoped to that repo with `Contents: Read and write` permission
-3. Add the token as a secret named `STAGING_DEPLOY_TOKEN` in this repository (Settings → Secrets → Actions)
-4. Push the `staging` branch — the first deploy will create the `gh-pages` branch in the staging repo
-5. Enable GitHub Pages on the staging repo (Settings → Pages → Branch: `gh-pages` / root)
-
-### If Deployment Fails
-
-1. Click on the failed workflow run
-2. Expand the failed step to see the error message
-3. Common issues:
-   - YAML syntax errors (missing quotes, wrong indentation)
-   - Invalid file references
-   - Missing required fields
 
 ---
 
