@@ -113,7 +113,7 @@
 
       html += '<tr class="' + rowClass + '">';
       html += categoryCell;
-      html += '<td class="text-left">' + diff.component + '</td>';
+      html += '<td class="comp-name">' + diff.component + '</td>';
       html += '<td class="font-mono text-sm">' + diff.value1 + '</td>';
       html += '<td class="font-mono text-sm">' + diff.value2 + '</td>';
       html += '</tr>';
@@ -131,6 +131,14 @@
     resultsContainer.innerHTML = html;
   }
 
+  // Update URL to reflect current selection
+  function updateURL() {
+    const url = new URL(window.location);
+    url.searchParams.set('year1', year1Select.value);
+    url.searchParams.set('year2', year2Select.value);
+    history.replaceState(null, '', url);
+  }
+
   // Compare function
   function compare() {
     const year1 = year1Select.value;
@@ -140,10 +148,20 @@
 
     const differences = findDifferences(year1, year2);
     renderResults(year1, year2, differences);
+    updateURL();
   }
 
   // Initialize
   populateSelects();
+
+  // Apply URL parameters if present
+  const params = new URLSearchParams(window.location.search);
+  const urlYear1 = params.get('year1');
+  const urlYear2 = params.get('year2');
+
+  if (urlYear1 && years.includes(urlYear1)) year1Select.value = urlYear1;
+  if (urlYear2 && years.includes(urlYear2)) year2Select.value = urlYear2;
+
   compare();
 
   // Event listeners
