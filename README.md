@@ -13,6 +13,8 @@ This repo hosts the VFX Reference Platform web site hosted at https://vfxplatfor
    - [Updating Component Versions](#updating-component-versions)
    - [Adding/Editing Notes (Footnotes)](#addingediting-notes-footnotes)
    - [Adding FAQ Entries](#adding-faq-entries)
+   - [Editing Homepage Content](#editing-homepage-content)
+   - [Editing Footer Content](#editing-footer-content)
    - [Modifying Navigation](#modifying-navigation)
 5. [Deployment](#deployment)
    - [Staging](#staging)
@@ -81,9 +83,11 @@ _data/
 │   └── CY2026.yml
 ├── components.yml       # Component metadata and categories
 ├── faq.yml              # FAQ questions and answers
+├── footer.yml           # Footer content (description, resources, contact)
 ├── navigation.yml       # Main navigation menu links
 ├── notes.yml            # Technical footnotes referenced from platform data
-└── status_updates.yml   # Status updates shown on the homepage
+├── status_updates.yml   # Status updates shown on the homepage
+└── useful_links.yml     # Useful links shown as cards on the homepage
 ```
 
 **Key point:** You rarely need to touch HTML templates. Almost all routine updates involve editing these YAML files.
@@ -272,6 +276,55 @@ questions:
 - `id`: Unique identifier (used for anchor links)
 - `question`: The question text
 - `answer`: Markdown-formatted answer (use `|` for multi-line)
+
+---
+
+### Editing Homepage Content
+
+The homepage uses a dedicated `home` layout (different from other pages) that allows full-width sections like the hero. Content is structured into sections:
+
+1. **Hero section** — Title, subtitle, and call-to-action buttons. The hero text is configured in `_config.yml` under the `hero:` key:
+   ```yaml
+   hero:
+     subtitle: "A standardized set of tool and library versions..."
+     cta_primary_text: "View Latest Platform"
+     cta_primary_url: "#reference-platform"
+     cta_secondary_text: "Join Discussion"
+     cta_secondary_url: "https://groups.google.com/g/vfx-platform-discuss"
+   ```
+
+2. **Current Status** — Shows the latest 4 status updates as cards (data from `_data/status_updates.yml`)
+
+3. **Reference Platform** — The main version specs table (data from `_data/platforms/`)
+
+4. **Support Guidance** — Two cards describing support window and best practices
+
+5. **Useful Links** — Card grid driven by `_data/useful_links.yml`:
+   ```yaml
+   - title: "Link Title"
+     url: "https://example.com"
+     description: "Brief description of the link."
+     icon: "chart"   # Options: chart, python, container, grid, matrix
+   ```
+
+### Editing Footer Content
+
+**File:** `_data/footer.yml`
+
+The footer displays across all pages with three columns: about, resources, and contact.
+
+```yaml
+description: "Site description text..."
+
+resources:
+  - title: "Discussion Group"
+    url: "https://groups.google.com/g/vfx-platform-discuss"
+  - title: "Academy Software Foundation"
+    url: "https://www.aswf.io/"
+
+contact_email: "feedback@vfxplatform.com"
+collaboration_text: "Updated annually in collaboration with..."
+```
 
 ---
 
@@ -488,10 +541,11 @@ current_year: 2026
 supported_years_count: 4
 ```
 
-Other settings (rarely need changing):
+Other settings:
 - `title`: Site title
 - `description`: Site description for SEO
 - `url`: Production site URL
+- `hero`: Homepage hero section text and CTA buttons (subtitle, button labels, URLs)
 
 **Important:** After changing `_config.yml`, you must restart the local Jekyll server to see changes.
 

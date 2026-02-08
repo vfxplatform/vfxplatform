@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Home
 description: "VFX Reference Platform - Reference Platform for VFX Software"
 ---
@@ -11,55 +11,173 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
   {% assign supported_years = supported_years | push: year %}
 {% endfor %}
 
-<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-12">
-  The VFX Reference Platform is a set of tool and library versions to be used as a common target platform for building software for the VFX industry. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for integrated pipelines and encourage further adoption of Linux by both studios and software vendors. The Reference Platform is updated annually by a group of software vendors in collaboration with the <a href="https://www.vesglobal.org/technology-committee-activities/" class="text-blue-600 dark:text-blue-400 hover:underline">Visual Effects Society Technology Committee</a>.
-</p>
+<!-- Hero Section -->
+<section class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="py-16 md:py-24">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+          VFX Reference<br>
+          <span class="text-blue-600 dark:text-blue-400">Platform</span>
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+          {{ site.hero.subtitle }}
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="{{ site.hero.cta_primary_url }}" class="inline-flex items-center px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">
+            {{ site.hero.cta_primary_text }}
+          </a>
+          <a href="{{ site.hero.cta_secondary_url }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+            {{ site.hero.cta_secondary_text }}
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2 class="text-2xl font-semibold mb-4" id="current-status">Current Status</h2>
+<!-- Current Status -->
+<section class="container mx-auto px-4 max-w-6xl py-12" id="current-status">
+  <div class="section-heading">
+    <h2>Current Status</h2>
+  </div>
 
-<p class="mb-4">The Calendar Year {{ current_year }} (CY{{ current_year }}) Reference Platform is the target for all major software releases in {{ current_year }}.</p>
+  <p class="mb-6 text-gray-600 dark:text-gray-300">
+    The Calendar Year {{ current_year }} (CY{{ current_year }}) Reference Platform is the target for all major software releases in {{ current_year }}.
+  </p>
 
-{% include status-updates.html limit=5 %}
+  {% include status-updates.html limit=4 style="cards" %}
 
-<p class="mt-6 mb-8">
-  <a href="/platform_history.html#previous-status-updates" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Previous status updates...</a>
-</p>
+  <p class="mt-6 text-center">
+    <a href="/platform_history.html#previous-status-updates" class="text-base text-blue-600 dark:text-blue-400 hover:underline">
+      Previous status updates &rarr;
+    </a>
+  </p>
+</section>
 
-<h2 class="text-2xl font-semibold mb-4" id="reference-platform">Reference Platform</h2>
+<!-- Reference Platform -->
+<section class="container mx-auto px-4 max-w-6xl pt-6 pb-12" id="reference-platform">
+  <div class="section-heading">
+    <h2>Reference Platform</h2>
+  </div>
 
-<p class="mb-4">Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.</p>
+  <div class="info-box mb-8">
+    <div class="flex gap-3">
+      <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <div>
+        <p class="text-sm text-gray-700 dark:text-gray-200 mb-2">
+          Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+          All versions should be considered exact required versions, except for those components where
+          <span class="whitespace-nowrap text-gray-500">&#8595;&#8593;</span>
+          indicates that:
+        </p>
+        <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>For systems (or software) providing the library at runtime, versions should be considered <em>minimum version required.</em></li>
+          <li>Otherwise, for software building against the library, versions should be considered <em>highest version allowed.</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-<p class="mb-4">
-  All versions should be considered exact required versions, except for those components where
-  <span class="whitespace-nowrap text-gray-500">&#8595;&#8593;</span>
-  indicates that:
-</p>
+  {% include platform-table.html years=supported_years show_history_link=true %}
+</section>
 
-<ul class="list-disc list-inside mb-6 text-gray-600 dark:text-gray-300 space-y-1">
-  <li>for systems (or software) providing the library at runtime, versions should be considered <em>minimum version required.</em></li>
-  <li>otherwise, for software building software against the library, versions should be considered <em>highest version allowed</em></li>
-</ul>
+<!-- Support Guidance -->
+<section class="container mx-auto px-4 max-w-6xl py-12" id="support-guidance">
+  <div class="section-heading">
+    <h2>Support Guidance</h2>
+  </div>
 
-{% include platform-table.html years=supported_years show_history_link=true %}
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Support Window card -->
+    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-800/50">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Support Window</h3>
+      </div>
+      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+        Providers of software libraries focused on VFX and animation content creation should aim to support their releases for the current calendar year and the three preceding years with compatible updates. Studios and end users should have no expectation of support for older libraries.
+      </p>
+    </div>
 
-<h2 class="text-2xl font-semibold mb-4 mt-16" id="support-guidance">Support Guidance</h2>
+    <!-- Best Practices card -->
+    <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-800/50">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Best Practices</h3>
+      </div>
+      <p class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
+        The VFX Reference Platform strongly recommends open source project maintainers provide a level of support described by the <a href="https://bestpractices.coreinfrastructure.org/en/criteria" class="text-blue-600 dark:text-blue-400 hover:underline">FLOSS Best Practices Criteria</a>, which is already a requirement for all Academy Software Foundation projects.
+      </p>
+    </div>
+  </div>
+</section>
 
-<p class="mb-4 text-gray-600 dark:text-gray-300">
-  Providers of software libraries focused on VFX and animation content creation should aim to support their releases for the current calendar year and the three preceding years with compatible updates. Studios and end users should have no expectation of support for older libraries.
-</p>
+<!-- Useful Links -->
+<section class="container mx-auto px-4 max-w-6xl py-12 mb-4" id="useful-links">
+  <div class="section-heading">
+    <h2>Useful Links</h2>
+  </div>
 
-<p class="mb-8 text-gray-600 dark:text-gray-300">
-  The VFX Reference Platform strongly recommends open source project maintainers provide a level of support described by the <a href="https://bestpractices.coreinfrastructure.org/en/criteria" class="text-blue-600 dark:text-blue-400 hover:underline">FLOSS Best Practices Criteria</a>, which is already a requirement for all Academy Software Foundation projects.
-</p>
-
-<h2 class="text-2xl font-semibold mb-4" id="useful-links">Useful Links</h2>
-
-<ul class="list-disc list-inside mb-8 text-gray-600 dark:text-gray-300 space-y-2">
-  <li><a href="https://bit.ly/VRP21Rep" class="text-blue-600 dark:text-blue-400 hover:underline">2021 Studio Platform Survey Report</a>.</li>
-  <li><a href="https://vfxpy.com/" class="text-blue-600 dark:text-blue-400 hover:underline">VFXpy Python 3 Compatibility Tracker</a> for common VFX and animation software packages.</li>
-  <li>ASWF <a href="https://github.com/academySoftwareFoundation/aswf-docker" class="text-blue-600 dark:text-blue-400 hover:underline">Github</a> and <a href="https://hub.docker.com/u/aswf" class="text-blue-600 dark:text-blue-400 hover:underline">Docker Hub</a> repositories for "ready to build" containers implementing VFX Reference Platform compliant build environments.</li>
-  <li>Tracking <a href="https://docs.google.com/spreadsheets/d/1-8VdfspUBpkYJzfKKovI-H2bZeb5Wn3cuNPsq_Ho3S8/edit?usp=sharing" class="text-blue-600 dark:text-blue-400 hover:underline">major digital content creation tool version compatibility</a> with VFX Reference Platform.</li>
-  <li><a href="https://docs.google.com/spreadsheets/d/1EwRlz5ZYObEOdBfIk8iTX5thlpTyEAfp3bxOgAfFOiU/edit?usp=sharing" class="text-blue-600 dark:text-blue-400 hover:underline">VFX Industry Build Matrix</a></li>
-</ul>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for link in site.data.useful_links %}
+    <a href="{{ link.url }}" class="group border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-white dark:bg-gray-800/50 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-sm transition-all">
+      <div class="flex items-start gap-3">
+        <div class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+          {% if link.icon == "chart" %}
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+          {% elsif link.icon == "python" %}
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+          {% elsif link.icon == "container" %}
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+          </svg>
+          {% elsif link.icon == "grid" %}
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+          </svg>
+          {% elsif link.icon == "matrix" %}
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M10 3v18M14 3v18"/>
+          </svg>
+          {% else %}
+          <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+          </svg>
+          {% endif %}
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+            {{ link.title }}
+          </h3>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+            {{ link.description }}
+          </p>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>
 
 {% include note-popover-content.html %}

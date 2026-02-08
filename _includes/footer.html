@@ -1,7 +1,53 @@
-<footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
-  <div class="container mx-auto px-4 py-6 max-w-6xl">
-    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-      <em>Any reference made in the VFX Reference Platform to any company or any other entity, or to their services or products, is not an endorsement or recommendation nor should it imply any such endorsement or recommendation of the quality or fitness of purpose of that company or entity, or its services or products. In no event shall the Visual Effects Society be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services identified in the VFX Reference Platform or the <a href="https://vesglobal.org" class="text-blue-600 dark:text-blue-400 hover:underline">Visual Effects Society website</a>.</em>
-    </p>
+<footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 mt-12">
+  <div class="container mx-auto px-4 py-12 max-w-6xl">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <!-- About column -->
+      <div>
+        <a href="/" class="flex items-center gap-2 text-white font-semibold text-lg mb-3">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0">
+            <path d="M16 1.5L28.5 8.75V23.25L16 30.5L3.5 23.25V8.75L16 1.5Z" fill="#3B82F6" stroke="#2563EB" stroke-width="1"/>
+            <text x="16" y="18.5" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="system-ui, sans-serif">VFX</text>
+          </svg>
+          <span>Reference Platform</span>
+        </a>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          {{ site.data.footer.description }}
+        </p>
+      </div>
+
+      <!-- Resources column -->
+      <div>
+        <h3 class="text-white font-semibold mb-3">Resources</h3>
+        <ul class="space-y-2 text-sm">
+          {% for link in site.data.footer.resources %}
+          <li>
+            <a href="{{ link.url }}" class="text-gray-400 hover:text-white transition-colors">
+              {{ link.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <h3 class="text-white font-semibold mb-3">Contact</h3>
+        <p class="text-sm text-gray-400 mb-2">
+          <a href="mailto:{{ site.data.footer.contact_email }}" class="hover:text-white transition-colors">
+            {{ site.data.footer.contact_email }}
+          </a>
+        </p>
+        <p class="text-sm text-gray-400">
+          {{ site.data.footer.collaboration_text }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Legal disclaimer -->
+    <div class="border-t border-gray-800 pt-6">
+      <p class="text-xs text-gray-500 leading-relaxed">
+        <em>Any reference made in the VFX Reference Platform to any company or any other entity, or to their services or products, is not an endorsement or recommendation nor should it imply any such endorsement or recommendation of the quality or fitness of purpose of that company or entity, or its services or products. In no event shall the Visual Effects Society be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services identified in the VFX Reference Platform or the <a href="https://vesglobal.org" class="text-blue-400 hover:text-blue-300 hover:underline">Visual Effects Society website</a>.</em>
+      </p>
+    </div>
   </div>
 </footer>

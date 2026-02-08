@@ -13,33 +13,41 @@
 @layer components {
   /* Platform table styles */
   .platform-table {
-    @apply w-full border-collapse text-sm;
-  }
-
-  .platform-table th,
-  .platform-table td {
-    @apply border border-gray-200 dark:border-gray-700 px-3 py-3 text-center;
+    @apply w-full text-sm;
+    border-collapse: separate;
+    border-spacing: 0;
   }
 
   .platform-table th {
-    @apply bg-gray-50 dark:bg-gray-800 font-semibold;
+    @apply px-4 py-3 text-center font-semibold text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700;
   }
 
-  /* Category row colors */
-  .category-linux {
-    @apply bg-amber-50 dark:bg-amber-900/20;
+  .platform-table th:first-child {
+    @apply text-left;
   }
 
-  .category-macos {
-    @apply bg-cyan-50 dark:bg-cyan-900/20;
+  .platform-table th.current-year {
+    @apply text-blue-600 dark:text-blue-400;
   }
 
-  .category-windows {
-    @apply bg-emerald-50 dark:bg-emerald-900/20;
+  .platform-table td {
+    @apply px-4 py-3 text-center border-b border-gray-100 dark:border-gray-800;
   }
 
-  .category-components {
-    @apply bg-gray-50 dark:bg-gray-800/50;
+  .platform-table td:first-child {
+    @apply text-left;
+  }
+
+  .platform-table td.current-year {
+    @apply text-blue-600 dark:text-blue-400;
+  }
+
+  .platform-table .category-header td {
+    @apply font-bold text-left bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700 py-2;
+  }
+
+  .platform-table-wrapper {
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;
   }
 
   /* Comparison highlighting - target td cells, excluding category cells with rowspan */
@@ -165,6 +173,26 @@
   @keyframes note-fade-in {
     from { opacity: 0; transform: translateY(4px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Section heading with flanking lines */
+  .section-heading {
+    @apply flex items-center gap-4 mb-8;
+  }
+
+  .section-heading::before,
+  .section-heading::after {
+    content: '';
+    @apply flex-1 h-px bg-gray-200 dark:bg-gray-700;
+  }
+
+  .section-heading h2 {
+    @apply text-2xl font-semibold whitespace-nowrap;
+  }
+
+  /* Info box */
+  .info-box {
+    @apply bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 rounded-lg p-5;
   }
 
   /* Accordion styles */

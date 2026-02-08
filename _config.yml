@@ -41,6 +41,14 @@ plugins:
 author:
   name: VFX Reference Platform Working Group
 
+# Hero section
+hero:
+  subtitle: "The VFX Reference Platform defines a set of tool and library versions to establish a consistent build target for software providers. Its purpose is to minimise incompatibilities between different software packages, ease the support burden for integrated pipelines and encourage further adoption of Linux."
+  cta_primary_text: "View Latest Platform"
+  cta_primary_url: "#reference-platform"
+  cta_secondary_text: "Join Discussion"
+  cta_secondary_url: "https://groups.google.com/g/vfx-platform-discuss"
+
 # Analytics
 cloudflare_analytics: 75ac194cb08e4271aa16a0649ac38734
 
