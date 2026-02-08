@@ -38,7 +38,7 @@ categories:
       - id: pyqt
         name: PyQt
       - id: pyside
-        name: "PySide"
+        name: "Qt for Python (PySide)"
       - id: numpy
         name: NumPy
       - id: imath

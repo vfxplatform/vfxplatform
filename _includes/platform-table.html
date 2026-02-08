@@ -24,7 +24,7 @@
           </tr>
 
           {% for item in category.items %}
-            <tr>
+            <tr{% assign mod = forloop.index | modulo: 2 %}{% if mod == 0 %} class="row-alt"{% endif %}>
               <td class="font-semibold whitespace-nowrap">
                 {{ item.name }}
                 {% if item.min_max %}
