@@ -43,7 +43,7 @@
   }
 
   .platform-table tr.row-alt td {
-    @apply bg-gray-50/70 dark:bg-gray-800/30;
+    @apply bg-gray-100 dark:bg-gray-800/40;
   }
 
   .platform-table .category-header td {
