@@ -26,10 +26,6 @@
     @apply text-left;
   }
 
-  .platform-table th.current-year {
-    @apply text-blue-300 dark:text-blue-300;
-  }
-
   .platform-table td {
     @apply px-4 py-3 text-center border-b border-gray-100 dark:border-gray-800;
   }
@@ -38,7 +34,7 @@
     @apply text-left;
   }
 
-  .platform-table td.current-year {
+  .platform-table td.version-changed {
     @apply text-blue-600 dark:text-blue-400;
   }
 

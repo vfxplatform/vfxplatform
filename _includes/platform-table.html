@@ -12,7 +12,7 @@
         <tr>
           <th scope="col">Component</th>
           {% for year in include.years %}
-          <th scope="col"{% if forloop.first %} class="current-year"{% endif %}>CY{{ year }}</th>
+          <th scope="col">CY{{ year }}</th>
           {% endfor %}
         </tr>
       </thead>
@@ -43,7 +43,25 @@
                   {% assign item_data = section[item.id] %}
                 {% endif %}
 
-                <td class="text-sm{% if forloop.first %} current-year{% endif %}">
+                {% assign version_changed = false %}
+                {% if item_data and item_data.version %}
+                  {% assign prev_year_num = year | minus: 1 %}
+                  {% assign prev_year_key = "CY" | append: prev_year_num %}
+                  {% assign prev_year_data = site.data.platforms[prev_year_key] %}
+                  {% if prev_year_data %}
+                    {% if category.id == "components" %}
+                      {% assign prev_item_data = prev_year_data.components[item.id] %}
+                    {% else %}
+                      {% assign prev_section = prev_year_data[category.id] %}
+                      {% assign prev_item_data = prev_section[item.id] %}
+                    {% endif %}
+                    {% if prev_item_data and prev_item_data.version and item_data.version != prev_item_data.version %}
+                      {% assign version_changed = true %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+                <td class="text-sm{% if version_changed %} version-changed{% endif %}">
                   {% if item_data and item_data.version %}
                     <span class="font-mono">{{ item_data.version }}</span>
                     {% if item_data.inline_note %}
