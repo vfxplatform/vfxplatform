@@ -71,6 +71,11 @@
     /* No special styling - inherits default */
   }
 
+  /* Ensure component name column stays left-aligned in comparison table (rowspan shifts td:first-child) */
+  .platform-table td.comp-name {
+    @apply text-left;
+  }
+
   /* Year cards for history page */
   .year-card {
     @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;
