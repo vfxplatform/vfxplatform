@@ -15,15 +15,6 @@ description: "VFX Reference Platform - Historical platform versions from CY2014 
 {% endfor %}
 {% assign all_years = all_years | sort | reverse %}
 
-{% comment %} History years = all years except the most recent 4 {% endcomment %}
-{% assign history_years = "" | split: "" %}
-{% for year in all_years %}
-  {% assign diff = current_year | minus: year %}
-  {% if diff >= supported_count %}
-    {% assign history_years = history_years | push: year %}
-  {% endif %}
-{% endfor %}
-
 <h2 class="text-2xl font-semibold mb-4">Reference Platform History</h2>
 
 <p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
@@ -50,7 +41,7 @@ description: "VFX Reference Platform - Historical platform versions from CY2014 
 </p>
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-  {% for year in history_years %}
+  {% for year in all_years %}
     {% include year-card.html year=year %}
   {% endfor %}
 </div>
