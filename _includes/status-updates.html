@@ -20,7 +20,7 @@
   {% for update in updates %}
   <div class="border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-white dark:bg-gray-800/50">
     <div class="flex items-center gap-3 mb-2">
-      {% if forloop.first %}
+      {% if forloop.first and include.show_latest != false %}
       <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-600 text-white">
         Latest
       </span>

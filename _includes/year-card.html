@@ -18,6 +18,20 @@
 
   <div class="year-card-content">
     {% for category in site.data.components.categories %}
+      {% assign has_items = false %}
+      {% for item in category.items %}
+        {% if category.id == "components" %}
+          {% assign check_data = year_data.components[item.id] %}
+        {% else %}
+          {% assign check_section = year_data[category.id] %}
+          {% assign check_data = check_section[item.id] %}
+        {% endif %}
+        {% if check_data and check_data.version %}
+          {% assign has_items = true %}
+        {% endif %}
+      {% endfor %}
+
+      {% if has_items %}
       <div class="year-card-section category-{{ category.id }}">
         <h4 class="font-semibold text-sm mb-2 text-gray-700 dark:text-gray-300">{{ category.name }}</h4>
         <table class="year-card-table">
@@ -53,6 +67,7 @@
           </tbody>
         </table>
       </div>
+      {% endif %}
     {% endfor %}
   </div>
 </div>

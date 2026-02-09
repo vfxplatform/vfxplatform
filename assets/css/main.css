@@ -82,11 +82,11 @@
   }
 
   .year-card-content {
-    @apply p-4 space-y-4;
+    @apply p-4 space-y-2;
   }
 
   .year-card-section {
-    @apply rounded-lg p-3;
+    @apply rounded-lg px-3 py-1;
   }
 
   .year-card-table {
@@ -94,7 +94,7 @@
   }
 
   .year-card-table td {
-    @apply py-2 px-2;
+    @apply py-1 px-2;
   }
 
   .year-card-table td:first-child {
