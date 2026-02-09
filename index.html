@@ -86,7 +86,14 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
     </div>
   </div>
 
-  {% include platform-table.html years=supported_years show_history_link=true %}
+  {% include platform-table.html years=supported_years %}
+
+  {% assign oldest_year = supported_years | last | minus: 1 %}
+  <p class="mt-6 text-center">
+    <a href="{{ '/platform_history.html' | relative_url }}#CY{{ oldest_year }}" class="text-base text-blue-600 dark:text-blue-400 hover:underline">
+      View Earlier Platforms &rarr;
+    </a>
+  </p>
 </section>
 
 <!-- Support Guidance -->
