@@ -27,7 +27,7 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
           <a href="{{ site.hero.cta_primary_url }}" class="inline-flex items-center px-6 py-3 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">
             {{ site.hero.cta_primary_text }}
           </a>
-          <a href="{{ site.hero.cta_secondary_url }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <a href="{{ site.hero.cta_secondary_url }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
             {{ site.hero.cta_secondary_text }}
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -135,7 +135,7 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
     <h2>Useful Links</h2>
   </div>
 
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="useful-links-grid">
     {% for link in site.data.useful_links %}
     <a href="{{ link.url }}" class="group border border-gray-200 dark:border-gray-700 rounded-lg p-5 bg-white dark:bg-gray-800/50 hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-sm transition-all">
       <div class="flex items-start gap-3">
