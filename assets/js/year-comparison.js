@@ -87,7 +87,7 @@
 
   // Render comparison results
   function renderResults(year1, year2, differences) {
-    let html = '<div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
+    let html = '<div class="platform-table-wrapper"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
     html += '<th class="text-left">Category</th>';
     html += '<th class="text-left">Component</th>';
     html += '<th>' + year1 + '</th>';
@@ -119,7 +119,7 @@
       html += '</tr>';
     });
 
-    html += '</tbody></table></div>';
+    html += '</tbody></table></div></div>';
 
     // Summary
     var diffCount = differences.filter(function(d) { return d.type !== 'unchanged'; }).length;
