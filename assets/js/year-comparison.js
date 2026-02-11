@@ -118,7 +118,7 @@
 
         html += '<tr class="' + rowClass + '">';
         html += categoryCell;
-        html += '<td class="comp-name">' + diff.component + '</td>';
+        html += '<td class="comp-name"><a href="component.html?id=' + diff.componentId + '" class="text-blue-600 dark:text-blue-400 hover:underline">' + diff.component + '</a></td>';
         html += '<td class="font-mono text-sm">' + diff.value1 + '</td>';
         html += '<td class="font-mono text-sm">' + diff.value2 + '</td>';
         html += '</tr>';
