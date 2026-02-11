@@ -71,12 +71,13 @@
     // Update page title
     document.title = item.name + ' \u2013 VFX Reference Platform';
 
-    // Build version history
+    // Build version history (iterate oldest to newest so changes are detected correctly)
     var rows = [];
     var prevVersion = null;
+    var yearsOldestFirst = years.slice().reverse();
 
-    for (var i = 0; i < years.length; i++) {
-      var year = years[i];
+    for (var i = 0; i < yearsOldestFirst.length; i++) {
+      var year = yearsOldestFirst[i];
       var yearData = platformData[year];
       var entry = getComponentValue(yearData, category.id, item.id);
       var version = entry ? (entry.version || null) : null;
@@ -95,22 +96,20 @@
       prevVersion = version;
     }
 
+    // Reverse so newest years display first
+    rows.reverse();
+
     // Render table
-    var html = '<div class="platform-table-wrapper"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
+    var html = '<div class="platform-table-wrapper" style="max-width:28rem;margin:0 auto"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
     html += '<th class="text-left">Year</th>';
     html += '<th>Version</th>';
-    html += '<th>Status</th>';
     html += '</tr></thead><tbody>';
 
     rows.forEach(function(row) {
       var rowClass = row.changed ? 'diff-changed' : '';
-      var statusLabel = row.status.charAt(0).toUpperCase() + row.status.slice(1);
-      var statusColor = row.status === 'draft' ? 'text-amber-600 dark:text-amber-400' : 'text-green-600 dark:text-green-400';
-
       html += '<tr class="' + rowClass + '">';
       html += '<td class="text-left font-medium">' + row.year + '</td>';
       html += '<td class="font-mono text-sm">' + (row.version || '\u2014') + '</td>';
-      html += '<td class="text-sm"><span class="' + statusColor + '">' + statusLabel + '</span></td>';
       html += '</tr>';
     });
 
