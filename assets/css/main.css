@@ -67,6 +67,19 @@
     /* No special styling - inherits default */
   }
 
+  /* Filter toggle buttons */
+  .diff-filter {
+    @apply opacity-40 select-none;
+  }
+
+  .diff-filter:hover {
+    @apply opacity-70;
+  }
+
+  .diff-filter.active {
+    @apply opacity-100 ring-1 ring-gray-400 dark:ring-gray-500 bg-gray-50 dark:bg-gray-800;
+  }
+
   /* Ensure component name column stays left-aligned in comparison table (rowspan shifts td:first-child) */
   .platform-table td.comp-name {
     @apply text-left;

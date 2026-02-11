@@ -20,11 +20,14 @@
     return;
   }
 
+  // Active filters (all enabled by default)
+  var activeFilters = new Set(['unchanged', 'changed', 'added', 'removed']);
+
   // Populate select dropdowns
   function populateSelects() {
     years.forEach(function(year, index) {
-      const option1 = new Option(year, year, index === 0, index === 0);
-      const option2 = new Option(year, year, index === 1, index === 1);
+      var option1 = new Option(year, year, index === 0, index === 0);
+      var option2 = new Option(year, year, index === 1, index === 1);
       year1Select.add(option1);
       year2Select.add(option2);
     });
@@ -34,7 +37,7 @@
   function getComponentValue(yearData, categoryId, itemId) {
     if (!yearData) return null;
 
-    let section;
+    var section;
     if (categoryId === 'components') {
       section = yearData.components;
     } else {
@@ -47,18 +50,14 @@
 
   // Find differences between two years
   function findDifferences(year1, year2) {
-    const data1 = platformData[year1];
-    const data2 = platformData[year2];
-    const diffs = [];
+    var data1 = platformData[year1];
+    var data2 = platformData[year2];
+    var diffs = [];
 
     componentMeta.categories.forEach(function(category) {
       category.items.forEach(function(item) {
-        const val1 = getComponentValue(data1, category.id, item.id);
-        const val2 = getComponentValue(data2, category.id, item.id);
-
-        // Normalize for comparison
-        const str1 = val1 || '';
-        const str2 = val2 || '';
+        var val1 = getComponentValue(data1, category.id, item.id);
+        var val2 = getComponentValue(data2, category.id, item.id);
 
         diffs.push({
           category: category.name,
@@ -87,45 +86,56 @@
 
   // Render comparison results
   function renderResults(year1, year2, differences) {
-    let html = '<div class="platform-table-wrapper"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
+    // Filter by active filters
+    var filtered = differences.filter(function(d) { return activeFilters.has(d.type); });
+
+    var html = '<div class="platform-table-wrapper"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
     html += '<th class="text-left">Category</th>';
     html += '<th class="text-left">Component</th>';
     html += '<th>' + year1 + '</th>';
     html += '<th>' + year2 + '</th>';
     html += '</tr></thead><tbody>';
 
-    let currentCategory = '';
-    let categoryCount = {};
+    if (filtered.length === 0) {
+      html += '<tr><td colspan="4" class="text-center py-8 text-gray-500 dark:text-gray-400">No components match the selected filters.</td></tr>';
+    } else {
+      var currentCategory = '';
+      var categoryCount = {};
 
-    // Count items per category for rowspan
-    differences.forEach(function(diff) {
-      categoryCount[diff.category] = (categoryCount[diff.category] || 0) + 1;
-    });
+      // Count visible items per category for rowspan
+      filtered.forEach(function(diff) {
+        categoryCount[diff.category] = (categoryCount[diff.category] || 0) + 1;
+      });
 
-    differences.forEach(function(diff) {
-      const rowClass = 'diff-' + diff.type;
-      let categoryCell = '';
+      filtered.forEach(function(diff) {
+        var rowClass = 'diff-' + diff.type;
+        var categoryCell = '';
 
-      if (diff.category !== currentCategory) {
-        categoryCell = '<td class="category-' + diff.categoryId + ' font-semibold align-middle" rowspan="' + categoryCount[diff.category] + '">' + diff.category + '</td>';
-        currentCategory = diff.category;
-      }
+        if (diff.category !== currentCategory) {
+          categoryCell = '<td class="category-' + diff.categoryId + ' font-semibold align-middle" rowspan="' + categoryCount[diff.category] + '">' + diff.category + '</td>';
+          currentCategory = diff.category;
+        }
 
-      html += '<tr class="' + rowClass + '">';
-      html += categoryCell;
-      html += '<td class="comp-name">' + diff.component + '</td>';
-      html += '<td class="font-mono text-sm">' + diff.value1 + '</td>';
-      html += '<td class="font-mono text-sm">' + diff.value2 + '</td>';
-      html += '</tr>';
-    });
+        html += '<tr class="' + rowClass + '">';
+        html += categoryCell;
+        html += '<td class="comp-name">' + diff.component + '</td>';
+        html += '<td class="font-mono text-sm">' + diff.value1 + '</td>';
+        html += '<td class="font-mono text-sm">' + diff.value2 + '</td>';
+        html += '</tr>';
+      });
+    }
 
     html += '</tbody></table></div></div>';
 
     // Summary
-    var diffCount = differences.filter(function(d) { return d.type !== 'unchanged'; }).length;
+    var totalDiffCount = differences.filter(function(d) { return d.type !== 'unchanged'; }).length;
+    var showingCount = filtered.length;
     html += '<div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">';
     html += '<p class="text-sm text-gray-600 dark:text-gray-400">';
-    html += '<strong>' + diffCount + '</strong> difference' + (diffCount === 1 ? '' : 's') + ' found out of <strong>' + differences.length + '</strong> components';
+    html += '<strong>' + totalDiffCount + '</strong> difference' + (totalDiffCount === 1 ? '' : 's') + ' found out of <strong>' + differences.length + '</strong> components';
+    if (showingCount < differences.length) {
+      html += ' &middot; showing <strong>' + showingCount + '</strong>';
+    }
     html += '</p></div>';
 
     resultsContainer.innerHTML = html;
@@ -133,35 +143,96 @@
 
   // Update URL to reflect current selection
   function updateURL() {
-    const url = new URL(window.location);
+    var url = new URL(window.location);
     url.searchParams.set('year1', year1Select.value);
     url.searchParams.set('year2', year2Select.value);
+
+    // Only store filters in URL if not all active
+    if (activeFilters.size === 4) {
+      url.searchParams.delete('filters');
+    } else {
+      var filterList = [];
+      activeFilters.forEach(function(f) { filterList.push(f); });
+      url.searchParams.set('filters', filterList.join(','));
+    }
+
     history.replaceState(null, '', url);
   }
 
   // Compare function
   function compare() {
-    const year1 = year1Select.value;
-    const year2 = year2Select.value;
+    var year1 = year1Select.value;
+    var year2 = year2Select.value;
 
     if (!year1 || !year2) return;
 
-    const differences = findDifferences(year1, year2);
+    var differences = findDifferences(year1, year2);
     renderResults(year1, year2, differences);
     updateURL();
   }
 
+  // Set up filter buttons
+  function initFilters() {
+    var filterContainer = document.getElementById('diff-filters');
+    if (!filterContainer) return;
+
+    var buttons = filterContainer.querySelectorAll('.diff-filter');
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filterType = btn.getAttribute('data-filter');
+
+        if (activeFilters.has(filterType)) {
+          // Don't allow deactivating the last filter
+          if (activeFilters.size <= 1) return;
+          activeFilters.delete(filterType);
+          btn.classList.remove('active');
+        } else {
+          activeFilters.add(filterType);
+          btn.classList.add('active');
+        }
+
+        compare();
+      });
+    });
+  }
+
+  // Restore filters from URL
+  function restoreFilters() {
+    var params = new URLSearchParams(window.location.search);
+    var filtersParam = params.get('filters');
+    if (filtersParam) {
+      var urlFilters = filtersParam.split(',');
+      var validTypes = ['unchanged', 'changed', 'added', 'removed'];
+      var restored = urlFilters.filter(function(f) { return validTypes.indexOf(f) !== -1; });
+      if (restored.length > 0) {
+        activeFilters = new Set(restored);
+        // Update button states
+        var buttons = document.querySelectorAll('.diff-filter');
+        buttons.forEach(function(btn) {
+          var filterType = btn.getAttribute('data-filter');
+          if (activeFilters.has(filterType)) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+    }
+  }
+
   // Initialize
   populateSelects();
+  initFilters();
 
   // Apply URL parameters if present
-  const params = new URLSearchParams(window.location.search);
-  const urlYear1 = params.get('year1');
-  const urlYear2 = params.get('year2');
+  var params = new URLSearchParams(window.location.search);
+  var urlYear1 = params.get('year1');
+  var urlYear2 = params.get('year2');
 
-  if (urlYear1 && years.includes(urlYear1)) year1Select.value = urlYear1;
-  if (urlYear2 && years.includes(urlYear2)) year2Select.value = urlYear2;
+  if (urlYear1 && years.indexOf(urlYear1) !== -1) year1Select.value = urlYear1;
+  if (urlYear2 && years.indexOf(urlYear2) !== -1) year2Select.value = urlYear2;
 
+  restoreFilters();
   compare();
 
   // Event listeners
