@@ -19,12 +19,15 @@
       <tbody>
         {% for category in site.data.components.categories %}
           <!-- Category header row -->
-          <tr class="category-header">
-            <td colspan="{{ col_count }}">{{ category.name }}</td>
+          <tr class="category-header" data-category="{{ category.id }}" role="button" tabindex="0" aria-expanded="true">
+            <td colspan="{{ col_count }}">
+              <span class="category-chevron">&#9662;</span>
+              {{ category.name }}
+            </td>
           </tr>
 
           {% for item in category.items %}
-            <tr{% assign mod = forloop.index | modulo: 2 %}{% if mod == 0 %} class="row-alt"{% endif %}>
+            <tr data-category-row="{{ category.id }}"{% assign mod = forloop.index | modulo: 2 %}{% if mod == 0 %} class="row-alt"{% endif %}>
               <td class="font-semibold whitespace-nowrap">
                 {{ item.name }}
                 {% if item.min_max %}

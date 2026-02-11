@@ -68,6 +68,30 @@
     @apply font-bold text-left text-sm tracking-wider text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-700/70 border-b border-gray-300 dark:border-gray-600 py-2;
   }
 
+  .platform-table .category-header {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .platform-table .category-header:hover td {
+    @apply bg-gray-300 dark:bg-gray-600/70;
+  }
+
+  .category-chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 0.75em;
+    margin-right: 0.25rem;
+  }
+
+  .category-header.collapsed .category-chevron {
+    transform: rotate(-90deg);
+  }
+
+  .category-row-hidden {
+    display: none;
+  }
+
   .platform-table-wrapper {
     @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;
   }

@@ -92,6 +92,8 @@ _data/
 
 **Key point:** You rarely need to touch HTML templates. Almost all routine updates involve editing these YAML files.
 
+**Interactive features:** The platform table supports collapsible category sections — users can click any category header (Linux, macOS, Windows, Components) to collapse/expand its rows. Collapsed state is remembered across visits via localStorage.
+
 ---
 
 ## Common Tasks
