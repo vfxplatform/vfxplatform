@@ -12,7 +12,14 @@
         <tr>
           <th scope="col">Component</th>
           {% for year in include.years %}
-          <th scope="col">CY{{ year }}</th>
+          {% assign year_key = "CY" | append: year %}
+          {% assign year_data = site.data.platforms[year_key] %}
+          <th scope="col">
+            CY{{ year }}
+            {% if year_data.status != 'final' %}
+              <span class="draft-badge">DRAFT</span>
+            {% endif %}
+          </th>
           {% endfor %}
         </tr>
       </thead>

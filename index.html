@@ -6,9 +6,25 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
 
 {% assign current_year = site.current_year %}
 {% assign supported_years = "" | split: "" %}
-{% for i in (0..3) %}
+{% assign final_count = 0 %}
+{% assign max_finals = site.supported_years_count %}
+{% for i in (0..20) %}
   {% assign year = current_year | minus: i %}
-  {% assign supported_years = supported_years | push: year %}
+  {% assign year_key = "CY" | append: year %}
+  {% assign year_data = site.data.platforms[year_key] %}
+  {% if year_data %}
+    {% if year_data.status == 'final' %}
+      {% if final_count < max_finals %}
+        {% assign supported_years = supported_years | push: year %}
+        {% assign final_count = final_count | plus: 1 %}
+      {% endif %}
+    {% else %}
+      {% assign supported_years = supported_years | push: year %}
+    {% endif %}
+  {% endif %}
+  {% if final_count >= max_finals %}
+    {% break %}
+  {% endif %}
 {% endfor %}
 
 <!-- Hero Section -->

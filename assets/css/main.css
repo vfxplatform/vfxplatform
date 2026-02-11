@@ -96,6 +96,11 @@
     @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;
   }
 
+  /* Draft badge for non-final platform years */
+  .draft-badge {
+    @apply ml-1 text-xs font-medium px-1.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300 align-middle;
+  }
+
   /* Comparison highlighting - target td cells, excluding category cells with rowspan */
   .diff-changed td:not([rowspan]) {
     @apply bg-yellow-100 dark:bg-yellow-900/30 font-medium;
