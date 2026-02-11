@@ -19,7 +19,18 @@
   }
 
   .platform-table th {
-    @apply px-4 py-3 text-center text-base font-bold text-white dark:text-gray-200 border-b-2 border-blue-700 dark:border-blue-900 bg-blue-600 dark:bg-blue-800;
+    @apply px-4 py-3 text-center text-base font-bold text-white dark:text-gray-200 bg-blue-600 dark:bg-blue-800;
+    border-bottom: 2px solid theme('colors.blue.700');
+    border-right: 1px solid theme('colors.blue.500/60');
+  }
+
+  :is(.dark) .platform-table th {
+    border-bottom-color: theme('colors.blue.900');
+    border-right-color: theme('colors.blue.700/70');
+  }
+
+  .platform-table th:last-child {
+    border-right: none;
   }
 
   .platform-table th:first-child {
@@ -27,7 +38,18 @@
   }
 
   .platform-table td {
-    @apply px-4 py-3 text-center border-b border-gray-100 dark:border-gray-800;
+    @apply px-4 py-3 text-center;
+    border-bottom: 1px solid theme('colors.gray.100');
+    border-right: 1px solid theme('colors.gray.200');
+  }
+
+  :is(.dark) .platform-table td {
+    border-bottom-color: theme('colors.gray.800');
+    border-right-color: theme('colors.gray.700/50');
+  }
+
+  .platform-table td:last-child {
+    border-right: none;
   }
 
   .platform-table td:first-child {
