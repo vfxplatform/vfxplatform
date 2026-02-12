@@ -39,18 +39,29 @@ _data/
 ├── platforms/CY20XX.yml  # Version specs per year (CY2014-CY2026)
 ├── components.yml        # Component metadata and categories
 ├── faq.yml              # FAQ Q&A content
+├── footer.yml           # Footer content (description, resources, contact)
 ├── navigation.yml       # Main navigation menu
-└── notes.yml            # Technical footnotes
+├── notes.yml            # Technical footnotes
+├── status_updates.yml   # Status updates shown on homepage
+└── useful_links.yml     # Useful links section on homepage
 ```
 
 **Key config in `_config.yml`:**
 - `current_year: 2026` - Active platform year
 - `supported_years_count: 4` - Total number of years shown in tables, except on pages where all platform history is shown.
 
-**Templates:**
+**Layouts:**
+- `_layouts/default.html` - Base page layout (centered content container)
+- `_layouts/home.html` - Full-width layout used by pages with hero sections
+
+**Key templates and assets:**
 - `_includes/platform-table.html` - Main specs table component
-- `_layouts/default.html` - Base page layout
 - `assets/css/main.css` - Tailwind directives + custom components
+- `assets/js/year-comparison.js` - Compare page logic
+- `assets/js/component-detail.js` - Component detail page
+- `assets/js/table-collapse.js` - Collapsible table categories
+- `assets/js/note-popover.js` - Note tooltip/bottom sheet
+- `assets/js/dark-mode.js` - Dark mode toggle persistence
 
 ## Common Tasks
 
@@ -61,6 +72,12 @@ _data/
 **Add FAQ entry:** Append to `_data/faq.yml`
 
 **Add technical note:** Add to `_data/notes.yml`, reference with `note:` key in platform data
+
+**Update footer content:** Edit `_data/footer.yml`
+
+**Update status updates:** Edit `_data/status_updates.yml`
+
+**Update useful links:** Edit `_data/useful_links.yml`
 
 ## Platform Data Schema
 
@@ -73,4 +90,4 @@ Each `_data/platforms/CY[YEAR].yml` contains:
 
 ## Deployment
 
-Push to main branch triggers GitHub Actions (`.github/workflows/deploy.yml`) which builds and deploys to GitHub Pages automatically.
+Push to main branch triggers GitHub Actions (`.github/workflows/deploy.yml`) which builds and deploys to GitHub Pages automatically. A separate `.github/workflows/deploy-staging.yml` workflow deploys the staging branch for preview.
