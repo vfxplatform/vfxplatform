@@ -13,38 +13,97 @@
 @layer components {
   /* Platform table styles */
   .platform-table {
-    @apply w-full border-collapse text-sm;
-  }
-
-  .platform-table th,
-  .platform-table td {
-    @apply border border-gray-200 dark:border-gray-700 px-3 py-3 text-center;
+    @apply w-full text-sm;
+    border-collapse: separate;
+    border-spacing: 0;
   }
 
   .platform-table th {
-    @apply bg-gray-50 dark:bg-gray-800 font-semibold;
+    @apply px-4 py-3 text-center text-base font-bold text-white dark:text-gray-200 bg-blue-600 dark:bg-blue-800;
+    border-bottom: 2px solid theme('colors.blue.700');
+    border-right: 1px solid theme('colors.blue.500/60');
   }
 
-  /* Category row colors */
-  .category-linux {
-    @apply bg-amber-50 dark:bg-amber-900/20;
+  :is(.dark) .platform-table th {
+    border-bottom-color: theme('colors.blue.900');
+    border-right-color: theme('colors.blue.700/70');
   }
 
-  .category-macos {
-    @apply bg-cyan-50 dark:bg-cyan-900/20;
+  .platform-table th:last-child {
+    border-right: none;
   }
 
-  .category-windows {
-    @apply bg-emerald-50 dark:bg-emerald-900/20;
+  .platform-table th:first-child {
+    @apply text-left;
   }
 
-  .category-components {
-    @apply bg-gray-50 dark:bg-gray-800/50;
+  .platform-table td {
+    @apply px-4 py-3 text-center;
+    border-bottom: 1px solid theme('colors.gray.100');
+    border-right: 1px solid theme('colors.gray.200');
+  }
+
+  :is(.dark) .platform-table td {
+    border-bottom-color: theme('colors.gray.800');
+    border-right-color: theme('colors.gray.700/50');
+  }
+
+  .platform-table td:last-child {
+    border-right: none;
+  }
+
+  .platform-table td:first-child {
+    @apply text-left;
+  }
+
+  .platform-table td.version-changed {
+    @apply bg-amber-50 dark:bg-amber-900/30;
+  }
+
+  .platform-table tr.row-alt td {
+    @apply bg-gray-50 dark:bg-gray-800/30;
+  }
+
+  .platform-table .category-header td {
+    @apply font-bold text-left text-sm tracking-wider text-gray-800 dark:text-gray-200 bg-gray-200 dark:bg-gray-700/70 border-b border-gray-300 dark:border-gray-600 py-2;
+  }
+
+  .platform-table .category-header {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .platform-table .category-header:hover td {
+    @apply bg-gray-300 dark:bg-gray-600/70;
+  }
+
+  .category-chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 0.75em;
+    margin-right: 0.25rem;
+  }
+
+  .category-header.collapsed .category-chevron {
+    transform: rotate(-90deg);
+  }
+
+  .category-row-hidden {
+    display: none;
+  }
+
+  .platform-table-wrapper {
+    @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;
+  }
+
+  /* Draft badge for non-final platform years */
+  .draft-badge {
+    @apply ml-1 text-xs font-medium px-1.5 py-0.5 rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300 align-middle;
   }
 
   /* Comparison highlighting - target td cells, excluding category cells with rowspan */
   .diff-changed td:not([rowspan]) {
-    @apply bg-yellow-100 dark:bg-yellow-900/30 font-medium;
+    @apply bg-amber-50 dark:bg-amber-900/30 font-medium;
   }
 
   .diff-added td:not([rowspan]) {
@@ -55,8 +114,22 @@
     @apply bg-red-100 dark:bg-red-900/30;
   }
 
-  .diff-unchanged td:not([rowspan]) {
-    /* No special styling - inherits default */
+  /* Filter toggle buttons */
+  .diff-filter {
+    @apply opacity-40 select-none;
+  }
+
+  .diff-filter:hover {
+    @apply opacity-70;
+  }
+
+  .diff-filter.active {
+    @apply opacity-100 ring-1 ring-gray-400 dark:ring-gray-500 bg-gray-50 dark:bg-gray-800;
+  }
+
+  /* Ensure component name column stays left-aligned in comparison table (rowspan shifts td:first-child) */
+  .platform-table td.comp-name {
+    @apply text-left;
   }
 
   /* Year cards for history page */
@@ -69,11 +142,11 @@
   }
 
   .year-card-content {
-    @apply p-4 space-y-4;
+    @apply p-4 space-y-2;
   }
 
   .year-card-section {
-    @apply rounded-lg p-3;
+    @apply rounded-lg px-3 py-1;
   }
 
   .year-card-table {
@@ -81,7 +154,7 @@
   }
 
   .year-card-table td {
-    @apply py-2 px-2;
+    @apply py-1 px-2;
   }
 
   .year-card-table td:first-child {
@@ -167,6 +240,48 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Section heading with flanking lines */
+  .section-heading {
+    @apply flex items-center gap-4 mb-8;
+  }
+
+  .section-heading::before,
+  .section-heading::after {
+    content: '';
+    @apply flex-1 h-px bg-gray-200 dark:bg-gray-700;
+  }
+
+  .section-heading h2 {
+    @apply text-2xl font-semibold whitespace-nowrap;
+  }
+
+  /* Useful links - flex layout with centered last row */
+  .useful-links-grid {
+    @apply flex flex-wrap justify-center;
+    gap: 1rem;
+  }
+
+  .useful-links-grid > * {
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .useful-links-grid > * {
+      width: calc(50% - 0.5rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .useful-links-grid > * {
+      width: calc(33.333% - 0.6667rem);
+    }
+  }
+
+  /* Info box */
+  .info-box {
+    @apply bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800/30 rounded-lg p-5;
+  }
+
   /* Accordion styles */
   .accordion-item {
     @apply border border-gray-200 dark:border-gray-700 rounded-lg mb-2;
@@ -179,10 +294,13 @@
   .accordion-content {
     @apply px-4 pb-4 prose dark:prose-invert max-w-none;
   }
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .accordion-item.open .accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  .accordion-item.open .accordion-header {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }

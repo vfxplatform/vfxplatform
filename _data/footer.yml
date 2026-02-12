@@ -1,0 +1,12 @@
+description: "A standardized set of tool and library versions to minimize incompatibilities between software packages in the VFX industry."
+
+resources:
+  - title: "Discussion Group"
+    url: "https://groups.google.com/g/vfx-platform-discuss"
+  - title: "Academy Software Foundation"
+    url: "https://www.aswf.io/"
+  - title: "VFXpy Tracker"
+    url: "https://vfxpy.com/"
+
+contact_email: "feedback@vfxplatform.com"
+collaboration_text: "Updated annually in collaboration with the <a href='https://vesglobal.org/technology-committee-activities/' class='text-blue-400 hover:text-blue-300 hover:underline'>Visual Effects Society Technology Committee</a>."

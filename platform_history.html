@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: Platform History
 description: "VFX Reference Platform - Historical platform versions from CY2014 to present"
 ---
@@ -15,48 +15,73 @@ description: "VFX Reference Platform - Historical platform versions from CY2014 
 {% endfor %}
 {% assign all_years = all_years | sort | reverse %}
 
-{% comment %} History years = all years except the most recent 4 {% endcomment %}
-{% assign history_years = "" | split: "" %}
-{% for year in all_years %}
-  {% assign diff = current_year | minus: year %}
-  {% if diff >= supported_count %}
-    {% assign history_years = history_years | push: year %}
-  {% endif %}
-{% endfor %}
+<!-- Hero Section -->
+<section class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="py-12 md:py-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          Platform History
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
+          All VFX Reference Platform targets going back to the initial release for CY2014.
+        </p>
+        <a href="{{ '/compare.html' | relative_url }}" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-medium hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+          Compare years side-by-side
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h2 class="text-2xl font-semibold mb-4">Reference Platform History</h2>
+<!-- Version Semantics -->
+<section class="container mx-auto px-4 max-w-6xl py-12">
+  <div class="info-box mb-8">
+    <div class="flex gap-3">
+      <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <div>
+        <p class="text-sm text-gray-700 dark:text-gray-200 mb-2">
+          Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">
+          All versions should be considered exact required versions, except for those components where
+          <span class="whitespace-nowrap text-gray-500">&#8595;&#8593;</span>
+          indicates that:
+        </p>
+        <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1">
+          <li>For systems (or software) providing the library at runtime, versions should be considered <em>minimum version required.</em></li>
+          <li>Otherwise, for software building against the library, versions should be considered <em>highest version allowed.</em></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p class="text-lg text-gray-600 dark:text-gray-300 mb-4">
-  Below is a list of all the VFX Reference Platform targets going back to the initial release for CY2014.
-</p>
+<!-- All Platforms -->
+<section class="container mx-auto px-4 max-w-6xl py-12">
+  <div class="section-heading">
+    <h2>All Platforms</h2>
+  </div>
 
-<p class="mb-4 text-gray-600 dark:text-gray-300">
-  Each annual reference platform is designated by the calendar year in which major product releases should be targeting that particular reference.
-</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {% for year in all_years %}
+      {% include year-card.html year=year %}
+    {% endfor %}
+  </div>
+</section>
 
-<p class="mb-4 text-gray-600 dark:text-gray-300">
-  All versions should be considered exact required versions, except for those components where
-  <span class="whitespace-nowrap text-gray-500">&#8595;&#8593;</span>
-  indicates that:
-</p>
+<!-- Previous Status Updates -->
+<section class="container mx-auto px-4 max-w-6xl py-12" id="previous-status-updates">
+  <div class="section-heading">
+    <h2>Previous Status Updates</h2>
+  </div>
 
-<ul class="list-disc list-inside mb-6 text-gray-600 dark:text-gray-300 space-y-1">
-  <li>for systems (or software) providing the library at runtime, versions should be considered <em>minimum version required.</em></li>
-  <li>otherwise, for software building software against the library, versions should be considered <em>highest version allowed</em></li>
-</ul>
-
-<p class="mb-8 text-gray-600 dark:text-gray-300">
-  <a href="/compare.html" class="text-blue-600 dark:text-blue-400 hover:underline">Compare years side-by-side &rarr;</a>
-</p>
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-  {% for year in history_years %}
-    {% include year-card.html year=year %}
-  {% endfor %}
-</div>
-
-<h2 class="text-2xl font-semibold mb-6 mt-12" id="previous-status-updates">Previous Status Updates</h2>
-
-{% include status-updates.html offset=5 %}
+  {% include status-updates.html offset=5 style="cards" show_latest=false %}
+</section>
 
 {% include note-popover-content.html %}

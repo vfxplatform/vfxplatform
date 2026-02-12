@@ -3,81 +3,93 @@
   Usage: {% include platform-table.html years=supported_years show_history_link=true %}
 {% endcomment %}
 
-{% assign total_rows = 0 %}
-{% for cat in site.data.components.categories %}
-  {% assign total_rows = total_rows | plus: cat.items.size %}
-{% endfor %}
+{% assign col_count = include.years | size | plus: 1 %}
 
-<div class="overflow-x-auto">
-  <table class="platform-table">
-    <thead>
-      <tr>
-        <th scope="col" class="text-left" colspan="2"></th>
-        {% for year in include.years %}
-        <th scope="col">CY{{ year }}</th>
-        {% endfor %}
-        {% if include.show_history_link %}
-        <th scope="col"></th>
-        {% endif %}
-      </tr>
-    </thead>
-    <tbody>
-      {% for category in site.data.components.categories %}
-        {% assign category_size = category.items | size %}
-        {% assign first_row = true %}
-
-        {% for item in category.items %}
-          <tr class="category-{{ category.id }}">
-            {% if first_row %}
-              <td class="font-bold text-center align-middle whitespace-nowrap" rowspan="{{ category_size }}">
-                {{ category.name }}
-              </td>
-              {% assign first_row = false %}
+<div class="platform-table-wrapper">
+  <div class="overflow-x-auto">
+    <table class="platform-table">
+      <thead>
+        <tr>
+          <th scope="col">Component</th>
+          {% for year in include.years %}
+          {% assign year_key = "CY" | append: year %}
+          {% assign year_data = site.data.platforms[year_key] %}
+          <th scope="col">
+            CY{{ year }}
+            {% if year_data.status != 'final' %}
+              <span class="draft-badge">DRAFT</span>
             {% endif %}
-
-            <td class="font-semibold text-left whitespace-nowrap">
-              {{ item.name }}
-              {% if item.min_max %}
-                <span class="text-xs text-gray-500 dark:text-gray-400" title="Minimum/Maximum version semantics apply">&#8595;&#8593;</span>
-              {% endif %}
+          </th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for category in site.data.components.categories %}
+          <!-- Category header row -->
+          <tr class="category-header" data-category="{{ category.id }}" role="button" tabindex="0" aria-expanded="true">
+            <td colspan="{{ col_count }}">
+              <span class="category-chevron">&#9662;</span>
+              {{ category.name }}
             </td>
+          </tr>
 
-            {% for year in include.years %}
-              {% assign year_key = "CY" | append: year %}
-              {% assign year_data = site.data.platforms[year_key] %}
-
-              {% if category.id == "components" %}
-                {% assign item_data = year_data.components[item.id] %}
-              {% else %}
-                {% assign section = year_data[category.id] %}
-                {% assign item_data = section[item.id] %}
-              {% endif %}
-
-              <td class="text-sm">
-                {% if item_data and item_data.version %}
-                  <span class="font-mono">{{ item_data.version }}</span>
-                  {% if item_data.inline_note %}
-                    <br><small class="text-gray-500 dark:text-gray-400">({{ item_data.inline_note }})</small>
-                  {% endif %}
-                  {% if item_data.note %}
-                    <br><small><a href="#{{ item_data.note }}" data-note-id="{{ item_data.note }}" class="text-blue-600 dark:text-blue-400 hover:underline">(see notes)</a></small>
-                  {% endif %}
-                {% else %}
-                  <span class="text-gray-400">&mdash;</span>
+          {% for item in category.items %}
+            <tr data-category-row="{{ category.id }}"{% assign mod = forloop.index | modulo: 2 %}{% if mod == 0 %} class="row-alt"{% endif %}>
+              <td class="font-semibold whitespace-nowrap">
+                {{ item.name }}
+                {% if item.min_max %}
+                  <span class="text-xs text-gray-500 dark:text-gray-400" title="Minimum/Maximum version semantics apply">&#8595;&#8593;</span>
                 {% endif %}
               </td>
-            {% endfor %}
 
-            {% if include.show_history_link and forloop.first and forloop.parentloop.first %}
-              <td class="text-center align-middle whitespace-nowrap" rowspan="{{ total_rows }}">
-                <a href="/platform_history.html" class="text-blue-600 dark:text-blue-400 hover:underline text-sm">
-                  Earlier<br>Platforms
-                </a>
-              </td>
-            {% endif %}
-          </tr>
+              {% for year in include.years %}
+                {% assign year_key = "CY" | append: year %}
+                {% assign year_data = site.data.platforms[year_key] %}
+
+                {% if category.id == "components" %}
+                  {% assign item_data = year_data.components[item.id] %}
+                {% else %}
+                  {% assign section = year_data[category.id] %}
+                  {% assign item_data = section[item.id] %}
+                {% endif %}
+
+                {% assign version_changed = false %}
+                {% if item_data and item_data.version %}
+                  {% assign prev_year_num = year | minus: 1 %}
+                  {% assign prev_year_key = "CY" | append: prev_year_num %}
+                  {% assign prev_year_data = site.data.platforms[prev_year_key] %}
+                  {% if prev_year_data %}
+                    {% if category.id == "components" %}
+                      {% assign prev_item_data = prev_year_data.components[item.id] %}
+                    {% else %}
+                      {% assign prev_section = prev_year_data[category.id] %}
+                      {% assign prev_item_data = prev_section[item.id] %}
+                    {% endif %}
+                    {% if prev_item_data and prev_item_data.version and item_data.version != prev_item_data.version %}
+                      {% assign version_changed = true %}
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+
+                <td class="text-sm{% if version_changed %} version-changed{% endif %}">
+                  {% if item_data and item_data.version %}
+                    <span class="font-mono">{{ item_data.version }}</span>
+                    {% if item_data.inline_note %}
+                      <br><small class="text-gray-500 dark:text-gray-400">({{ item_data.inline_note }})</small>
+                    {% endif %}
+                    {% if item_data.note %}
+                      <br><small><a href="#{{ item_data.note }}" data-note-id="{{ item_data.note }}" class="text-blue-600 dark:text-blue-400 hover:underline">(see notes)</a></small>
+                    {% endif %}
+                  {% else %}
+                    <span class="text-gray-400">&mdash;</span>
+                  {% endif %}
+                </td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
         {% endfor %}
-      {% endfor %}
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
+

@@ -1,12 +1,13 @@
-<nav class="bg-gray-900 sticky top-0 z-50">
+<nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
   <div class="container mx-auto px-4 max-w-6xl">
     <div class="flex items-center justify-between h-16">
-      <a href="/" class="text-white font-semibold text-lg hover:text-gray-300 transition-colors">
-        VFX Reference Platform
+      <a href="{{ '/' | relative_url }}" class="flex items-center gap-2 text-gray-900 dark:text-white font-semibold text-lg hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+        <img src="{{ '/assets/images/logo_optimized.svg' | relative_url }}" alt="VFX Reference Platform" class="h-10 w-auto flex-shrink-0">
+        <span>VFX Reference Platform</span>
       </a>
 
       <!-- Mobile menu button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -15,8 +16,8 @@
       <!-- Desktop navigation -->
       <div class="hidden md:flex items-center space-x-1">
         {% for item in site.data.navigation.main %}
-        <a href="{{ item.url }}"
-           class="px-3 py-2 text-sm text-gray-300 hover:text-white rounded-md transition-colors {% if page.url == item.url or page.url == item.url | append: 'index.html' %}text-white bg-gray-800{% endif %}">
+        <a href="{{ item.url | relative_url }}"
+           class="px-3 py-2 text-sm rounded-md transition-colors {% if page.url == item.url or page.url == item.url | append: 'index.html' %}text-blue-600 dark:text-blue-400 font-medium{% else %}text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white{% endif %}">
           {{ item.title }}
         </a>
         {% endfor %}
@@ -28,7 +29,7 @@
     <!-- Mobile navigation -->
     <div id="mobile-menu" class="hidden md:hidden pb-4">
       {% for item in site.data.navigation.main %}
-      <a href="{{ item.url }}" class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded-md">
+      <a href="{{ item.url | relative_url }}" class="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md">
         {{ item.title }}
       </a>
       {% endfor %}
@@ -42,7 +43,7 @@
 <script>
   document.getElementById('mobile-menu-btn').addEventListener('click', function() {
     document.getElementById('mobile-menu').classList.toggle('hidden');
-    var expanded = this.getAttribute('aria-expanded') === 'true';
+    const expanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', !expanded);
   });
 </script>

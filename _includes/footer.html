@@ -1,7 +1,72 @@
-<footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12">
-  <div class="container mx-auto px-4 py-6 max-w-6xl">
-    <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
-      <em>Any reference made in the VFX Reference Platform to any company or any other entity, or to their services or products, is not an endorsement or recommendation nor should it imply any such endorsement or recommendation of the quality or fitness of purpose of that company or entity, or its services or products. In no event shall the Visual Effects Society be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services identified in the VFX Reference Platform or the <a href="https://vesglobal.org" class="text-blue-600 dark:text-blue-400 hover:underline">Visual Effects Society website</a>.</em>
-    </p>
+<footer class="bg-gray-900 dark:bg-gray-950 text-gray-300 mt-12">
+  <div class="container mx-auto px-4 py-12 max-w-6xl">
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <!-- About column -->
+      <div>
+        <a href="{{ '/' | relative_url }}" class="flex items-center gap-2 text-white font-semibold text-lg mb-3">
+          <img src="{{ '/assets/images/logo_optimized.svg' | relative_url }}" alt="VFX Reference Platform" class="h-9 w-auto flex-shrink-0">
+          <span>VFX Reference Platform</span>
+        </a>
+        <p class="text-sm text-gray-400 leading-relaxed mb-2">
+          {{ site.data.footer.description }}
+        </p>
+        <p class="text-sm text-gray-400 leading-relaxed">
+          {{ site.data.footer.collaboration_text }}
+        </p>
+      </div>
+
+      <!-- Resources column -->
+      <div>
+        <h3 class="text-white font-semibold mb-3">Resources</h3>
+        <ul class="space-y-2 text-sm">
+          {% for link in site.data.footer.resources %}
+          <li>
+            <a href="{{ link.url }}" class="text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1">
+              {{ link.title }}
+              <svg class="w-2.5 h-2.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Contact column -->
+      <div>
+        <h3 class="text-white font-semibold mb-3">Contact</h3>
+        <p class="text-sm text-gray-400 mb-2">
+          <a href="mailto:{{ site.data.footer.contact_email }}" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            {{ site.data.footer.contact_email }}
+          </a>
+        </p>
+        <p class="text-sm text-gray-400 mb-2">
+          <a href="https://groups.google.com/g/vfx-platform-discuss" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            vfx-platform-discuss
+          </a>
+        </p>
+        <p class="text-sm text-gray-400 mb-2">
+          <a href="https://academysoftwarefdn.slack.com/archives/C017TA11X2S" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.124 2.521a2.528 2.528 0 0 1 2.52-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.52V8.834zm-1.271 0a2.528 2.528 0 0 1-2.521 2.521 2.528 2.528 0 0 1-2.521-2.521V2.522A2.528 2.528 0 0 1 15.165 0a2.528 2.528 0 0 1 2.522 2.522v6.312zm-2.522 10.124a2.528 2.528 0 0 1 2.522 2.52A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.521-2.522v-2.52h2.521zm0-1.271a2.527 2.527 0 0 1-2.521-2.521 2.528 2.528 0 0 1 2.521-2.522h6.313A2.528 2.528 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.522h-6.313z"/>
+            </svg>
+            #vfx_reference_platform
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Legal disclaimer -->
+    <div class="border-t border-gray-800 pt-6">
+      <p class="text-xs text-gray-500 leading-relaxed">
+        <em>Any reference made in the VFX Reference Platform to any company or any other entity, or to their services or products, is not an endorsement or recommendation nor should it imply any such endorsement or recommendation of the quality or fitness of purpose of that company or entity, or its services or products. In no event shall the Visual Effects Society be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods, or services identified in the VFX Reference Platform or the <a href="https://vesglobal.org" class="text-blue-400 hover:text-blue-300 hover:underline">Visual Effects Society website</a>.</em>
+      </p>
+    </div>
   </div>
 </footer>

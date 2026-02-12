@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Environment
+.env
+.bundle/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.bak
+
+# Archived reference
+v1-reference/

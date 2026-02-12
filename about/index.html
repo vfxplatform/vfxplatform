@@ -1,48 +1,84 @@
 ---
-layout: default
+layout: home
 title: About
 description: "VFX Reference Platform - About the VFX Reference Platform initiative"
 ---
 
-<h2 class="text-2xl font-semibold mb-6">About the VFX Reference Platform</h2>
+<!-- Hero Section -->
+<section class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="py-12 md:py-16">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+          About the VFX Reference Platform
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+          Minimising incompatibilities between different software packages used in VFX and animation production.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<h3 class="text-xl font-semibold mb-4">Background</h3>
+<!-- Background -->
+<section class="container mx-auto px-4 max-w-6xl py-12">
+  <div class="section-heading">
+    <h2>Background</h2>
+  </div>
 
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-  The production of visual effects and animation for film requires the use of a number of different software products. In order for these products to work together and share data through commonly understood file formats, they frequently depend on the same set of third-party components. Unfortunately software vendors are often not building with the same versions of these shared components. The result can be significant integration challenges for studios and end users.
-</p>
+  <p class="text-gray-600 dark:text-gray-300 mb-4">
+    The production of visual effects and animation for film requires the use of a number of different software products. In order for these products to work together and share data through commonly understood file formats, they frequently depend on the same set of third-party components. Unfortunately software vendors are often not building with the same versions of these shared components. The result can be significant integration challenges for studios and end users.
+  </p>
 
-<p class="text-gray-600 dark:text-gray-300 mb-8">
-  For example, if the versions of <a href="http://python.org" class="text-blue-600 dark:text-blue-400 hover:underline">Python</a> vary then plug-ins written for one software product will not work with another. The same issue can arise with <a href="http://qt.io" class="text-blue-600 dark:text-blue-400 hover:underline">Qt</a> widgets or <a href="https://www.boost.org/" class="text-blue-600 dark:text-blue-400 hover:underline">Boost</a> libraries. Even varying versions of low-level components like the C++ compiler or glibc can result in plug-in incompatibilities or crashes when sharing files.
-</p>
+  <p class="text-gray-600 dark:text-gray-300">
+    For example, if the versions of <a href="http://python.org" class="text-blue-600 dark:text-blue-400 hover:underline">Python</a> vary then plug-ins written for one software product will not work with another. The same issue can arise with <a href="http://qt.io" class="text-blue-600 dark:text-blue-400 hover:underline">Qt</a> widgets or <a href="https://www.boost.org/" class="text-blue-600 dark:text-blue-400 hover:underline">Boost</a> libraries. Even varying versions of low-level components like the C++ compiler or glibc can result in plug-in incompatibilities or crashes when sharing files.
+  </p>
+</section>
 
-<h3 class="text-xl font-semibold mb-4">Goals</h3>
+<!-- Goals -->
+<section class="container mx-auto px-4 max-w-6xl py-12">
+  <div class="section-heading">
+    <h2>Goals</h2>
+  </div>
 
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-  Our main focus is on minimising incompatibilities between different software packages:
-</p>
+  <p class="text-gray-600 dark:text-gray-300 mb-4">
+    Our main focus is on minimising incompatibilities between different software packages:
+  </p>
 
-<ul class="list-disc list-inside mb-8 text-gray-600 dark:text-gray-300 space-y-2">
-  <li>Ease the support burden for integrated pipelines at VFX and animation studios.</li>
-  <li>Make it easier for software vendors to support their products on Linux and other operating systems.</li>
-  <li>Encourage further adoption of Linux by making it less daunting for small to medium studios and end users.</li>
-  <li>Help the industry adopt new technologies more rapidly.</li>
-</ul>
+  <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+    <li>Ease the support burden for integrated pipelines at VFX and animation studios.</li>
+    <li>Make it easier for software vendors to support their products on Linux and other operating systems.</li>
+    <li>Encourage further adoption of Linux by making it less daunting for small to medium studios and end users.</li>
+    <li>Help the industry adopt new technologies more rapidly.</li>
+  </ul>
+</section>
 
-<h3 class="text-xl font-semibold mb-4">Process</h3>
+<!-- Process -->
+<section class="container mx-auto px-4 max-w-6xl py-12">
+  <div class="section-heading">
+    <h2>Process</h2>
+  </div>
 
-<p class="text-gray-600 dark:text-gray-300 mb-4">
-  Each year a new VFX Reference Platform is published for use by vendors building software for release during that calendar year. Each year the process is as follows:
-</p>
+  <p class="text-gray-600 dark:text-gray-300 mb-4">
+    Each year a new VFX Reference Platform is published for use by vendors building software for release during that calendar year. Each year the process is as follows:
+  </p>
 
-<ul class="list-disc list-inside mb-4 text-gray-600 dark:text-gray-300 space-y-2">
-  <li><strong>January to April</strong> - Research and information gathering.</li>
-  <li><strong>May</strong> - Draft Reference Platform published. The community is invited to provide feedback on the Draft.</li>
-  <li><strong>Late July / August</strong> - Draft discussed at our annual Birds of a Feather meeting at SIGGRAPH and User Group meeting.</li>
-  <li><strong>September 1st</strong> - Final version of the Reference Platform published.</li>
-  <li><strong>November</strong> - Late changes occasionally permitted if required to pick up late releases from upstream dependencies, and where there is consensus within the community.</li>
-</ul>
+  <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2 mb-6">
+    <li><strong>January to April</strong> - Research and information gathering.</li>
+    <li><strong>May</strong> - Draft Reference Platform published. The community is invited to provide feedback on the Draft.</li>
+    <li><strong>Late July / August</strong> - Draft discussed at our annual Birds of a Feather meeting at SIGGRAPH and User Group meeting.</li>
+    <li><strong>September 1st</strong> - Final version of the Reference Platform published.</li>
+    <li><strong>November</strong> - Late changes occasionally permitted if required to pick up late releases from upstream dependencies, and where there is consensus within the community.</li>
+  </ul>
 
-<p class="text-gray-600 dark:text-gray-300">
-  Latest news and discussion is available on the mailing list: <a href="https://groups.google.com/g/vfx-platform-discuss" class="text-blue-600 dark:text-blue-400 hover:underline">vfx-platform-discuss</a>.
-</p>
+  <div class="info-box">
+    <div class="flex gap-3">
+      <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p class="text-sm text-gray-700 dark:text-gray-200">
+        Latest news and discussion is available on the mailing list: <a href="https://groups.google.com/g/vfx-platform-discuss" class="text-blue-600 dark:text-blue-400 hover:underline">vfx-platform-discuss</a>.
+      </p>
+    </div>
+  </div>
+</section>

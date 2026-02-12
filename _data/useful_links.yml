@@ -1,0 +1,24 @@
+- title: "2021 Studio Platform Survey Report"
+  url: "https://bit.ly/VRP21Rep"
+  description: "Results from the 2021 survey of VFX studio platform configurations and requirements."
+  icon: "chart"
+
+- title: "VFXpy Python 3 Compatibility Tracker"
+  url: "https://vfxpy.com/"
+  description: "Track Python 3 compatibility for common VFX and animation software packages."
+  icon: "python"
+
+- title: "ASWF Docker Containers"
+  url: "https://github.com/AcademySoftwareFoundation/aswf-docker"
+  description: "Ready-to-build containers implementing VFX Reference Platform compliant build environments."
+  icon: "container"
+
+- title: "DCC Tool Version Compatibility"
+  url: "https://docs.google.com/spreadsheets/d/1-8VdfspUBpkYJzfKKovI-H2bZeb5Wn3cuNPsq_Ho3S8/edit?usp=sharing"
+  description: "Track major digital content creation tool version compatibility with each platform year."
+  icon: "grid"
+
+- title: "VFX Industry Build Matrix"
+  url: "https://docs.google.com/spreadsheets/d/1EwRlz5ZYObEOdBfIk8iTX5thlpTyEAfp3bxOgAfFOiU/edit?usp=sharing"
+  description: "Cross-reference of build configurations used across the VFX industry."
+  icon: "matrix"
