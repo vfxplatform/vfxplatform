@@ -18,11 +18,6 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      colors: {
-        'vfx-dark': '#1a1a2e',
-        'vfx-primary': '#16213e',
-        'vfx-accent': '#0f3460',
-      },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],

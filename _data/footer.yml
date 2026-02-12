@@ -9,4 +9,4 @@ resources:
     url: "https://vfxpy.com/"
 
 contact_email: "feedback@vfxplatform.com"
-collaboration_text: "Updated annually in collaboration with the Visual Effects Society Technology Committee."
+collaboration_text: "Updated annually in collaboration with the <a href='https://vesglobal.org/technology-committee-activities/' class='text-blue-400 hover:text-blue-300 hover:underline'>Visual Effects Society Technology Committee</a>."
