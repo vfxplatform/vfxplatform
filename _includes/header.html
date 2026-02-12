@@ -2,7 +2,7 @@
   <div class="container mx-auto px-4 max-w-6xl">
     <div class="flex items-center justify-between h-16">
       <a href="{{ '/' | relative_url }}" class="flex items-center gap-2 text-gray-900 dark:text-white font-semibold text-lg hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
-        <img src="{{ '/assets/images/logo_optimized.svg' | relative_url }}" alt="VFX Reference Platform" style="height: 2.5rem; width: auto;" class="flex-shrink-0">
+        <img src="{{ '/assets/images/logo_optimized.svg' | relative_url }}" alt="VFX Reference Platform" class="h-10 w-auto flex-shrink-0">
         <span>VFX Reference Platform</span>
       </a>
 
@@ -43,7 +43,7 @@
 <script>
   document.getElementById('mobile-menu-btn').addEventListener('click', function() {
     document.getElementById('mobile-menu').classList.toggle('hidden');
-    var expanded = this.getAttribute('aria-expanded') === 'true';
+    const expanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', !expanded);
   });
 </script>

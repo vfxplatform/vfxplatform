@@ -1,8 +1,8 @@
 // Component detail page
 (function() {
-  var titleEl = document.getElementById('component-title');
-  var subtitleEl = document.getElementById('component-subtitle');
-  var contentEl = document.getElementById('component-content');
+  const titleEl = document.getElementById('component-title');
+  const subtitleEl = document.getElementById('component-subtitle');
+  const contentEl = document.getElementById('component-content');
 
   if (!titleEl || !subtitleEl || !contentEl) return;
 
@@ -11,11 +11,11 @@
     return;
   }
 
-  var params = new URLSearchParams(window.location.search);
-  var componentId = params.get('id');
+  const params = new URLSearchParams(window.location.search);
+  const componentId = params.get('id');
 
   // Get sorted years (newest first)
-  var years = Object.keys(platformData).sort().reverse();
+  const years = Object.keys(platformData).sort().reverse();
 
   if (!componentId) {
     renderIndex();
@@ -23,7 +23,7 @@
   }
 
   // Find component metadata
-  var componentInfo = findComponent(componentId);
+  const componentInfo = findComponent(componentId);
   if (!componentInfo) {
     titleEl.textContent = 'Component Not Found';
     subtitleEl.textContent = 'The component "' + componentId + '" does not exist.';
@@ -34,10 +34,10 @@
   renderDetail(componentInfo);
 
   function findComponent(id) {
-    for (var i = 0; i < componentMeta.categories.length; i++) {
-      var category = componentMeta.categories[i];
-      for (var j = 0; j < category.items.length; j++) {
-        var item = category.items[j];
+    for (let i = 0; i < componentMeta.categories.length; i++) {
+      const category = componentMeta.categories[i];
+      for (let j = 0; j < category.items.length; j++) {
+        const item = category.items[j];
         if (item.id === id) {
           return { item: item, category: category };
         }
@@ -47,7 +47,7 @@
   }
 
   function getComponentValue(yearData, categoryId, itemId) {
-    var section;
+    let section;
     if (categoryId === 'components') {
       section = yearData.components;
     } else {
@@ -58,12 +58,12 @@
   }
 
   function renderDetail(info) {
-    var item = info.item;
-    var category = info.category;
+    const item = info.item;
+    const category = info.category;
 
     // Update hero
     titleEl.textContent = item.name;
-    var subtitleParts = [category.name];
+    const subtitleParts = [category.name];
     if (item.subtitle) subtitleParts.push(item.subtitle);
     if (item.min_max) subtitleParts.push('Min version');
     subtitleEl.textContent = subtitleParts.join(' \u00B7 ');
@@ -72,18 +72,18 @@
     document.title = item.name + ' \u2013 VFX Reference Platform';
 
     // Build version history (iterate oldest to newest so changes are detected correctly)
-    var rows = [];
-    var prevVersion = null;
-    var yearsOldestFirst = years.slice().reverse();
+    const rows = [];
+    let prevVersion = null;
+    const yearsOldestFirst = years.slice().reverse();
 
-    for (var i = 0; i < yearsOldestFirst.length; i++) {
-      var year = yearsOldestFirst[i];
-      var yearData = platformData[year];
-      var entry = getComponentValue(yearData, category.id, item.id);
-      var version = entry ? (entry.version || null) : null;
-      var status = yearData.status || 'unknown';
-      var note = entry ? (entry.note || null) : null;
-      var changed = (prevVersion !== null && version !== prevVersion) || (prevVersion === null && i > 0 && version !== null);
+    for (let i = 0; i < yearsOldestFirst.length; i++) {
+      const year = yearsOldestFirst[i];
+      const yearData = platformData[year];
+      const entry = getComponentValue(yearData, category.id, item.id);
+      const version = entry ? (entry.version || null) : null;
+      const status = yearData.status || 'unknown';
+      const note = entry ? (entry.note || null) : null;
+      const changed = (prevVersion !== null && version !== prevVersion) || (prevVersion === null && i > 0 && version !== null);
 
       rows.push({
         year: year,
@@ -100,13 +100,13 @@
     rows.reverse();
 
     // Render table
-    var html = '<div class="platform-table-wrapper" style="max-width:28rem;margin:0 auto"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
+    let html = '<div class="platform-table-wrapper" style="max-width:28rem;margin:0 auto"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
     html += '<th class="text-left">Year</th>';
     html += '<th>Version</th>';
     html += '</tr></thead><tbody>';
 
     rows.forEach(function(row) {
-      var rowClass = row.changed ? 'diff-changed' : '';
+      const rowClass = row.changed ? 'diff-changed' : '';
       html += '<tr class="' + rowClass + '">';
       html += '<td class="text-left font-medium">' + row.year + '</td>';
       html += '<td class="font-mono text-sm">' + (row.version || '\u2014') + '</td>';
@@ -123,7 +123,7 @@
     subtitleEl.textContent = 'Browse version history for any VFX Reference Platform component.';
     document.title = 'All Components \u2013 VFX Reference Platform';
 
-    var html = '<div class="grid gap-8 md:grid-cols-2">';
+    let html = '<div class="grid gap-8 md:grid-cols-2">';
 
     componentMeta.categories.forEach(function(category) {
       html += '<div class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">';

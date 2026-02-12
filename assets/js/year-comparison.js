@@ -21,13 +21,13 @@
   }
 
   // Active filters (all enabled by default)
-  var activeFilters = new Set(['unchanged', 'changed', 'added', 'removed']);
+  let activeFilters = new Set(['unchanged', 'changed', 'added', 'removed']);
 
   // Populate select dropdowns
   function populateSelects() {
     years.forEach(function(year, index) {
-      var option1 = new Option(year, year, index === 0, index === 0);
-      var option2 = new Option(year, year, index === 1, index === 1);
+      const option1 = new Option(year, year, index === 0, index === 0);
+      const option2 = new Option(year, year, index === 1, index === 1);
       year1Select.add(option1);
       year2Select.add(option2);
     });
@@ -37,7 +37,7 @@
   function getComponentValue(yearData, categoryId, itemId) {
     if (!yearData) return null;
 
-    var section;
+    let section;
     if (categoryId === 'components') {
       section = yearData.components;
     } else {
@@ -50,14 +50,14 @@
 
   // Find differences between two years
   function findDifferences(year1, year2) {
-    var data1 = platformData[year1];
-    var data2 = platformData[year2];
-    var diffs = [];
+    const data1 = platformData[year1];
+    const data2 = platformData[year2];
+    const diffs = [];
 
     componentMeta.categories.forEach(function(category) {
       category.items.forEach(function(item) {
-        var val1 = getComponentValue(data1, category.id, item.id);
-        var val2 = getComponentValue(data2, category.id, item.id);
+        const val1 = getComponentValue(data1, category.id, item.id);
+        const val2 = getComponentValue(data2, category.id, item.id);
 
         diffs.push({
           category: category.name,
@@ -87,9 +87,9 @@
   // Render comparison results
   function renderResults(year1, year2, differences) {
     // Filter by active filters
-    var filtered = differences.filter(function(d) { return activeFilters.has(d.type); });
+    const filtered = differences.filter(function(d) { return activeFilters.has(d.type); });
 
-    var html = '<div class="platform-table-wrapper"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
+    let html = '<div class="platform-table-wrapper"><div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
     html += '<th class="text-left">Category</th>';
     html += '<th class="text-left">Component</th>';
     html += '<th>' + year1 + '</th>';
@@ -99,8 +99,8 @@
     if (filtered.length === 0) {
       html += '<tr><td colspan="4" class="text-center py-8 text-gray-500 dark:text-gray-400">No components match the selected filters.</td></tr>';
     } else {
-      var currentCategory = '';
-      var categoryCount = {};
+      let currentCategory = '';
+      const categoryCount = {};
 
       // Count visible items per category for rowspan
       filtered.forEach(function(diff) {
@@ -108,8 +108,8 @@
       });
 
       filtered.forEach(function(diff) {
-        var rowClass = 'diff-' + diff.type;
-        var categoryCell = '';
+        const rowClass = 'diff-' + diff.type;
+        let categoryCell = '';
 
         if (diff.category !== currentCategory) {
           categoryCell = '<td class="category-' + diff.categoryId + ' font-semibold align-middle" rowspan="' + categoryCount[diff.category] + '">' + diff.category + '</td>';
@@ -128,8 +128,8 @@
     html += '</tbody></table></div></div>';
 
     // Summary
-    var totalDiffCount = differences.filter(function(d) { return d.type !== 'unchanged'; }).length;
-    var showingCount = filtered.length;
+    const totalDiffCount = differences.filter(function(d) { return d.type !== 'unchanged'; }).length;
+    const showingCount = filtered.length;
     html += '<div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">';
     html += '<p class="text-sm text-gray-600 dark:text-gray-400">';
     html += '<strong>' + totalDiffCount + '</strong> difference' + (totalDiffCount === 1 ? '' : 's') + ' found out of <strong>' + differences.length + '</strong> components';
@@ -143,7 +143,7 @@
 
   // Update URL to reflect current selection
   function updateURL() {
-    var url = new URL(window.location);
+    const url = new URL(window.location);
     url.searchParams.set('year1', year1Select.value);
     url.searchParams.set('year2', year2Select.value);
 
@@ -151,7 +151,7 @@
     if (activeFilters.size === 4) {
       url.searchParams.delete('filters');
     } else {
-      var filterList = [];
+      const filterList = [];
       activeFilters.forEach(function(f) { filterList.push(f); });
       url.searchParams.set('filters', filterList.join(','));
     }
@@ -161,25 +161,25 @@
 
   // Compare function
   function compare() {
-    var year1 = year1Select.value;
-    var year2 = year2Select.value;
+    const year1 = year1Select.value;
+    const year2 = year2Select.value;
 
     if (!year1 || !year2) return;
 
-    var differences = findDifferences(year1, year2);
+    const differences = findDifferences(year1, year2);
     renderResults(year1, year2, differences);
     updateURL();
   }
 
   // Set up filter buttons
   function initFilters() {
-    var filterContainer = document.getElementById('diff-filters');
+    const filterContainer = document.getElementById('diff-filters');
     if (!filterContainer) return;
 
-    var buttons = filterContainer.querySelectorAll('.diff-filter');
+    const buttons = filterContainer.querySelectorAll('.diff-filter');
     buttons.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        var filterType = btn.getAttribute('data-filter');
+        const filterType = btn.getAttribute('data-filter');
 
         if (activeFilters.has(filterType)) {
           // Don't allow deactivating the last filter
@@ -198,18 +198,18 @@
 
   // Restore filters from URL
   function restoreFilters() {
-    var params = new URLSearchParams(window.location.search);
-    var filtersParam = params.get('filters');
+    const params = new URLSearchParams(window.location.search);
+    const filtersParam = params.get('filters');
     if (filtersParam) {
-      var urlFilters = filtersParam.split(',');
-      var validTypes = ['unchanged', 'changed', 'added', 'removed'];
-      var restored = urlFilters.filter(function(f) { return validTypes.indexOf(f) !== -1; });
+      const urlFilters = filtersParam.split(',');
+      const validTypes = ['unchanged', 'changed', 'added', 'removed'];
+      const restored = urlFilters.filter(function(f) { return validTypes.indexOf(f) !== -1; });
       if (restored.length > 0) {
         activeFilters = new Set(restored);
         // Update button states
-        var buttons = document.querySelectorAll('.diff-filter');
+        const buttons = document.querySelectorAll('.diff-filter');
         buttons.forEach(function(btn) {
-          var filterType = btn.getAttribute('data-filter');
+          const filterType = btn.getAttribute('data-filter');
           if (activeFilters.has(filterType)) {
             btn.classList.add('active');
           } else {
@@ -225,9 +225,9 @@
   initFilters();
 
   // Apply URL parameters if present
-  var params = new URLSearchParams(window.location.search);
-  var urlYear1 = params.get('year1');
-  var urlYear2 = params.get('year2');
+  const params = new URLSearchParams(window.location.search);
+  const urlYear1 = params.get('year1');
+  const urlYear2 = params.get('year2');
 
   if (urlYear1 && years.indexOf(urlYear1) !== -1) year1Select.value = urlYear1;
   if (urlYear2 && years.indexOf(urlYear2) !== -1) year2Select.value = urlYear2;

@@ -340,6 +340,8 @@ The main navigation menu is a simple list:
 main:
   - title: Home
     url: /
+  - title: History
+    url: /platform_history.html
   - title: Compare
     url: /compare.html
   - title: Linux
@@ -348,8 +350,6 @@ main:
     url: /FAQ/
   - title: About
     url: /about/
-  - title: Contact
-    url: /contact/
 ```
 
 Add, remove, or reorder items as needed. URLs can be:

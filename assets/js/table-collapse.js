@@ -1,6 +1,6 @@
 // Collapsible table category sections with localStorage persistence
 (function() {
-  var STORAGE_KEY = 'tableCollapsed';
+  const STORAGE_KEY = 'tableCollapsed';
 
   function getCollapsedState() {
     try {
@@ -19,10 +19,10 @@
   }
 
   function setCategory(categoryId, collapsed) {
-    var header = document.querySelectorAll('.category-header[data-category="' + categoryId + '"]');
-    var rows = document.querySelectorAll('[data-category-row="' + categoryId + '"]');
+    const headers = document.querySelectorAll('.category-header[data-category="' + categoryId + '"]');
+    const rows = document.querySelectorAll('[data-category-row="' + categoryId + '"]');
 
-    header.forEach(function(el) {
+    headers.forEach(function(el) {
       el.classList.toggle('collapsed', collapsed);
       el.setAttribute('aria-expanded', String(!collapsed));
     });
@@ -33,8 +33,8 @@
   }
 
   function toggleCategory(categoryId) {
-    var state = getCollapsedState();
-    var collapsed = !state[categoryId];
+    const state = getCollapsedState();
+    const collapsed = !state[categoryId];
     state[categoryId] = collapsed;
     if (!collapsed) delete state[categoryId];
     saveCollapsedState(state);
@@ -42,7 +42,7 @@
   }
 
   // Apply saved state on load
-  var state = getCollapsedState();
+  const state = getCollapsedState();
   Object.keys(state).forEach(function(categoryId) {
     if (state[categoryId]) {
       setCategory(categoryId, true);
