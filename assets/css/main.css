@@ -57,7 +57,7 @@
   }
 
   .platform-table td.version-changed {
-    @apply text-blue-600 dark:text-blue-400;
+    @apply bg-amber-50 dark:bg-amber-900/30;
   }
 
   .platform-table tr.row-alt td {
@@ -103,7 +103,7 @@
 
   /* Comparison highlighting - target td cells, excluding category cells with rowspan */
   .diff-changed td:not([rowspan]) {
-    @apply bg-yellow-100 dark:bg-yellow-900/30 font-medium;
+    @apply bg-amber-50 dark:bg-amber-900/30 font-medium;
   }
 
   .diff-added td:not([rowspan]) {
