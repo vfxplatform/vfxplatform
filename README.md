@@ -1,6 +1,6 @@
 # VFX Reference Platform Web Site
 
-This repo hosts the VFX Reference Platform web site hosted at https://vfxplatform.com. Optionally, major changes can be deployed to a staging site at https://vfxplatform.github.io/vfxplatform-staging/ for review before pushing to production.
+This repo hosts the VFX Reference Platform web site hosted at https://vfxplatform.com. Optionally, major changes can be deployed to a staging site at https://ves-tech.github.io/vfxplatform-staging/ for review before pushing to production.
 
 ## Table of Contents
 
@@ -382,7 +382,7 @@ Deployment is **fully automated** via GitHub Actions.
 
 For major changes, you can deploy to a staging site for review before pushing to production.
 
-**Staging URL:** https://vfxplatform.github.io/vfxplatform-staging/
+**Staging URL:** https://ves-tech.github.io/vfxplatform-staging/
 
 **How to use:**
 

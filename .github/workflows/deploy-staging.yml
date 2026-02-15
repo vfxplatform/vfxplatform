@@ -38,6 +38,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.STAGING_DEPLOY_TOKEN }}
-          external_repository: vfxplatform/vfxplatform-staging
+          external_repository: ves-tech/vfxplatform-staging
           publish_branch: gh-pages
           publish_dir: ./_site
